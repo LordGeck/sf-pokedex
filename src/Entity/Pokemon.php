@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -75,6 +77,22 @@ class Pokemon
      * @ORM\Column(type="integer")
      */
     private $weight;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\AttackSlot", mappedBy="pokemon")
+     */
+    private $attackSlots;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Description", mappedBy="pokemon")
+     */
+    private $descriptions;
+
+    public function __construct()
+    {
+        $this->attackSlots = new ArrayCollection();
+        $this->descriptions = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -221,6 +239,68 @@ class Pokemon
     public function setWeight(int $weight): self
     {
         $this->weight = $weight;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|AttackSlot[]
+     */
+    public function getAttackSlots(): Collection
+    {
+        return $this->attackSlots;
+    }
+
+    public function addAttackSlot(AttackSlot $attackSlot): self
+    {
+        if (!$this->attackSlots->contains($attackSlot)) {
+            $this->attackSlots[] = $attackSlot;
+            $attackSlot->setPokemon($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAttackSlot(AttackSlot $attackSlot): self
+    {
+        if ($this->attackSlots->contains($attackSlot)) {
+            $this->attackSlots->removeElement($attackSlot);
+            // set the owning side to null (unless already changed)
+            if ($attackSlot->getPokemon() === $this) {
+                $attackSlot->setPokemon(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Description[]
+     */
+    public function getDescriptions(): Collection
+    {
+        return $this->descriptions;
+    }
+
+    public function addDescription(Description $description): self
+    {
+        if (!$this->descriptions->contains($description)) {
+            $this->descriptions[] = $description;
+            $description->setPokemon($this);
+        }
+
+        return $this;
+    }
+
+    public function removeDescription(Description $description): self
+    {
+        if ($this->descriptions->contains($description)) {
+            $this->descriptions->removeElement($description);
+            // set the owning side to null (unless already changed)
+            if ($description->getPokemon() === $this) {
+                $description->setPokemon(null);
+            }
+        }
 
         return $this;
     }
