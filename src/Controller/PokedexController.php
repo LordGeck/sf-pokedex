@@ -60,7 +60,7 @@ class PokedexController extends AbstractController
     }
 
     /**
-     * @Route("/create}", name="create_resource")
+     * @Route("/create", name="create_resource")
      */
     public function createResource()
     {
