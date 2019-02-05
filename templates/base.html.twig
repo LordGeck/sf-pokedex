@@ -4,7 +4,11 @@
         <meta charset="UTF-8">
         <title>{% block title %}{% endblock %}</title>
         {% block stylesheets %}
-	{# Add bootstrap here #}
+		{# 'app' is the first argument to addEntry in webpack.config.js #}
+		{{ encore_entry_link_tags('app') }}
+
+		<link rel="stylesheet" href="/build/app.css">
+	
 	{% endblock %}
     </head>
     <body>
@@ -51,7 +55,11 @@
 
         {% block body %}{% endblock %}
         {% block javascripts %}
-	{# bootstrap JS here #}
+		{# bootstrap JS here #}
+		{{ encore_entry_script_tags('app') }}
+
+		<script src="/build/runtime.js"></script>
+		<script src="/build/app.js"></script>
 	{% endblock %}
     </body>
 </html>

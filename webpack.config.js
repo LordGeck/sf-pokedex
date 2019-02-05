@@ -18,8 +18,13 @@ Encore
      * and one CSS file (e.g. app.css) if you JavaScript imports CSS.
      */
     .addEntry('app', './assets/js/app.js')
-    //.addEntry('page1', './assets/js/page1.js')
-    //.addEntry('page2', './assets/js/page2.js')
+    .addEntry('attack_detail', './assets/js/attack_detail.js')
+    .addEntry('attack_list', './assets/js/attack_list.js')
+    .addEntry('create_resource', './assets/js/create_resource.js')
+    .addEntry('home', './assets/js/home.js')
+    .addEntry('pokemon_detail', './assets/js/pokemon_detail.js')
+    .addEntry('pokemon_grid', './assets/js/pokemon_grid.js')
+
 
     // will require an extra script tag for runtime.js
     // but, you probably want this, unless you're building a single-page app
@@ -50,6 +55,16 @@ Encore
     // uncomment if you use API Platform Admin (composer req api-admin)
     //.enableReactPreset()
     //.addEntry('admin', './assets/js/admin.js')
+    
+	// Babel custom configuration
+	.configureBabel(function(babelConfig) {
+		// presets and plugins
+	},{
+		// modules and files whitelist
+	})
+
+	// enabling .scss and .sass support
+	.enableSassLoader()
 ;
 
 module.exports = Encore.getWebpackConfig();

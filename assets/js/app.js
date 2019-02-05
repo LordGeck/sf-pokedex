@@ -6,9 +6,22 @@
  */
 
 // any CSS you require will output into a single css file (app.css in this case)
-require('../css/app.css');
+import '../css/app.css';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
-// const $ = require('jquery');
+import $ from 'jquery';
+// bootstrap does not export anything
+require('bootstrap');
 
-console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
+// to look for a local file start path with './' or '../' for a previous folder
+import greet from './greet.js';
+
+$(document).ready(function() {
+	$('body').prepend('<h1>' + greet('Satoshi Nakamoto') + '</h1>');
+	console.log('document is ready');
+
+	// test bootstrap pop
+	$('[data-toggle="popover"]').popover();
+});
+
+//console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
