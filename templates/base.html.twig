@@ -14,14 +14,15 @@
     <body>
 
 	<nav class="navbar fixed-top navbar-light bg-light">
-		<a class="navbar-brand" href="#">
-			<img src="" width="30" height="30" alt="Pokeball image">
-			Pokedex Symfony
-		</a>
-
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+		<div class="navbar-header">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<a class="navbar-brand" href="#">
+				<img src="" width="30" height="30" alt="Pokeball image">
+				Pokedex Symfony
+			</a>
+		</div>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<div class="navbar-nav">
 					<a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
@@ -57,7 +58,6 @@
         {% block javascripts %}
 		{# bootstrap JS here #}
 		{{ encore_entry_script_tags('app') }}
-
 		<script src="/build/runtime.js"></script>
 		<script src="/build/app.js"></script>
 	{% endblock %}

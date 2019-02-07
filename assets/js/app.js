@@ -6,7 +6,7 @@
  */
 
 // any CSS you require will output into a single css file (app.css in this case)
-import '../css/app.css';
+import '../css/global.scss';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
 import $ from 'jquery';
@@ -17,11 +17,11 @@ require('bootstrap');
 import greet from './greet.js';
 
 $(document).ready(function() {
-	$('body').prepend('<h1>' + greet('Satoshi Nakamoto') + '</h1>');
+//	$('body').prepend('<h1>' + greet('Satoshi Nakamoto') + '</h1>');
 	console.log('document is ready');
 
 	// test bootstrap pop
-	$('[data-toggle="popover"]').popover();
+//	$('[data-toggle="popover"]').popover();
 });
 
 //console.log('Hello Webpack Encore! Edit me in assets/js/app.js');

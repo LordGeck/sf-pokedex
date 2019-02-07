@@ -17,6 +17,11 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if you JavaScript imports CSS.
      */
+
+	// main app asset files
+	.addEntry('js/app', './assets/js/app.js')
+	.addStyleEntry('css/app', './assets/css/global.scss')
+
     .addEntry('app', './assets/js/app.js')
     .addEntry('attack_detail', './assets/js/attack_detail.js')
     .addEntry('attack_list', './assets/js/attack_list.js')
