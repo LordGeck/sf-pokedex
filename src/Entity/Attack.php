@@ -48,6 +48,11 @@ class Attack
      */
     private $attackSlots;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $name;
+
     public function __construct()
     {
         $this->attackSlots = new ArrayCollection();
@@ -67,6 +72,8 @@ class Attack
     public function setAccuracy($accuracy): self
     {
         $this->accuracy = $accuracy;
+
+        return $this;
     }
 
     /**
@@ -83,6 +90,8 @@ class Attack
     public function setPower($power): self
     {
         $this->power = $power;
+
+        return $this;
     }
 
     /**
@@ -99,6 +108,8 @@ class Attack
     public function setCt($ct): self
     {
         $this->ct = $ct;
+
+        return $this;
     }
 
 
@@ -159,6 +170,18 @@ class Attack
                 $attackSlot->setAttack(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
 
         return $this;
     }

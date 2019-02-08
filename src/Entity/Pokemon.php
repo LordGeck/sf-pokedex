@@ -88,6 +88,11 @@ class Pokemon
      */
     private $descriptions;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $name;
+
     public function __construct()
     {
         $this->attackSlots = new ArrayCollection();
@@ -301,6 +306,18 @@ class Pokemon
                 $description->setPokemon(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
 
         return $this;
     }
