@@ -1,55 +1,68 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}{% endblock %}</title>
-        {% block stylesheets %}
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}{% endblock %}</title>
+	{% block stylesheets %}
 		{# 'app' is the first argument to addEntry in webpack.config.js #}
 		{{ encore_entry_link_tags('app') }}
 
 		<link rel="stylesheet" href="/build/app.css">
-	
-	{% endblock %}
-    </head>
-    <body>
 
-		<nav class="navbar">
-			<a class="navbar-brand" href="#">
-				<img src="" width="30" height="30" alt="Pokeball image">
-				Pokedex Symfony
-			</a>
-			<a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-			<a class="nav-link" href="#">Grille Pokémon</a>
-			<a class="nav-link" href="#">Liste attaques</a>
-			<a class="nav-link disabled" href="#">Créer ressource</a>
-			<div class="nav-item-dropdown show">
-				<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	{% endblock %}
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a class="navbar-brand" href="#">
+		<img src="{{ asset('build/assets/images/common/brand.png') }}" width="30" height="30" alt="Pokeball image">
+		Pokedex Symfony
+	</a>
+
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Grille Pokémon</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Liste attaques</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Créer ressource</a>
+			</li>
+
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Mon compte
 				</a>
-				<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="#">Connexion</a>
 					<a class="dropdown-item" href="#">Mon compte</a>
 					<a class="dropdown-item" href="#">Déconnexion</a>
 				</div>
-			</div>
-			{# Searchbar #}
-			<form class="form-inline">
-				<input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Rechercher">
-				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-			</form>
+			</li>
+		</ul>
+		{# Searchbar #}
+		<form class="form-inline my-2 my-lg-0">
+			<input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Rechercher">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+		</form>
+	</div>
+</nav>
 
-			{# decoration text #}
-			<span class="navbar-text">
-				Pokedex Symfony
-			</span>
-		</nav>
-
-        {% block body %}{% endblock %}
-        {% block javascripts %}
-		{# bootstrap JS here #}
-		{{ encore_entry_script_tags('app') }}
-		<script src="/build/runtime.js"></script>
-		<script src="/build/app.js"></script>
-	{% endblock %}
-    </body>
+{% block body %}{% endblock %}
+{% block javascripts %}
+	{# bootstrap JS here #}
+	{{ encore_entry_script_tags('app') }}
+	<script src="/build/runtime.js"></script>
+	<script src="/build/app.js"></script>
+{% endblock %}
+</body>
 </html>

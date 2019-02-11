@@ -9,7 +9,12 @@
 import '../css/global.scss';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
-import $ from 'jquery';
+// import $ from 'jquery';
+
+var $ = require('jquery');
+global.$ = $;
+global.jQuery = $;
+
 // bootstrap does not export anything
 require('bootstrap');
 
@@ -25,3 +30,7 @@ $(document).ready(function() {
 });
 
 //console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
+
+// autoload images (miniatures and brand in common folder)
+const imagesContext = require.context('../images/common', true, /\.(png|jpg|jpeg|gif|ico|svg|webp)$/);
+imagesContext.keys().forEach(imagesContext);
