@@ -9,11 +9,8 @@
 import '../css/global.scss';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
-// import $ from 'jquery';
-
-var $ = require('jquery');
-global.$ = $;
-global.jQuery = $;
+//import $ from 'jquery';
+const $ = require('jquery');
 
 // bootstrap does not export anything
 require('bootstrap');
@@ -26,7 +23,7 @@ $(document).ready(function() {
 	console.log('document is ready');
 
 	// test bootstrap pop
-//	$('[data-toggle="popover"]').popover();
+	$('[data-toggle="popover"]').popover();
 });
 
 //console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
