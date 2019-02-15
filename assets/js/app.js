@@ -29,5 +29,13 @@ $(document).ready(function() {
 //console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
 
 // autoload images (miniatures and brand in common folder)
-const imagesContext = require.context('../images/common', true, /\.(png|jpg|jpeg|gif|ico|svg|webp)$/);
-imagesContext.keys().forEach(imagesContext);
+
+// common
+const imagesCommonContext = require.context('../images/common', true, /\.(png|jpg|jpeg|gif|ico|svg|webp)$/);
+imagesCommonContext.keys().forEach(imagesCommonContext);
+// sprites
+const imagesSpritesContext = require.context('../images/sprites', true, /\.(png|jpg|jpeg|gif|ico|svg|webp)$/);
+imagesSpritesContext.keys().forEach(imagesSpritesContext);
+// artworks (heavier, seek an alternative)
+const imagesArtworksContext = require.context('../images/artworks', true, /\.(png|jpg|jpeg|gif|ico|svg|webp)$/);
+imagesArtworksContext.keys().forEach(imagesArtworksContext);

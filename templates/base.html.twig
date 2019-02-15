@@ -11,31 +11,36 @@
 
 	{% endblock %}
 </head>
+
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	<a class="navbar-brand" href="#">
+<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+	<a class="navbar-brand" href="{{ path('home') }}">
 		<img src="{{ asset('build/assets/images/common/brand.png') }}" width="30" height="30" alt="Pokeball image">
-		Pokedex Symfony
+	</a>
+	<a class="navbar-brand" href="{{ path('home') }}">
+		Pokédex Symfony
 	</a>
 
+	{#
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
+	#}
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item">
-				<a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="{{ path('home') }}">Home<span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Grille Pokémon</a>
+				<a class="nav-link" href="{{ path('pokemon_grid') }}">Grille Pokémon</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Liste attaques</a>
+				<a class="nav-link" href="{{ path('attack_list') }}">Liste attaques</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Créer ressource</a>
+				<a class="nav-link" href="{{ path('create_resource') }}">Créer ressource</a>
 			</li>
 
 			<li class="nav-item dropdown">
@@ -58,6 +63,11 @@
 </nav>
 
 {% block body %}{% endblock %}
+
+<div class="card-footer text-muted">
+	Pokédex créé en 2019. Symfony 4, Bootstrap 4, Twig
+</div>
+
 {% block javascripts %}
 	{# bootstrap JS here #}
 	{{ encore_entry_script_tags('js/app') }}

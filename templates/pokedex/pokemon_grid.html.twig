@@ -8,14 +8,156 @@
 {% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Pokemon Grid</h1>
-</div>
+
+	<h1>Grille des Pokémon</h1>
+
+	<table class="table">
+		<thead>
+		{# tr stands for row #}
+		<tr>
+			<div class="alert alert-primary">
+				Clique sur le Pokémon voulu pour voir ses informations !
+			</div>
+		</tr>
+		</thead>
+
+		<tbody>
+		{# Make a loop in body to fill table with all available pokemon #}
+		<tr>
+			{# One <td> by Pokemon #}
+			<td>
+				<h5>Pokemon 1 Name</h5>
+				<img src="{{ asset('build/assets/images/sprites/placeholder64.png') }}">
+				<p>
+					<a>
+						<button type="button" class="btn btn-outline-primary">
+							Voir les infos
+						</button>
+					</a>
+				</p>
+			</td>
+
+			{# One <td> by Pokemon #}
+			<td>
+				<h5>Pokemon 1 Name</h5>
+				<img src="{{ asset('build/assets/images/sprites/placeholder64.png') }}">
+				<p>
+					<a>
+						<button type="button" class="btn btn-outline-primary">
+							Voir les infos
+						</button>
+					</a>
+				</p>
+			</td>
+			{# One <td> by Pokemon #}
+			<td>
+				<h5>Pokemon 1 Name</h5>
+				<img src="{{ asset('build/assets/images/sprites/placeholder64.png') }}">
+				<p>
+					<a>
+						<button type="button" class="btn btn-outline-primary">
+							Voir les infos
+						</button>
+					</a>
+				</p>
+			</td>
+			{# One <td> by Pokemon #}
+			<td>
+				<h5>Pokemon 1 Name</h5>
+				<img src="{{ asset('build/assets/images/sprites/placeholder64.png') }}">
+				<p>
+					<a>
+						<button type="button" class="btn btn-outline-primary">
+							Voir les infos
+						</button>
+					</a>
+				</p>
+			</td>
+			<td>
+				<h5>Pokemon 1 Name</h5>
+				<img src="{{ asset('build/assets/images/sprites/placeholder64.png') }}">
+				<p>
+					<a>
+						<button type="button" class="btn btn-outline-primary">
+							Voir les infos
+						</button>
+					</a>
+				</p>
+			</td>
+
+
+		</tr>
+
+		{# remove this #}
+		<tr>
+			{# One <td> by Pokemon #}
+			<td>
+				<h5>Pokemon 1 Name</h5>
+				<img src="{{ asset('build/assets/images/sprites/placeholder64.png') }}">
+				<p>
+					<a>
+						<button type="button" class="btn btn-outline-primary">
+							Voir les infos
+						</button>
+					</a>
+				</p>
+			</td>
+
+			{# One <td> by Pokemon #}
+			<td>
+				<h5>Pokemon 1 Name</h5>
+				<img src="{{ asset('build/assets/images/sprites/placeholder64.png') }}">
+				<p>
+					<a>
+						<button type="button" class="btn btn-outline-primary">
+							Voir les infos
+						</button>
+					</a>
+				</p>
+			</td>
+			{# One <td> by Pokemon #}
+			<td>
+				<h5>Pokemon 1 Name</h5>
+				<img src="{{ asset('build/assets/images/sprites/placeholder64.png') }}">
+				<p>
+					<a>
+						<button type="button" class="btn btn-outline-primary">
+							Voir les infos
+						</button>
+					</a>
+				</p>
+			</td>
+			{# One <td> by Pokemon #}
+			<td>
+				<h5>Pokemon 1 Name</h5>
+				<img src="{{ asset('build/assets/images/sprites/placeholder64.png') }}">
+				<p>
+					<a>
+						<button type="button" class="btn btn-outline-primary">
+							Voir les infos
+						</button>
+					</a>
+				</p>
+			</td>
+			<td>
+				<h5>Pokemon 1 Name</h5>
+				<img src="{{ asset('build/assets/images/sprites/placeholder64.png') }}">
+				<p>
+					<a>
+						<button type="button" class="btn btn-outline-primary">
+							Voir les infos
+						</button>
+					</a>
+				</p>
+			</td>
+
+
+		</tr>
+
+		</tbody>
+	</table>
+
 {% endblock %}
 
 {% block javascripts %}

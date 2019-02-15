@@ -11,14 +11,71 @@
 
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Attack List</h1>
-</div>
+
+	<h1>Liste des attaques</h1>
+
+	<table class="table table-hover">
+		<thead>
+		{# tr stands for row #}
+		<tr>
+			<div class="alert alert-primary">
+				Clique sur l'attaque voulue, ou filtre par types / CT / CS
+			</div>
+		</tr>
+		{# jQuery type / phys-spec / CT / CS selector #}
+		<tr>
+			<th>Nom attaque</th>
+			<th>Type</th>
+			<th>Puissance</th>
+			<th>Précision</th>
+		</tr>
+		</thead>
+
+		<tbody>
+		{# One raw by attack #}
+		<tr>
+			<td>Psyko</td>
+			<td>
+				<button type="button" class="btn btn-poketype btn-xs btn-dark">PSY</button>
+			</td>
+			<td>
+				90
+			</td>
+			<td>
+				100
+			</td>
+		</tr>
+		{# One raw by attack #}
+		<tr>
+			<td>Psyko</td>
+			<td>
+				<button type="button" class="btn btn-poketype btn-xs btn-dark">PSY</button>
+			</td>
+			<td>
+				90
+			</td>
+			<td>
+				100
+			</td>
+		</tr>
+		{# One raw by attack #}
+		<tr>
+			<td>Psyko</td>
+			<td>
+				<button type="button" class="btn btn-poketype btn-xs btn-dark">PSY</button>
+			</td>
+			<td>
+				90
+			</td>
+			<td>
+				100
+			</td>
+		</tr>
+
+		</tbody>
+	</table>
+
 {% endblock %}
 
 

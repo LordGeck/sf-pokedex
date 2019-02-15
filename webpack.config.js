@@ -48,21 +48,8 @@ Encore
 	})
 
 	.configureFilenames({
-		images: '[path][name].[hash:8].[ext]',
+		images: '[path][name].[hash:8].[ext]'
 	})
-
-
-
-	/*
-	var webpack = require('webpack');
-	plugins: [
-		new webpack.ProvidePlugin({
-			'$': "jquery",
-			'jQuery': "jquery",
-			'Popper': 'popper.js'
-		})
-	]
-	*/
 ;
 
 // import webpack config

@@ -4,3 +4,76 @@ $primary: darken(#428bca, 20%);
 
 @import "~bootstrap/scss/bootstrap";
 //@import "~bootstrap/scss/_carousel";
+
+
+body{
+  width: 80%;
+  margin: auto;
+
+  nav{
+
+  }
+
+  h1{
+    text-align: center;
+  }
+
+  img{
+    display: block;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // put in pokemon_grid.scss
+  table {
+    text-align: center;
+
+    thead {
+      tr {
+
+      }
+    }
+
+    tbody {
+      tr {
+        // pokemon block in pokemon_grid
+        td {
+          img{
+            margin-bottom: 15px;
+          }
+          p {
+            a {
+              button {
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .card-footer{
+    text-align: center;
+  }
+}
+
+// custom pokemon types buttons
+
+.btn-poketype,
+.btn-poketype:hover,
+.btn-poketype:active,
+.btn-poketype:visited,
+.btn-poketype:focus
+{
+  background-color: #6f42c1;
+}
+
+// btn-xs fix
+.btn-group-xs > .btn, .btn-xs {
+  padding  : .25rem .4rem;
+  font-size  : .875rem;
+  line-height  : .5;
+  border-radius : .2rem;
+}
