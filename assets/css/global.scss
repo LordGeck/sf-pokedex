@@ -59,16 +59,145 @@ body{
   }
 }
 
+//.custom-outline{
+//  color: black;
+//  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+//  -webkit-text-stroke-width: 1px;
+//  -webkit-text-stroke-color: black;
+//}
+
 // custom pokemon types buttons
 
-.btn-poketype,
-.btn-poketype:hover,
-.btn-poketype:active,
-.btn-poketype:visited,
+// grass
+.btn-grass,
+.btn-grass:hover,
+.btn-grass:active,
+.btn-grass:visited,
+.btn-grass:focus
+{
+  background-color: green;
+}
+// bug
+.btn-bug,
+.btn-bug:hover,
+.btn-bug:active,
+.btn-bug:visited,
 .btn-poketype:focus
 {
-  background-color: #6f42c1;
+  background-color: greenyellow;
 }
+// poison
+.btn-poison,
+.btn-poison:hover,
+.btn-poison:active,
+.btn-poison:visited,
+.btn-poison:focus
+{
+  background-color: rebeccapurple;
+}
+// fire
+.btn-fire,
+.btn-fire:hover,
+.btn-fire:active,
+.btn-fire:visited,
+.btn-fire:focus
+{
+  background-color: orangered;
+}
+// water
+.btn-water,
+.btn-water:hover,
+.btn-water:active,
+.btn-water:visited,
+.btn-water:focus
+{
+  background-color: dodgerblue;
+}
+// ice
+.btn-ice,
+.btn-ice:hover,
+.btn-ice:active,
+.btn-ice:visited,
+.btn-ice:focus
+{
+  background-color: lightskyblue;
+}
+// normal
+.btn-normal,
+.btn-normal:hover,
+.btn-normal:active,
+.btn-normal:visited,
+.btn-normal:focus
+{
+  background-color: gray;
+}
+// dragon
+.btn-dragon,
+.btn-dragon:hover,
+.btn-dragon:active,
+.btn-dragon:visited,
+.btn-dragon:focus
+{
+  background-color: darkblue;
+}
+// flight
+.btn-flying,
+.btn-flying:hover,
+.btn-flying:active,
+.btn-flying:visited,
+.btn-flying:focus
+{
+  background-color: mediumpurple;
+}
+.btn-electric,
+.btn-electric:hover,
+.btn-electric:active,
+.btn-electric:visited,
+.btn-electric:focus
+{
+  background-color: gold;
+}
+.btn-psychic,
+.btn-psychic:hover,
+.btn-psychic:active,
+.btn-psychic:visited,
+.btn-psychic:focus
+{
+  background-color: deeppink;
+}
+.btn-fighting,
+.btn-fighting:hover,
+.btn-fighting:active,
+.btn-fighting:visited,
+.btn-fighting:focus
+{
+  background-color: brown;
+}
+.btn-ghost,
+.btn-ghost:hover,
+.btn-ghost:active,
+.btn-ghost:visited,
+.btn-ghost:focus
+{
+  background-color: lightslategray;
+}
+.btn-rock,
+.btn-rock:hover,
+.btn-rock:active,
+.btn-rock:visited,
+.btn-rock:focus
+{
+  background-color: saddlebrown;
+}
+.btn-ground,
+.btn-ground:hover,
+.btn-ground:active,
+.btn-ground:visited,
+.btn-ground:focus
+{
+  background-color: sandybrown;
+}
+
 
 // btn-xs fix
 .btn-group-xs > .btn, .btn-xs {

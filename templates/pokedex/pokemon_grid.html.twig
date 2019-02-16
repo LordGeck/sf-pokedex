@@ -25,11 +25,16 @@
 		</thead>
 
 		<tbody>
+
+
 		{# Make a loop in body to fill table with all available pokemon #}
+		{% set i = 0 %}
 		<tr>
+		{% for pokemon in pokemons %}
+
 			{# One <td> by Pokemon #}
 			<td>
-				<h5>Pokemon 1 Name</h5>
+				<h5>{{ pokemon.name }}</h5>
 				<img src="{{ asset('build/assets/images/sprites/placeholder64.png') }}">
 				<p>
 					<a>
@@ -40,121 +45,16 @@
 				</p>
 			</td>
 
-			{# One <td> by Pokemon #}
-			<td>
-				<h5>Pokemon 1 Name</h5>
-				<img src="{{ asset('build/assets/images/sprites/placeholder64.png') }}">
-				<p>
-					<a>
-						<button type="button" class="btn btn-outline-primary">
-							Voir les infos
-						</button>
-					</a>
-				</p>
-			</td>
-			{# One <td> by Pokemon #}
-			<td>
-				<h5>Pokemon 1 Name</h5>
-				<img src="{{ asset('build/assets/images/sprites/placeholder64.png') }}">
-				<p>
-					<a>
-						<button type="button" class="btn btn-outline-primary">
-							Voir les infos
-						</button>
-					</a>
-				</p>
-			</td>
-			{# One <td> by Pokemon #}
-			<td>
-				<h5>Pokemon 1 Name</h5>
-				<img src="{{ asset('build/assets/images/sprites/placeholder64.png') }}">
-				<p>
-					<a>
-						<button type="button" class="btn btn-outline-primary">
-							Voir les infos
-						</button>
-					</a>
-				</p>
-			</td>
-			<td>
-				<h5>Pokemon 1 Name</h5>
-				<img src="{{ asset('build/assets/images/sprites/placeholder64.png') }}">
-				<p>
-					<a>
-						<button type="button" class="btn btn-outline-primary">
-							Voir les infos
-						</button>
-					</a>
-				</p>
-			</td>
+			{% if i is divisible by(4) %}
+				{% if i != 0 %}
+					{# close current row #}
+					</tr><tr>
+				{% endif %}
 
+			{% endif %}
 
-		</tr>
-
-		{# remove this #}
-		<tr>
-			{# One <td> by Pokemon #}
-			<td>
-				<h5>Pokemon 1 Name</h5>
-				<img src="{{ asset('build/assets/images/sprites/placeholder64.png') }}">
-				<p>
-					<a>
-						<button type="button" class="btn btn-outline-primary">
-							Voir les infos
-						</button>
-					</a>
-				</p>
-			</td>
-
-			{# One <td> by Pokemon #}
-			<td>
-				<h5>Pokemon 1 Name</h5>
-				<img src="{{ asset('build/assets/images/sprites/placeholder64.png') }}">
-				<p>
-					<a>
-						<button type="button" class="btn btn-outline-primary">
-							Voir les infos
-						</button>
-					</a>
-				</p>
-			</td>
-			{# One <td> by Pokemon #}
-			<td>
-				<h5>Pokemon 1 Name</h5>
-				<img src="{{ asset('build/assets/images/sprites/placeholder64.png') }}">
-				<p>
-					<a>
-						<button type="button" class="btn btn-outline-primary">
-							Voir les infos
-						</button>
-					</a>
-				</p>
-			</td>
-			{# One <td> by Pokemon #}
-			<td>
-				<h5>Pokemon 1 Name</h5>
-				<img src="{{ asset('build/assets/images/sprites/placeholder64.png') }}">
-				<p>
-					<a>
-						<button type="button" class="btn btn-outline-primary">
-							Voir les infos
-						</button>
-					</a>
-				</p>
-			</td>
-			<td>
-				<h5>Pokemon 1 Name</h5>
-				<img src="{{ asset('build/assets/images/sprites/placeholder64.png') }}">
-				<p>
-					<a>
-						<button type="button" class="btn btn-outline-primary">
-							Voir les infos
-						</button>
-					</a>
-				</p>
-			</td>
-
-
+			{% set i = i+1 %}
+		{% endfor %}
 		</tr>
 
 		</tbody>

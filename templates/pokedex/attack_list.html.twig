@@ -39,7 +39,7 @@
 				<tr>
 					<td>{{ attack.name }}</td>
 					<td>
-						<button type="button" class="btn btn-poketype btn-xs btn-dark">{{ attack.type | upper }}</button>
+						<button type="button" class="btn btn-{{ attack.type }} btn-xs btn-dark custom-outline">{{ attack.type | upper }}</button>
 					</td>
 					<td>
 						{{ attack.power }}
