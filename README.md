@@ -28,8 +28,118 @@ Common template :
 
 ## Images management
 
+We manage images loading with Webpack.
 See https://github.com/symfony/webpack-encore/issues/24
 
 ## Frontend setup
 
-See https://symfony.com/doc/current/frontend.html
+This project embeds both backend and frontend, like a classic website and not a independent webservice.<br/>
+
+### Step 1 : Install Encore, yarn and webpack components<br/>
+```
+composer require encore
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update && sudo apt-get install yarn
+```
+Install node_module dependencies at project root by running :
+```
+yarn install
+```
+WebpackEncoreBundle is now enabled, and webpack.config.js created at root to manage dependencies. .gitignore was auto updated. A new assets/ folders appears with assets/js/app.js and assets/css/app.css as common JavaScript/CSS.
+
+### Step 2 : Configure Encore, SASS, jQuery and Bootstrap
+
+First enable CSS preprocessor. We use SASS (<a href="https://sass-lang.com/">see website</a>). Install it with yarn :
+
+```
+yarn add sass-loader@^7.0.1 node-sass --dev
+```
+
+Load it in app.js :
+```
+// assets/js/app.js
+// ...
+
+require('../css/app.scss');
+```
+
+Enable in webpack.config.js :
+
+```
+// webpack.config.js
+// ...
+
+Encore
+    // ...
+
+    // enable just the one you want
+
+    // processes files ending in .scss or .sass
+    .enableSassLoader()
+;
+```
+**Note that any webpack.config.js needs Encore restart to take effect.**
+
+base.html.twig will include common CSS and JavaScript like that :
+```
+{# templates/base.html.twig #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- ... -->
+
+        {% block stylesheets %}
+            {# 'app' must match the first argument to addEntry() in webpack.config.js #}
+            {{ encore_entry_link_tags('app') }}
+
+            <!-- Renders a link tag (if your module requires any CSS)
+                 <link rel="stylesheet" href="/build/app.css"> -->
+        {% endblock %}
+    </head>
+    <body>
+        <!-- ... -->
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+
+            <!-- Renders app.js & a webpack runtime.js file
+                <script src="/build/runtime.js"></script>
+                <script src="/build/app.js"></script> -->
+        {% endblock %}
+    </body>
+</html>
+```
+
+Install bootstrap with yarn :
+```
+yarn add bootstrap --dev
+```
+Then import Bootstrap in our main stylesheet :
+```
+// assets/css/global.scss
+
+// the ~ allows you to reference things in node_modules
+@import "~bootstrap/scss/bootstrap";
+```
+
+Now install jQuery and its dependency :
+```
+yarn add jquery popper.js --dev
+```
+Load it in app.js :
+```
+// assets/app.js
+
+const $ = require('jquery');
+// this "modifies" the jquery module: adding behavior to it
+// the bootstrap module doesn't export/return anything
+require('bootstrap');
+```
+
+After any config change, to launch frontend auto watch :
+```
+yarn encore dev --watch
+```
+
+See https://symfony.com/doc/current/frontend.html for more details.
