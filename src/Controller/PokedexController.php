@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Pokemon;
+use App\Entity\Attack;
 
 class PokedexController extends AbstractController
 {
@@ -22,8 +24,18 @@ class PokedexController extends AbstractController
      */
     public function pokemonGrid()
     {
+        $repository = $this->getDoctrine()->getRepository(Pokemon::class);
+        $pokemons = $repository->findAll();
+
+        if (!$pokemons) {
+            throw $this->createNotFoundException(
+                'No pokemon found.'
+            );
+        }
+
         return $this->render('pokedex/pokemon_grid.html.twig', [
             'controller_name' => 'PokedexController',
+            'pokemons' => $pokemons,
         ]);
     }
 
@@ -43,8 +55,19 @@ class PokedexController extends AbstractController
      */
     public function attackList()
     {
+        $repository = $this->getDoctrine()->getRepository(Attack::class);
+        $attacks = $repository->findAll();
+
+        if (!$attacks) {
+            throw $this->createNotFoundException(
+                'No attack found.'
+            );
+        }
+
+
         return $this->render('pokedex/attack_list.html.twig', [
             'controller_name' => 'PokedexController',
+            'attacks' => $attacks,
         ]);
     }
 

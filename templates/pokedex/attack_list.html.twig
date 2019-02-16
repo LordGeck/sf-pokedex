@@ -2,7 +2,6 @@
 
 {% block title %}Attack List{% endblock %}
 
-
 {% block stylesheets %}
 	{{ parent() }}
 	{{ encore_entry_link_tags('attack_list') }}
@@ -11,6 +10,8 @@
 
 
 {% block body %}
+
+{% dump attacks %}
 
 
 	<h1>Liste des attaques</h1>
@@ -34,44 +35,20 @@
 
 		<tbody>
 		{# One raw by attack #}
-		<tr>
-			<td>Psyko</td>
-			<td>
-				<button type="button" class="btn btn-poketype btn-xs btn-dark">PSY</button>
-			</td>
-			<td>
-				90
-			</td>
-			<td>
-				100
-			</td>
-		</tr>
-		{# One raw by attack #}
-		<tr>
-			<td>Psyko</td>
-			<td>
-				<button type="button" class="btn btn-poketype btn-xs btn-dark">PSY</button>
-			</td>
-			<td>
-				90
-			</td>
-			<td>
-				100
-			</td>
-		</tr>
-		{# One raw by attack #}
-		<tr>
-			<td>Psyko</td>
-			<td>
-				<button type="button" class="btn btn-poketype btn-xs btn-dark">PSY</button>
-			</td>
-			<td>
-				90
-			</td>
-			<td>
-				100
-			</td>
-		</tr>
+		{% for attack in attacks %}
+				<tr>
+					<td>{{ attack.name }}</td>
+					<td>
+						<button type="button" class="btn btn-poketype btn-xs btn-dark">{{ attack.type | upper }}</button>
+					</td>
+					<td>
+						{{ attack.power }}
+					</td>
+					<td>
+						{{ attack.accuracy }}
+					</td>
+				</tr>
+		{% endfor %}
 
 		</tbody>
 	</table>
