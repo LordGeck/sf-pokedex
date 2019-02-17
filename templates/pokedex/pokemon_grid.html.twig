@@ -37,7 +37,10 @@
 				<h5>{{ pokemon.name }}</h5>
 				<img src="{{ asset('build/assets/images/sprites/placeholder64.png') }}">
 				<p>
-					<a>
+					{# We search pokemon by id and not by no_pokedex
+						id is enough to find pokemon because we go through controller again
+					#}
+					<a href="{{ path('pokemon_detail', {'id': pokemon.id}) }}">
 						<button type="button" class="btn btn-outline-primary">
 							Voir les infos
 						</button>

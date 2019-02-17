@@ -25,7 +25,23 @@ body{
     margin-right: auto;
   }
 
+  // put in pokemon_detail.scss
+
+  .figure-center{
+    text-align: center;
+
+    figure{
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  section{
+    text-align: center;
+  }
+
   // put in pokemon_grid.scss
+
   table {
     text-align: center;
 
@@ -59,12 +75,9 @@ body{
   }
 }
 
-//.custom-outline{
-//  color: black;
-//  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-//  -webkit-text-stroke-width: 1px;
-//  -webkit-text-stroke-color: black;
-//}
+/**
+GLOBAL
+ */
 
 // custom pokemon types buttons
 

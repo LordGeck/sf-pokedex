@@ -44,9 +44,18 @@ class PokedexController extends AbstractController
      */
     public function pokemonDetail($id)
     {
+        $repository = $this->getDoctrine()->getRepository(Pokemon::class);
+        $pokemon = $repository->find($id);
+
+        if(!$pokemon){
+            throw $this->createNotFoundException(
+                'pokemon was not found'
+            );
+        }
+
         return $this->render('pokedex/pokemon_detail.html.twig', [
             'controller_name' => 'PokedexController',
-            'id' => $id,
+            'pokemon' => $pokemon,
         ]);
     }
 
