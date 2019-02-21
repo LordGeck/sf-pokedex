@@ -19,6 +19,21 @@ class DescriptionRepository extends ServiceEntityRepository
         parent::__construct($registry, Description::class);
     }
 
+    /**
+     * Serves for pokemon_detail template
+     */
+    public function findByPokemon($pokemonNo): ?Description
+    {
+	/**
+	 * select description.description, description.gen
+	 * from description
+	 * inner join pokemon on pokemon.pokemon_id=description.pokemon_id
+	 * where description.pokemon_id=:pokemonNo 
+	 */
+	    // write DQL
+	    
+    }
+
     // /**
     //  * @return Description[] Returns an array of Description objects
     //  */

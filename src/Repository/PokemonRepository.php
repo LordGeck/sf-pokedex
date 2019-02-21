@@ -19,6 +19,31 @@ class PokemonRepository extends ServiceEntityRepository
         parent::__construct($registry, Pokemon::class);
     }
 
+    /**
+     * @return Pokemon[]
+     */
+    public function findAllWithDescription()
+    {
+	    /*
+	     * select pokemon.no_pokedex, pokemon.location, pokemon.image, pokemon.type1, pokemon.type2, pokemon.size, pokemon.weight, description.gen, description.description
+	     * from pokemon
+	     * inner join description on description.pokemon_id=pokemon.pokemon_id 
+	     */
+	    // write DQL
+    }
+
+    // Add joined requests for use in Pokemon pages here
+    // Need attack_slot, attack and description
+
+    public function pokemonDetailRequest(){
+	/**
+	 * pokemon : no_pokedex, hp, atk, def, spe, speed, location, image, type1, type2, size, weight
+	 *
+	 */
+    }
+    
+
+
     // /**
     //  * @return Pokemon[] Returns an array of Pokemon objects
     //  */

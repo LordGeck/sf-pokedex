@@ -1,0 +1,247 @@
+{
+  "attacks": [
+    {
+      "id": 1,
+      "is_cs": false,
+      "type": "normal",
+      "accuracy": 100,
+      "power": 50,
+      "ct": "",
+      "name": "Charge"
+    },
+    {
+      "id": 2,
+      "is_cs": false,
+      "type": "normal",
+      "accuracy": 100,
+      "power": 0,
+      "ct": "",
+      "name": "Rugissement"
+    },
+    {
+      "id": 3,
+      "is_cs": false,
+      "type": "grass",
+      "accuracy": 90,
+      "power": 0,
+      "ct": "",
+      "name": "Vampigraine"
+    },
+    {
+      "id": 4,
+      "is_cs": false,
+      "type": "grass",
+      "accuracy": 100,
+      "power": 45,
+      "ct": "",
+      "name": "Fouet Lianes"
+    },
+    {
+      "id": 5,
+      "is_cs": false,
+      "type": "poison",
+      "accuracy": 75,
+      "power": 0,
+      "ct": "",
+      "name": "Poudre Toxik"
+    },
+    {
+      "id": 6,
+      "is_cs": false,
+      "type": "grass",
+      "accuracy": 95,
+      "power": 55,
+      "ct": "",
+      "name": "Tranch'herbe"
+    },
+    {
+      "id": 7,
+      "is_cs": false,
+      "type": "normal",
+      "accuracy": 100,
+      "power": 0,
+      "ct": "",
+      "name": "Croissance"
+    },
+    {
+      "id": 8,
+      "is_cs": false,
+      "type": "grass",
+      "accuracy": 75,
+      "power": 0,
+      "ct": "",
+      "name": "Poudre dodo"
+    },
+    {
+      "id": 9,
+      "is_cs": false,
+      "type": "grass",
+      "accuracy": 100,
+      "power": 100,
+      "ct": "",
+      "name": "Lance-soleil"
+    },
+    {
+      "id": 10,
+      "is_cs": false,
+      "type": "normal",
+      "accuracy": 100,
+      "power": 40,
+      "ct": "",
+      "name": "Griffe"
+    },
+    {
+      "id": 11,
+      "is_cs": false,
+      "type": "fire",
+      "accuracy": 100,
+      "power": 40,
+      "ct": "",
+      "name": "Flammèche"
+    },
+    {
+      "id": 12,
+      "is_cs": false,
+      "type": "normal",
+      "accuracy": 100,
+      "power": 0,
+      "ct": "",
+      "name": "Groz'yeux"
+    },
+    {
+      "id": 13,
+      "is_cs": false,
+      "type": "normal",
+      "accuracy": 100,
+      "power": 20,
+      "ct": "",
+      "name": "Frénésie"
+    },
+    {
+      "id": 14,
+      "is_cs": false,
+      "type": "normal",
+      "accuracy": 100,
+      "power": 70,
+      "ct": "",
+      "name": "Tranche"
+    },
+    {
+      "id": 15,
+      "is_cs": false,
+      "type": "fire",
+      "accuracy": 100,
+      "power": 90,
+      "ct": "",
+      "name": "Lance-flammes"
+    },
+    {
+      "id": 16,
+      "is_cs": false,
+      "type": "fire",
+      "accuracy": 85,
+      "power": 35,
+      "ct": "",
+      "name": "Danseflammes"
+    },
+    {
+      "id": 18,
+      "is_cs": false,
+      "type": "normal",
+      "accuracy": 100,
+      "power": 0,
+      "ct": "",
+      "name": "Mimi-queue"
+    },
+    {
+      "id": 19,
+      "is_cs": false,
+      "type": "water",
+      "accuracy": 100,
+      "power": 40,
+      "ct": "",
+      "name": "Ecume"
+    },
+    {
+      "id": 20,
+      "is_cs": false,
+      "type": "water",
+      "accuracy": 100,
+      "power": 40,
+      "ct": "",
+      "name": "Pistolet à O"
+    },
+    {
+      "id": 21,
+      "is_cs": false,
+      "type": "normal",
+      "accuracy": 100,
+      "power": 60,
+      "ct": "",
+      "name": "Morsure"
+    },
+    {
+      "id": 22,
+      "is_cs": false,
+      "type": "water",
+      "accuracy": 100,
+      "power": 0,
+      "ct": "",
+      "name": "Repli"
+    },
+    {
+      "id": 23,
+      "is_cs": false,
+      "type": "normal",
+      "accuracy": 100,
+      "power": 130,
+      "ct": "",
+      "name": "Coud'Krane"
+    },
+    {
+      "id": 24,
+      "is_cs": false,
+      "type": "water",
+      "accuracy": 80,
+      "power": 110,
+      "ct": "",
+      "name": "Hydrocanon"
+    }
+  ],
+  /*
+  "pokemons": [
+    {
+      "id": ,
+      "no_pokedex": ,
+      "hp": ,
+      "atk": ,
+      "def": ,
+      "spe": ,
+      "speed": ,
+      "location":  ,
+      "image":  ,
+      "type1":  ,
+      "type2": ,
+      "size": ,
+      "weight": ,
+      "name": ,
+      "descriptions": [
+        {
+          "id": ,
+          "gen": ,
+          "pokemon_id": ,
+          "description":
+        }
+      ],
+      "attack_slots": [
+        {
+          "id": ,
+          "pokemon_id": ,
+          "attack_id":  ,
+          "level": ,
+          "gen":
+        }
+      ]
+    }
+  ]*/
+}

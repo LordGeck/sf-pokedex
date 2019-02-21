@@ -19,6 +19,39 @@ class AttackSlotRepository extends ServiceEntityRepository
         parent::__construct($registry, AttackSlot::class);
     }
 
+    /**
+     * @return AttackSlot[]
+     */
+    public function findByPokemon($pokemonNo)
+    {
+	/**
+	 * select attack_slot.level, attack_slot.gen, attack.name, attack.type
+	 * from attack_slot
+	 * inner join attack on attack_slot.attack_id=attack.id
+	 * where attack_slot.pokemon_id=:pokemonNo
+	 */
+	    return $this->createQueryBuilder('a')
+		    ->andWhere('a.pokemon_id = :val')
+		    ->setParameter('val', $pokemonNo)
+		    ->orderBy('a.level', 'ASC')
+		    ->getQuery()
+		    ->getResult();
+    }
+
+    /**
+     * @return AttackSlot[]
+     */
+    public function findByAttack($attackId)
+    {
+	    /**
+	     * select attack_slot.level, attack_slot.gen, pokemon.name
+	     * from attack_slot
+	     * inner join pokemon on attack_slot.pokemon_id=pokemon.id
+	     * where attack_slot.attack_id=:attackId
+	     */
+	    // write DQL here
+    }
+
     // /**
     //  * @return AttackSlot[] Returns an array of AttackSlot objects
     //  */
