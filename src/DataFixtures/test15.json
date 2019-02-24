@@ -208,40 +208,38 @@
       "name": "Hydrocanon"
     }
   ],
-  /*
   "pokemons": [
     {
-      "id": ,
-      "no_pokedex": ,
-      "hp": ,
-      "atk": ,
-      "def": ,
-      "spe": ,
-      "speed": ,
-      "location":  ,
-      "image":  ,
-      "type1":  ,
-      "type2": ,
-      "size": ,
-      "weight": ,
-      "name": ,
+      "id": 9,
+      "no_pokedex": 9,
+      "hp": 79,
+      "atk": 83,
+      "def": 100,
+      "spe": 85,
+      "speed": 78,
+      "location": null,
+      "type1": "water",
+      "type2": null,
+      "size": 160,
+      "weight": 85,
+      "name": "Tortank",
       "descriptions": [
         {
-          "id": ,
-          "gen": ,
-          "pokemon_id": ,
-          "description":
+          "id": 1,
+          "gen": 1,
+          "pokemon_id": 9,
+          "description": "Un Pokémon brutal armé de canons hydrauliques. Ses puissants jets d'eau sont dévastateurs."
         }
       ],
       "attack_slots": [
         {
-          "id": ,
-          "pokemon_id": ,
-          "attack_id":  ,
-          "level": ,
-          "gen":
+          "id": 1,
+          "pokemon_id": 9,
+          "attack_id": 24,
+          "level": 52,
+          "gen": 1
         }
       ]
     }
-  ]*/
+  ]
 }
