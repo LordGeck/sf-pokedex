@@ -1,0 +1,187 @@
+[
+  {
+    "id": 1,
+    "is_cs": false,
+    "type": "normal",
+    "accuracy": 100,
+    "power": 50,
+    "ct": "",
+    "name": "Charge"
+  },
+  {
+    "is_cs": false,
+    "type": "normal",
+    "accuracy": 100,
+    "power": 0,
+    "ct": "",
+    "name": "Rugissement"
+  },
+  {
+    "is_cs": false,
+    "type": "grass",
+    "accuracy": 90,
+    "power": 0,
+    "ct": "",
+    "name": "Vampigraine"
+  },
+  {
+    "is_cs": false,
+    "type": "grass",
+    "accuracy": 100,
+    "power": 45,
+    "ct": "",
+    "name": "Fouet Lianes"
+  },
+  {
+    "is_cs": false,
+    "type": "poison",
+    "accuracy": 75,
+    "power": 0,
+    "ct": "",
+    "name": "Poudre Toxik"
+  },
+  {
+    "is_cs": false,
+    "type": "grass",
+    "accuracy": 95,
+    "power": 55,
+    "ct": "",
+    "name": "Tranch'herbe"
+  },
+  {
+    "is_cs": false,
+    "type": "normal",
+    "accuracy": 100,
+    "power": 0,
+    "ct": "",
+    "name": "Croissance"
+  },
+  {
+    "is_cs": false,
+    "type": "grass",
+    "accuracy": 75,
+    "power": 0,
+    "ct": "",
+    "name": "Poudre dodo"
+  },
+  {
+    "is_cs": false,
+    "type": "grass",
+    "accuracy": 100,
+    "power": 100,
+    "ct": "",
+    "name": "Lance-soleil"
+  },
+  {
+    "is_cs": false,
+    "type": "normal",
+    "accuracy": 100,
+    "power": 40,
+    "ct": "",
+    "name": "Griffe"
+  },
+  {
+    "is_cs": false,
+    "type": "fire",
+    "accuracy": 100,
+    "power": 40,
+    "ct": "",
+    "name": "Flammèche"
+  },
+  {
+    "is_cs": false,
+    "type": "normal",
+    "accuracy": 100,
+    "power": 0,
+    "ct": "",
+    "name": "Groz'yeux"
+  },
+  {
+    "is_cs": false,
+    "type": "normal",
+    "accuracy": 100,
+    "power": 20,
+    "ct": "",
+    "name": "Frénésie"
+  },
+  {
+    "is_cs": false,
+    "type": "normal",
+    "accuracy": 100,
+    "power": 70,
+    "ct": "",
+    "name": "Tranche"
+  },
+  {
+    "is_cs": false,
+    "type": "fire",
+    "accuracy": 100,
+    "power": 90,
+    "ct": "",
+    "name": "Lance-flammes"
+  },
+  {
+    "is_cs": false,
+    "type": "fire",
+    "accuracy": 85,
+    "power": 35,
+    "ct": "",
+    "name": "Danseflammes"
+  },
+  {
+    "is_cs": false,
+    "type": "normal",
+    "accuracy": 100,
+    "power": 0,
+    "ct": "",
+    "name": "Mimi-queue"
+  },
+  {
+    "is_cs": false,
+    "type": "water",
+    "accuracy": 100,
+    "power": 40,
+    "ct": "",
+    "name": "Ecume"
+  },
+  {
+    "is_cs": false,
+    "type": "water",
+    "accuracy": 100,
+    "power": 40,
+    "ct": "",
+    "name": "Pistolet à O"
+  },
+  {
+    "is_cs": false,
+    "type": "normal",
+    "accuracy": 100,
+    "power": 60,
+    "ct": "",
+    "name": "Morsure"
+  },
+  {
+    "is_cs": false,
+    "type": "water",
+    "accuracy": 100,
+    "power": 0,
+    "ct": "",
+    "name": "Repli"
+  },
+  {
+    "is_cs": false,
+    "type": "normal",
+    "accuracy": 100,
+    "power": 130,
+    "ct": "",
+    "name": "Coud'Krane"
+  },
+  {
+    "is_cs": false,
+    "type": "water",
+    "accuracy": 80,
+    "power": 110,
+    "ct": "",
+    "name": "Hydrocanon"
+  }
+]

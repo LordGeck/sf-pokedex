@@ -1,0 +1,66 @@
+[
+  {
+    "no_pokedex": 9,
+    "hp": 79,
+    "atk": 83,
+    "def": 100,
+    "spe": 85,
+    "speed": 78,
+    "location": null,
+    "type1": "water",
+    "type2": null,
+    "size": 160,
+    "weight": 85,
+    "name": "Tortank",
+    "descriptions": [
+      {
+        "id": 1,
+        "gen": 1,
+        "pokemon_id": 9,
+        "description": "Un Pokémon brutal armé de canons hydrauliques. Ses puissants jets d'eau sont dévastateurs."
+      }
+    ],
+    "attack_slots": [
+      {
+        "attack_name": "Charge",
+        "level": 1,
+        "gen": 1
+      },
+      {
+        "attack_name": "Mimi-queue",
+        "level": 1,
+        "gen": 1
+      },
+      {
+        "attack_name": "Ecume",
+        "level": 8,
+        "gen": 1
+      },
+      {
+        "attack_name": "Pistolet à O",
+        "level": 15,
+        "gen": 1
+      },
+      {
+        "attack_name": "Morsure",
+        "level": 24,
+        "gen": 1
+      },
+      {
+        "attack_name": "Repli",
+        "level": 31,
+        "gen": 1
+      },
+      {
+        "attack_name": "Coud'krane",
+        "level": 42,
+        "gen": 1
+      },
+      {
+        "attack_name": "Hydrocanon",
+        "level": 52,
+        "gen": 1
+      }
+    ]
+  }
+]
