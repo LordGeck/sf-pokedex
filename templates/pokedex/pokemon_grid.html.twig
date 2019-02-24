@@ -23,11 +23,11 @@
 		{% for pokemon in pokemons %}
 
 			<div class="col-1.5">
-				<div class="card text-center border-0" style="width: 10rem;">
+				<div class="card text-center border-0 card-pokemon">
 					<div class="card-body">
 						<h5 class="card-title">{{ pokemon.name }}</h5>
 						<img src="{{ asset('build/assets/images/sprites/placeholder64.png') }}" alt="Image de {{ pokemon.name }}">
-				    <a href="#" class="btn btn-outline-primary">Voir les infos</a>
+				    <a href="{{ path('pokemon_detail', {'id': pokemon.id}) }}" class="btn btn-outline-primary">Voir les infos</a>
 				  </div>
 				</div>
 			</div>
