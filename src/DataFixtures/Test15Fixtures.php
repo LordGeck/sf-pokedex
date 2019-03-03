@@ -71,8 +71,6 @@ class Test15Fixtures extends Fixture
                 $description = new Description();
                 $description->setDescription($pokemonArray[$i]['descriptions'][$i]['description']);
                 $description->setGen($pokemonArray[$i]['descriptions'][$i]['gen']);
-                // replace with no_pokedex
-//                $description->setPokemon($pokemonArray[$i]['no_pokedex']);
                 $pokemon->addDescription($description);
                 $manager->persist($description);
             }
