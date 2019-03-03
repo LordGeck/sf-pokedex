@@ -1,3 +1,15 @@
+# TODO list
+Garald : separate SCSS files by page, card system for pokemon grid
+Prime : consistent entities and real fixture (9 first pkmns), joins for correct data set in each page
+
+next week :
+- Determine JQuery sorts for each page, with controls
+- Feed sprite folder
+- User space with custom team with custom attacks
+- Backoffice page to CRUD pokemons and attacks
+- Make REST API layer with API Platform
+- Dockerize with fast controls in a make file
+
 # sf-pokedex
 
 Pokedex example using Symfony 4.2, Bootstrap 4, PHP 7.2.
