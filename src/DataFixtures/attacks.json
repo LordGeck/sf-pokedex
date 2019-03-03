@@ -6,7 +6,8 @@
     "accuracy": 100,
     "power": 50,
     "ct": "",
-    "name": "Charge"
+    "name": "Charge",
+    "key": "tackle"
   },
   {
     "is_cs": false,
@@ -14,7 +15,8 @@
     "accuracy": 100,
     "power": 0,
     "ct": "",
-    "name": "Rugissement"
+    "name": "Rugissement",
+    "key": "growl"
   },
   {
     "is_cs": false,
@@ -22,7 +24,8 @@
     "accuracy": 90,
     "power": 0,
     "ct": "",
-    "name": "Vampigraine"
+    "name": "Vampigraine",
+    "key": "leechSeed"
   },
   {
     "is_cs": false,
@@ -30,7 +33,8 @@
     "accuracy": 100,
     "power": 45,
     "ct": "",
-    "name": "Fouet Lianes"
+    "name": "Fouet Lianes",
+    "key": "vineWhip"
   },
   {
     "is_cs": false,
@@ -38,7 +42,8 @@
     "accuracy": 75,
     "power": 0,
     "ct": "",
-    "name": "Poudre Toxik"
+    "name": "Poudre Toxik",
+    "key": "poisonPowder"
   },
   {
     "is_cs": false,
@@ -46,7 +51,8 @@
     "accuracy": 95,
     "power": 55,
     "ct": "",
-    "name": "Tranch'herbe"
+    "name": "Tranch'herbe",
+    "key": "razorLeaf"
   },
   {
     "is_cs": false,
@@ -54,7 +60,8 @@
     "accuracy": 100,
     "power": 0,
     "ct": "",
-    "name": "Croissance"
+    "name": "Croissance",
+    "key": "growth"
   },
   {
     "is_cs": false,
@@ -62,7 +69,8 @@
     "accuracy": 75,
     "power": 0,
     "ct": "",
-    "name": "Poudre dodo"
+    "name": "Poudre dodo",
+    "key": "poisonPowder"
   },
   {
     "is_cs": false,
@@ -70,7 +78,8 @@
     "accuracy": 100,
     "power": 100,
     "ct": "",
-    "name": "Lance-soleil"
+    "name": "Lance-soleil",
+    "key": "solarBeam"
   },
   {
     "is_cs": false,
@@ -78,7 +87,8 @@
     "accuracy": 100,
     "power": 40,
     "ct": "",
-    "name": "Griffe"
+    "name": "Griffe",
+    "key": "scratch"
   },
   {
     "is_cs": false,
@@ -86,7 +96,8 @@
     "accuracy": 100,
     "power": 40,
     "ct": "",
-    "name": "Flammèche"
+    "name": "Flammèche",
+    "key": "ember"
   },
   {
     "is_cs": false,
@@ -94,7 +105,8 @@
     "accuracy": 100,
     "power": 0,
     "ct": "",
-    "name": "Groz'yeux"
+    "name": "Groz'yeux",
+    "key": "leer"
   },
   {
     "is_cs": false,
@@ -102,7 +114,8 @@
     "accuracy": 100,
     "power": 20,
     "ct": "",
-    "name": "Frénésie"
+    "name": "Frénésie",
+    "key": "rage"
   },
   {
     "is_cs": false,
@@ -110,7 +123,8 @@
     "accuracy": 100,
     "power": 70,
     "ct": "",
-    "name": "Tranche"
+    "name": "Tranche",
+    "key": "slash"
   },
   {
     "is_cs": false,
@@ -118,7 +132,8 @@
     "accuracy": 100,
     "power": 90,
     "ct": "",
-    "name": "Lance-flammes"
+    "name": "Lance-flammes",
+    "key": "flameThrower"
   },
   {
     "is_cs": false,
@@ -126,7 +141,8 @@
     "accuracy": 85,
     "power": 35,
     "ct": "",
-    "name": "Danseflammes"
+    "name": "Danseflammes",
+    "key": "fireSpin"
   },
   {
     "is_cs": false,
@@ -134,7 +150,8 @@
     "accuracy": 100,
     "power": 0,
     "ct": "",
-    "name": "Mimi-queue"
+    "name": "Mimi-queue",
+    "key": "tailWhip"
   },
   {
     "is_cs": false,
@@ -142,7 +159,8 @@
     "accuracy": 100,
     "power": 40,
     "ct": "",
-    "name": "Ecume"
+    "name": "Ecume",
+    "key": "bubble"
   },
   {
     "is_cs": false,
@@ -150,7 +168,8 @@
     "accuracy": 100,
     "power": 40,
     "ct": "",
-    "name": "Pistolet à O"
+    "name": "Pistolet à O",
+    "key": "waterGun"
   },
   {
     "is_cs": false,
@@ -158,7 +177,8 @@
     "accuracy": 100,
     "power": 60,
     "ct": "",
-    "name": "Morsure"
+    "name": "Morsure",
+    "key": "bite"
   },
   {
     "is_cs": false,
@@ -166,7 +186,8 @@
     "accuracy": 100,
     "power": 0,
     "ct": "",
-    "name": "Repli"
+    "name": "Repli",
+    "key": "withdraw"
   },
   {
     "is_cs": false,
@@ -174,7 +195,8 @@
     "accuracy": 100,
     "power": 130,
     "ct": "",
-    "name": "Coud'Krane"
+    "name": "Coud'Krane",
+    "key": "skullBash"
   },
   {
     "is_cs": false,
@@ -182,6 +204,7 @@
     "accuracy": 80,
     "power": 110,
     "ct": "",
-    "name": "Hydrocanon"
+    "name": "Hydrocanon",
+    "key": "hydroPump"
   }
 ]

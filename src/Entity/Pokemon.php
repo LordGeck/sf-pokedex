@@ -13,7 +13,7 @@ class Pokemon
 {
     /**
      * @ORM\Id()
-     * @ORM\GeneratedValue()
+     * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
      */
     private $id;
@@ -97,6 +97,12 @@ class Pokemon
     {
         $this->attackSlots = new ArrayCollection();
         $this->descriptions = new ArrayCollection();
+    }
+
+    public function setId($id): self
+    {
+        $this->id = $id;
+        return $this;
     }
 
     public function getId(): ?int

@@ -38,6 +38,11 @@ class AttackSlot
      */
     private $attack;
 
+    /**
+     * @ORM\Column(type="string", length=255) 
+     */
+    private $attack_key;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -89,6 +94,17 @@ class AttackSlot
         $this->pokemon_id = $pokemon_id;
 
         return $this;
+    }
+
+    public function setAttackKey($attack_key): self
+    {
+            $this->attack_key = $attack_key;
+            return $this;
+    }
+
+    public function getAttackKey(): ?string
+    {
+        return $this->attack_key;
     }
 
     public function getPokemon(): ?Pokemon

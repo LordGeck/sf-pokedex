@@ -13,7 +13,7 @@ class Attack
 {
     /**
      * @ORM\Id()
-     * @ORM\GeneratedValue()
+     * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
      */
     private $id;
@@ -52,6 +52,11 @@ class Attack
      * @ORM\Column(type="string", length=255)
      */
     private $name;
+
+    /**
+     * @ORM\Column(name="`key`", type="string", length=255)
+     */
+    private $key;
 
     public function __construct()
     {
@@ -112,7 +117,11 @@ class Attack
         return $this;
     }
 
-
+    public function setId($id): self
+    {
+            $this->id = $id;
+            return $this;
+    }
 
     public function getId(): ?int
     {
@@ -183,6 +192,17 @@ class Attack
     {
         $this->name = $name;
 
+        return $this;
+    }
+
+    public function getKey(): ?string
+    {
+        return $this->key;
+    }
+
+    public function setKey(string $key): self
+    {
+        $this->key = $key;
         return $this;
     }
 }

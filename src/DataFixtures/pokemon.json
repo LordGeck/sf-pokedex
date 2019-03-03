@@ -22,44 +22,44 @@
     ],
     "attack_slots": [
       {
-        "attack_name": "Charge",
         "level": 1,
-        "gen": 1
+        "gen": 1,
+        "attack_key": "tackle"
       },
       {
-        "attack_name": "Mimi-queue",
         "level": 1,
-        "gen": 1
+        "gen": 1,
+        "attack_key": "tailWhip"
       },
       {
-        "attack_name": "Ecume",
         "level": 8,
-        "gen": 1
+        "gen": 1,
+        "attack_key": "bubble"
       },
       {
-        "attack_name": "Pistolet à O",
         "level": 15,
-        "gen": 1
+        "gen": 1,
+        "attack_key": "waterGun" 
       },
       {
-        "attack_name": "Morsure",
         "level": 24,
-        "gen": 1
+        "gen": 1,
+        "attack_key": "bite"
       },
       {
-        "attack_name": "Repli",
         "level": 31,
-        "gen": 1
+        "gen": 1,
+        "attack_key": "withdraw" 
       },
       {
-        "attack_name": "Coud'krane",
         "level": 42,
-        "gen": 1
+        "gen": 1,
+        "attack_key": "skullBash" 
       },
       {
-        "attack_name": "Hydrocanon",
         "level": 52,
-        "gen": 1
+        "gen": 1,
+        "attack_key": "hydroPump" 
       }
     ]
   }

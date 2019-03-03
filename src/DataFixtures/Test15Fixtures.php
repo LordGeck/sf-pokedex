@@ -8,6 +8,8 @@ use App\Entity\Description;
 use App\Entity\Pokemon;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\Mapping\ClassMetadata;
+use Doctrine\ORM\Id\AssignedGenerator;
 
 class Test15Fixtures extends Fixture
 {
@@ -18,7 +20,17 @@ class Test15Fixtures extends Fixture
         $attacksJson = file_get_contents(__DIR__.'/attacks.json');
         $attacksArray = json_decode($attacksJson, true);
 
+       // pokemon
+        $pokemonJson = file_get_contents(__DIR__.'/pokemon.json');
+        $pokemonArray = json_decode($pokemonJson, true);
+        
+        // add incremental ids
+        $i = 0;
+        for($i=0; $i<sizeof($attacksArray); $i++){
+            $attacksArray[$i]['id'] = $i+1;
+        }        
 
+        $attackObjects = array();
         for($i=0; $i<sizeof($attacksArray); $i++){
             $attack = new Attack();
             $attack->setAccuracy($attacksArray[$i]['accuracy']);
@@ -27,13 +39,12 @@ class Test15Fixtures extends Fixture
             $attack->setType($attacksArray[$i]['type']);
             $attack->setPower($attacksArray[$i]['power']);
             $attack->setName($attacksArray[$i]['name']);
+            $attack->setId($attacksArray[$i]['id']);
+            $attack->setKey($attacksArray[$i]['key']);
 
-            $manager->persist($attack);
+            array_push($attackObjects, $attack);
         }
-
-        // pokemon
-        $pokemonJson = file_get_contents(__DIR__.'/pokemon.json');
-        $pokemonArray = json_decode($pokemonJson, true);
+        
 
         for($i=0; $i<sizeof($pokemonArray); $i++){
             $pokemon = new Pokemon();
@@ -70,16 +81,31 @@ class Test15Fixtures extends Fixture
                 $attackSlot = new AttackSlot();
                 $attackSlot->setGen($pokemonArray[$i]['attack_slots'][$j]['gen']);
                 $attackSlot->setLevel($pokemonArray[$i]['attack_slots'][$j]['level']);
-                $attackSlot->setAttackId($pokemonArray[$i]['attack_slots'][$j]['attack_name']);
+                $attackSlot->setAttackKey($pokemonArray[$i]['attack_slots'][$j]['attack_key']);
+
+                // deduct attack_id from attack_key in attack_slots here (see in attackArray)
 
                 $pokemon->addAttackSlot($attackSlot);
-                $manager->persist($attackSlot);
+                
+                foreach($attackObjects as $attackObject){
 
-//                $attackSlot->setPokemonId();
-//                $attackSlot->setAttackId();
+                        if($attackSlot->getAttackKey() === $attackObject->getKey()){
+                                $attackSlot->setAttackId($attackObject->getId());
+
+                                $attackObject->addAttackSlot($attackSlot);
+                        }
+                }
+
+
+                $manager->persist($attackSlot);
             }
 
             $manager->persist($pokemon);
+        }
+
+        // finally persist attacks
+        foreach($attackObjects as $attackObject){
+                $manager->persist($attackObject);
         }
 
         $manager->flush();
