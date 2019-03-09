@@ -3,8 +3,10 @@
 namespace App\Repository;
 
 use App\Entity\Description;
+use App\Entity\Pokemon;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Doctrine\ORM\Query\ResultSetMappingBuilder;
 
 /**
  * @method Description|null find($id, $lockMode = null, $lockVersion = null)
@@ -20,46 +22,26 @@ class DescriptionRepository extends ServiceEntityRepository
     }
 
     /**
+     * @return Description[]
      * Serves for pokemon_detail template
      */
     public function findByPokemon($pokemonNo): ?Description
     {
-	/**
-	 * select description.description, description.gen
-	 * from description
-	 * inner join pokemon on pokemon.pokemon_id=description.pokemon_id
-	 * where description.pokemon_id=:pokemonNo 
-	 */
-	    // write DQL
-	    
-    }
+        $em = $this->getEntityManager();
+        $qb = $em->createQueryBuilder();
 
-    // /**
-    //  * @return Description[] Returns an array of Description objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('d')
-            ->andWhere('d.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('d.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+        $qb->select('d.description', 'd.gen')
+            ->from('description', 'd')
+            ->innerJoin('pokemon', 'p', Expr\Join::ON, 'p.id=d.pokemon_id')
+            ->where('d.pokemon_id=:pokemonNo')
+            ->setParameter('pokemonNo', (int)$pokemonNo);
 
-    /*
-    public function findOneBySomeField($value): ?Description
-    {
-        return $this->createQueryBuilder('d')
-            ->andWhere('d.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        $query = $qb->getQuery();
+
+        // debug
+        dump($query->getSql());
+
+        return $query->getResult();
     }
-    */
 }
+

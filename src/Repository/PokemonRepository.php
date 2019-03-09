@@ -1,10 +1,14 @@
 <?php
 
+//require __DIR__.'/../../vendor/autoload.php';
+
 namespace App\Repository;
 
-use App\Entity\Pokemon;
+use App\Entity\Pokemon as Pokemon;
+use App\Entity\Description as Description;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Doctrine\ORM\Query\Expr\Join;
 
 /**
  * @method Pokemon|null find($id, $lockMode = null, $lockVersion = null)
@@ -20,56 +24,69 @@ class PokemonRepository extends ServiceEntityRepository
     }
 
     /**
-     * @return Pokemon[]
+     * @return array
      */
     public function findAllWithDescription()
     {
-	    /*
-	     * select pokemon.no_pokedex, pokemon.location, pokemon.image, pokemon.type1, pokemon.type2, pokemon.size, pokemon.weight, description.gen, description.description
-	     * from pokemon
-	     * inner join description on description.pokemon_id=pokemon.pokemon_id 
-	     */
-	    // write DQL
+        $em = $this->getEntityManager();
+
+        $qb = $em->createQueryBuilder();
+        $qb->select('p.no_pokedex', 'p.location', 'p.name', 'p.image', 'p.type1', 'p.type2', 'p.size', 'p.weight', 'd.gen', 'd.description')
+            ->from('App\Entity\Pokemon', 'p')
+            // relationship to join, alias of join, expression, condition
+            ->innerJoin('App\Entity\Description', 'd');
+
+        $query = $qb->getQuery();
+
+        // debug
+        dump($query->getSql());
+
+        return $query->getResult();
     }
 
-    // Add joined requests for use in Pokemon pages here
-    // Need attack_slot, attack and description
-
-    public function pokemonDetailRequest(){
-	/**
-	 * pokemon : no_pokedex, hp, atk, def, spe, speed, location, image, type1, type2, size, weight
-	 *
-	 */
-    }
-    
-
-
-    // /**
-    //  * @return Pokemon[] Returns an array of Pokemon objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return array
+     * For use in pokemon_detail view
+     */
+    public function findDetail($pokemonNo)
     {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+        $em = $this->getEntityManager();
+        $qb = $em->createQueryBuilder();
+        $qb->select('p.no_pokedex',
+                    'p.hp',
+                    'p.atk',
+                    'p.def',
+                    'p.spe',
+                    'p.speed',
+                    'p.size',
+                    'p.weight',
+                    'p.location',
+                    'p.image',
+                    'p.type1',
+                    'p.type2',
+                    'd.gen',
+                    'd.description',
+                    'a_s.level',
+                    'a_s.gen',
+                    'a.is_cs',
+                    'a.type',
+                    'a.ct',
+                    'a.name')
+            ->from('App\Entity\Pokemon', 'p')
+            ->innerJoin('App\Entity\Description', 'd')
+            ->innerJoin('App\Entity\AttackSlot', 'a_s')
+            ->innerJoin('App\Entity\Attack', 'a')
+            ->where('p.no_pokedex = :pokemonNo')
+            ->setParameter('pokemonNo', (int)$pokemonNo);
 
-    /*
-    public function findOneBySomeField($value): ?Pokemon
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        $query = $qb->getQuery();
+
+        // debug
+        dump($query->getSql());
+
+        dump($query->getResult());
+
+        return $query->getOneOrNullResult();
     }
-    */
 }
+

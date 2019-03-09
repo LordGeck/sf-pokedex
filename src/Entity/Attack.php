@@ -39,7 +39,7 @@ class Attack
     private $power;
 
     /**
-     * @ORM\Column(type="string", length=6)
+     * @ORM\Column(type="string", length=6, nullable=true)
      */
     private $ct;
 
@@ -54,9 +54,9 @@ class Attack
     private $name;
 
     /**
-     * @ORM\Column(name="`key`", type="string", length=255)
+     * @ORM\Column(name="code", type="string", length=255)
      */
-    private $key;
+    private $code;
 
     public function __construct()
     {
@@ -195,14 +195,14 @@ class Attack
         return $this;
     }
 
-    public function getKey(): ?string
+    public function getCode(): ?string
     {
-        return $this->key;
+        return $this->code;
     }
 
-    public function setKey(string $key): self
+    public function setCode(string $code): self
     {
-        $this->key = $key;
+        $this->code = $code;
         return $this;
     }
 }

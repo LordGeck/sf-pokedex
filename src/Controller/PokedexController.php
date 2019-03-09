@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Pokemon;
 use App\Entity\Attack;
+use App\Entity\AttackSlot;
 
 class PokedexController extends AbstractController
 {
@@ -25,7 +26,9 @@ class PokedexController extends AbstractController
     public function pokemonGrid()
     {
         $repository = $this->getDoctrine()->getRepository(Pokemon::class);
-        $pokemons = $repository->findAll();
+        $pokemons = $repository->findAllWithDescription();
+
+        var_dump($pokemons);
 
         if (!$pokemons) {
             throw $this->createNotFoundException(
@@ -45,17 +48,18 @@ class PokedexController extends AbstractController
     public function pokemonDetail($id)
     {
         $repository = $this->getDoctrine()->getRepository(Pokemon::class);
-        $pokemon = $repository->find($id);
+        //$pokemon = $repository->find($id);
+        $pokemonDetail = $repository->findDetail($id);
 
-        if(!$pokemon){
+        if(!$pokemonDetail){
             throw $this->createNotFoundException(
-                'pokemon was not found'
+                'pokemon detail infos was not found'
             );
         }
 
         return $this->render('pokedex/pokemon_detail.html.twig', [
             'controller_name' => 'PokedexController',
-            'pokemon' => $pokemon,
+            'pokemon' => $pokemonDetail,
         ]);
     }
 
@@ -85,18 +89,22 @@ class PokedexController extends AbstractController
      */
     public function attackDetail($id)
     {
-	$repository = $this->getDoctrine()->getRepository(Attack::class);
-	$attack = $repository->find($id);
+	    $attackRepository = $this->getDoctrine()->getRepository(Attack::class);
+        $attack = $attackRepository->find($id);
+        // load related attack slots as well
+        $attackSlotRepository = $this->getDoctrine()->getRepository(AttackSlot::class);
+        $attackSlots = $attackSlotRepository->findByAttack($attack->getId());
 
-	if(!$attack){
-		throw $this->createNotFoundException(
-			'attack of id '.$id.' was not found'
-		);
-	}
+	    if(!$attack){
+		    throw $this->createNotFoundException(
+			    'attack of id '.$id.' was not found'
+		    );
+        }
 
-	return $this->render('pokedex/attack_detail.html.twig', [
+	    return $this->render('pokedex/attack_detail.html.twig', [
             'controller_name' => 'PokedexController',
             'attack' => $attack,
+            'attackSlots' => $attackSlots
         ]);
     }
 

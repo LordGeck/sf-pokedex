@@ -40,7 +40,7 @@
 					{# We search pokemon by id and not by no_pokedex
 						id is enough to find pokemon because we go through controller again
 					#}
-					<a href="{{ path('pokemon_detail', {'id': pokemon.id}) }}">
+					<a href="{{ path('pokemon_detail', {'id': pokemon.no_pokedex}) }}">
 						<button type="button" class="btn btn-outline-primary">
 							Voir les infos
 						</button>

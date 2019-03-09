@@ -74,7 +74,7 @@ class Pokemon
     private $size;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="float")
      */
     private $weight;
 

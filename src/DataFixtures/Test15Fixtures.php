@@ -44,7 +44,8 @@ class Test15Fixtures extends Fixture
 
             array_push($attackObjects, $attack);
         }
-        
+
+       var_dump($pokemonArray); 
 
         for($i=0; $i<sizeof($pokemonArray); $i++){
             $pokemon = new Pokemon();

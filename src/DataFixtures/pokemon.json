@@ -1,5 +1,649 @@
 [
   {
+    "no_pokedex": 1,
+    "hp": 45,
+    "atk": 49,
+    "def": 49,
+    "spe": 65,
+    "speed": 45,
+    "location": null,
+    "type1": "leaf",
+    "type2": "poison",
+    "size": 70,
+    "weight": 6.9,
+    "name": "Bulbizarre",
+    "descriptions": [
+      {
+        "gen": 1,
+        "description": "Il a une étrange graine plantée sur son dos. Elle grandit avec lui depuis la naissance."
+      }
+    ],
+    "attack_slots": [
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_key": "tackle"
+      },
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_key": "tailWhip"
+      },
+      {
+        "level": 8,
+        "gen": 1,
+        "attack_key": "bubble"
+      },
+      {
+        "level": 15,
+        "gen": 1,
+        "attack_key": "waterGun" 
+      },
+      {
+        "level": 24,
+        "gen": 1,
+        "attack_key": "bite"
+      },
+      {
+        "level": 31,
+        "gen": 1,
+        "attack_key": "withdraw" 
+      },
+      {
+        "level": 42,
+        "gen": 1,
+        "attack_key": "skullBash" 
+      },
+      {
+        "level": 52,
+        "gen": 1,
+        "attack_key": "hydroPump" 
+      }
+    ]
+  },
+
+  {
+    "no_pokedex": 9,
+    "hp": 79,
+    "atk": 83,
+    "def": 100,
+    "spe": 85,
+    "speed": 78,
+    "location": null,
+    "type1": "water",
+    "type2": null,
+    "size": 160,
+    "weight": 85,
+    "name": "Tortank",
+    "descriptions": [
+      {
+        "id": 1,
+        "gen": 1,
+        "pokemon_id": 9,
+        "description": "Un Pokémon brutal armé de canons hydrauliques. Ses puissants jets d'eau sont dévastateurs."
+      }
+    ],
+    "attack_slots": [
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_key": "tackle"
+      },
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_key": "tailWhip"
+      },
+      {
+        "level": 8,
+        "gen": 1,
+        "attack_key": "bubble"
+      },
+      {
+        "level": 15,
+        "gen": 1,
+        "attack_key": "waterGun" 
+      },
+      {
+        "level": 24,
+        "gen": 1,
+        "attack_key": "bite"
+      },
+      {
+        "level": 31,
+        "gen": 1,
+        "attack_key": "withdraw" 
+      },
+      {
+        "level": 42,
+        "gen": 1,
+        "attack_key": "skullBash" 
+      },
+      {
+        "level": 52,
+        "gen": 1,
+        "attack_key": "hydroPump" 
+      }
+    ]
+  },
+
+
+  {
+    "no_pokedex": 9,
+    "hp": 79,
+    "atk": 83,
+    "def": 100,
+    "spe": 85,
+    "speed": 78,
+    "location": null,
+    "type1": "water",
+    "type2": null,
+    "size": 160,
+    "weight": 85,
+    "name": "Tortank",
+    "descriptions": [
+      {
+        "id": 1,
+        "gen": 1,
+        "pokemon_id": 9,
+        "description": "Un Pokémon brutal armé de canons hydrauliques. Ses puissants jets d'eau sont dévastateurs."
+      }
+    ],
+    "attack_slots": [
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_key": "tackle"
+      },
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_key": "tailWhip"
+      },
+      {
+        "level": 8,
+        "gen": 1,
+        "attack_key": "bubble"
+      },
+      {
+        "level": 15,
+        "gen": 1,
+        "attack_key": "waterGun" 
+      },
+      {
+        "level": 24,
+        "gen": 1,
+        "attack_key": "bite"
+      },
+      {
+        "level": 31,
+        "gen": 1,
+        "attack_key": "withdraw" 
+      },
+      {
+        "level": 42,
+        "gen": 1,
+        "attack_key": "skullBash" 
+      },
+      {
+        "level": 52,
+        "gen": 1,
+        "attack_key": "hydroPump" 
+      }
+    ]
+  },
+
+  {
+    "no_pokedex": 9,
+    "hp": 79,
+    "atk": 83,
+    "def": 100,
+    "spe": 85,
+    "speed": 78,
+    "location": null,
+    "type1": "water",
+    "type2": null,
+    "size": 160,
+    "weight": 85,
+    "name": "Tortank",
+    "descriptions": [
+      {
+        "id": 1,
+        "gen": 1,
+        "pokemon_id": 9,
+        "description": "Un Pokémon brutal armé de canons hydrauliques. Ses puissants jets d'eau sont dévastateurs."
+      }
+    ],
+    "attack_slots": [
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_key": "tackle"
+      },
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_key": "tailWhip"
+      },
+      {
+        "level": 8,
+        "gen": 1,
+        "attack_key": "bubble"
+      },
+      {
+        "level": 15,
+        "gen": 1,
+        "attack_key": "waterGun" 
+      },
+      {
+        "level": 24,
+        "gen": 1,
+        "attack_key": "bite"
+      },
+      {
+        "level": 31,
+        "gen": 1,
+        "attack_key": "withdraw" 
+      },
+      {
+        "level": 42,
+        "gen": 1,
+        "attack_key": "skullBash" 
+      },
+      {
+        "level": 52,
+        "gen": 1,
+        "attack_key": "hydroPump" 
+      }
+    ]
+  },
+{  
+  {
+    "no_pokedex": 9,
+    "hp": 79,
+    "atk": 83,
+    "def": 100,
+    "spe": 85,
+    "speed": 78,
+    "location": null,
+    "type1": "water",
+    "type2": null,
+    "size": 160,
+    "weight": 85,
+    "name": "Tortank",
+    "descriptions": [
+      {
+        "id": 1,
+        "gen": 1,
+        "pokemon_id": 9,
+        "description": "Un Pokémon brutal armé de canons hydrauliques. Ses puissants jets d'eau sont dévastateurs."
+      }
+    ],
+    "attack_slots": [
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_key": "tackle"
+      },
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_key": "tailWhip"
+      },
+      {
+        "level": 8,
+        "gen": 1,
+        "attack_key": "bubble"
+      },
+      {
+        "level": 15,
+        "gen": 1,
+        "attack_key": "waterGun" 
+      },
+      {
+        "level": 24,
+        "gen": 1,
+        "attack_key": "bite"
+      },
+      {
+        "level": 31,
+        "gen": 1,
+        "attack_key": "withdraw" 
+      },
+      {
+        "level": 42,
+        "gen": 1,
+        "attack_key": "skullBash" 
+      },
+      {
+        "level": 52,
+        "gen": 1,
+        "attack_key": "hydroPump" 
+      }
+    ]
+  },
+{
+    "no_pokedex": 9,
+    "hp": 79,
+    "atk": 83,
+    "def": 100,
+    "spe": 85,
+    "speed": 78,
+    "location": null,
+    "type1": "water",
+    "type2": null,
+    "size": 160,
+    "weight": 85,
+    "name": "Tortank",
+    "descriptions": [
+      {
+        "id": 1,
+        "gen": 1,
+        "pokemon_id": 9,
+        "description": "Un Pokémon brutal armé de canons hydrauliques. Ses puissants jets d'eau sont dévastateurs."
+      }
+    ],
+    "attack_slots": [
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_key": "tackle"
+      },
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_key": "tailWhip"
+      },
+      {
+        "level": 8,
+        "gen": 1,
+        "attack_key": "bubble"
+      },
+      {
+        "level": 15,
+        "gen": 1,
+        "attack_key": "waterGun" 
+      },
+      {
+        "level": 24,
+        "gen": 1,
+        "attack_key": "bite"
+      },
+      {
+        "level": 31,
+        "gen": 1,
+        "attack_key": "withdraw" 
+      },
+      {
+        "level": 42,
+        "gen": 1,
+        "attack_key": "skullBash" 
+      },
+      {
+        "level": 52,
+        "gen": 1,
+        "attack_key": "hydroPump" 
+      }
+    ]
+  },
+{
+    "no_pokedex": 9,
+    "hp": 79,
+    "atk": 83,
+    "def": 100,
+    "spe": 85,
+    "speed": 78,
+    "location": null,
+    "type1": "water",
+    "type2": null,
+    "size": 160,
+    "weight": 85,
+    "name": "Tortank",
+    "descriptions": [
+      {
+        "id": 1,
+        "gen": 1,
+        "pokemon_id": 9,
+        "description": "Un Pokémon brutal armé de canons hydrauliques. Ses puissants jets d'eau sont dévastateurs."
+      }
+    ],
+    "attack_slots": [
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_key": "tackle"
+      },
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_key": "tailWhip"
+      },
+      {
+        "level": 8,
+        "gen": 1,
+        "attack_key": "bubble"
+      },
+      {
+        "level": 15,
+        "gen": 1,
+        "attack_key": "waterGun" 
+      },
+      {
+        "level": 24,
+        "gen": 1,
+        "attack_key": "bite"
+      },
+      {
+        "level": 31,
+        "gen": 1,
+        "attack_key": "withdraw" 
+      },
+      {
+        "level": 42,
+        "gen": 1,
+        "attack_key": "skullBash" 
+      },
+      {
+        "level": 52,
+        "gen": 1,
+        "attack_key": "hydroPump" 
+      }
+    ]
+  },
+{
+    "no_pokedex": 9,
+    "hp": 79,
+    "atk": 83,
+    "def": 100,
+    "spe": 85,
+    "speed": 78,
+    "location": null,
+    "type1": "water",
+    "type2": null,
+    "size": 160,
+    "weight": 85,
+    "name": "Tortank",
+    "descriptions": [
+      {
+        "id": 1,
+        "gen": 1,
+        "pokemon_id": 9,
+        "description": "Un Pokémon brutal armé de canons hydrauliques. Ses puissants jets d'eau sont dévastateurs."
+      }
+    ],
+    "attack_slots": [
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_key": "tackle"
+      },
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_key": "tailWhip"
+      },
+      {
+        "level": 8,
+        "gen": 1,
+        "attack_key": "bubble"
+      },
+      {
+        "level": 15,
+        "gen": 1,
+        "attack_key": "waterGun" 
+      },
+      {
+        "level": 24,
+        "gen": 1,
+        "attack_key": "bite"
+      },
+      {
+        "level": 31,
+        "gen": 1,
+        "attack_key": "withdraw" 
+      },
+      {
+        "level": 42,
+        "gen": 1,
+        "attack_key": "skullBash" 
+      },
+      {
+        "level": 52,
+        "gen": 1,
+        "attack_key": "hydroPump" 
+      }
+    ]
+  },
+{
+    "no_pokedex": 9,
+    "hp": 79,
+    "atk": 83,
+    "def": 100,
+    "spe": 85,
+    "speed": 78,
+    "location": null,
+    "type1": "water",
+    "type2": null,
+    "size": 160,
+    "weight": 85,
+    "name": "Tortank",
+    "descriptions": [
+      {
+        "id": 1,
+        "gen": 1,
+        "pokemon_id": 9,
+        "description": "Un Pokémon brutal armé de canons hydrauliques. Ses puissants jets d'eau sont dévastateurs."
+      }
+    ],
+    "attack_slots": [
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_key": "tackle"
+      },
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_key": "tailWhip"
+      },
+      {
+        "level": 8,
+        "gen": 1,
+        "attack_key": "bubble"
+      },
+      {
+        "level": 15,
+        "gen": 1,
+        "attack_key": "waterGun" 
+      },
+      {
+        "level": 24,
+        "gen": 1,
+        "attack_key": "bite"
+      },
+      {
+        "level": 31,
+        "gen": 1,
+        "attack_key": "withdraw" 
+      },
+      {
+        "level": 42,
+        "gen": 1,
+        "attack_key": "skullBash" 
+      },
+      {
+        "level": 52,
+        "gen": 1,
+        "attack_key": "hydroPump" 
+      }
+    ]
+  },
+
+  {
+    "no_pokedex": 9,
+    "hp": 79,
+    "atk": 83,
+    "def": 100,
+    "spe": 85,
+    "speed": 78,
+    "location": null,
+    "type1": "water",
+    "type2": null,
+    "size": 160,
+    "weight": 85,
+    "name": "Tortank",
+    "descriptions": [
+      {
+        "id": 1,
+        "gen": 1,
+        "pokemon_id": 9,
+        "description": "Un Pokémon brutal armé de canons hydrauliques. Ses puissants jets d'eau sont dévastateurs."
+      }
+    ],
+    "attack_slots": [
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_key": "tackle"
+      },
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_key": "tailWhip"
+      },
+      {
+        "level": 8,
+        "gen": 1,
+        "attack_key": "bubble"
+      },
+      {
+        "level": 15,
+        "gen": 1,
+        "attack_key": "waterGun" 
+      },
+      {
+        "level": 24,
+        "gen": 1,
+        "attack_key": "bite"
+      },
+      {
+        "level": 31,
+        "gen": 1,
+        "attack_key": "withdraw" 
+      },
+      {
+        "level": 42,
+        "gen": 1,
+        "attack_key": "skullBash" 
+      },
+      {
+        "level": 52,
+        "gen": 1,
+        "attack_key": "hydroPump" 
+      }
+    ]
+  },
+  {
     "no_pokedex": 9,
     "hp": 79,
     "atk": 83,
