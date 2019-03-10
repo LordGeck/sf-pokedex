@@ -43,6 +43,11 @@ class AttackSlot
      */
     private $attack_code;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $no_pokedex;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -129,5 +134,21 @@ class AttackSlot
         $this->attack = $attack;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNoPokedex()
+    {
+        return $this->no_pokedex;
+    }
+
+    /**
+     * @param mixed $no_pokedex
+     */
+    public function setNoPokedex($no_pokedex): void
+    {
+        $this->no_pokedex = $no_pokedex;
     }
 }

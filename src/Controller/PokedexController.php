@@ -28,7 +28,7 @@ class PokedexController extends AbstractController
         $repository = $this->getDoctrine()->getRepository(Pokemon::class);
         $pokemons = $repository->findAllWithDescription();
 
-        var_dump($pokemons);
+        dump($pokemons);
 
         if (!$pokemons) {
             throw $this->createNotFoundException(

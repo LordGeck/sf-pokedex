@@ -6,7 +6,7 @@
     "power": 50,
     "ct": "",
     "name": "Charge",
-    "key": "tackle"
+    "code": "tackle"
   },
   {
     "is_cs": false,
@@ -15,7 +15,7 @@
     "power": 0,
     "ct": "",
     "name": "Rugissement",
-    "key": "growl"
+    "code": "growl"
   },
   {
     "is_cs": false,
@@ -24,7 +24,7 @@
     "power": 0,
     "ct": "",
     "name": "Vampigraine",
-    "key": "leechSeed"
+    "code": "leechSeed"
   },
   {
     "is_cs": false,
@@ -33,7 +33,7 @@
     "power": 45,
     "ct": "",
     "name": "Fouet Lianes",
-    "key": "vineWhip"
+    "code": "vineWhip"
   },
   {
     "is_cs": false,
@@ -42,7 +42,7 @@
     "power": 0,
     "ct": "",
     "name": "Poudre Toxik",
-    "key": "poisonPowder"
+    "code": "poisonPowder"
   },
   {
     "is_cs": false,
@@ -51,7 +51,7 @@
     "power": 55,
     "ct": "",
     "name": "Tranch'herbe",
-    "key": "razorLeaf"
+    "code": "razorLeaf"
   },
   {
     "is_cs": false,
@@ -60,7 +60,7 @@
     "power": 0,
     "ct": "",
     "name": "Croissance",
-    "key": "growth"
+    "code": "growth"
   },
   {
     "is_cs": false,
@@ -69,7 +69,7 @@
     "power": 0,
     "ct": "",
     "name": "Poudre dodo",
-    "key": "poisonPowder"
+    "code": "poisonPowder"
   },
   {
     "is_cs": false,
@@ -78,7 +78,7 @@
     "power": 100,
     "ct": "",
     "name": "Lance-soleil",
-    "key": "solarBeam"
+    "code": "solarBeam"
   },
   {
     "is_cs": false,
@@ -87,7 +87,7 @@
     "power": 40,
     "ct": "",
     "name": "Griffe",
-    "key": "scratch"
+    "code": "scratch"
   },
   {
     "is_cs": false,
@@ -96,7 +96,7 @@
     "power": 40,
     "ct": "",
     "name": "Flammèche",
-    "key": "ember"
+    "code": "ember"
   },
   {
     "is_cs": false,
@@ -105,7 +105,7 @@
     "power": 0,
     "ct": "",
     "name": "Groz'yeux",
-    "key": "leer"
+    "code": "leer"
   },
   {
     "is_cs": false,
@@ -114,7 +114,7 @@
     "power": 20,
     "ct": "",
     "name": "Frénésie",
-    "key": "rage"
+    "code": "rage"
   },
   {
     "is_cs": false,
@@ -123,7 +123,7 @@
     "power": 70,
     "ct": "",
     "name": "Tranche",
-    "key": "slash"
+    "code": "slash"
   },
   {
     "is_cs": false,
@@ -132,7 +132,7 @@
     "power": 90,
     "ct": "",
     "name": "Lance-flammes",
-    "key": "flameThrower"
+    "code": "flameThrower"
   },
   {
     "is_cs": false,
@@ -141,7 +141,7 @@
     "power": 35,
     "ct": "",
     "name": "Danseflammes",
-    "key": "fireSpin"
+    "code": "fireSpin"
   },
   {
     "is_cs": false,
@@ -150,7 +150,7 @@
     "power": 0,
     "ct": "",
     "name": "Mimi-queue",
-    "key": "tailWhip"
+    "code": "tailWhip"
   },
   {
     "is_cs": false,
@@ -159,7 +159,7 @@
     "power": 40,
     "ct": "",
     "name": "Ecume",
-    "key": "bubble"
+    "code": "bubble"
   },
   {
     "is_cs": false,
@@ -168,7 +168,7 @@
     "power": 40,
     "ct": "",
     "name": "Pistolet à O",
-    "key": "waterGun"
+    "code": "waterGun"
   },
   {
     "is_cs": false,
@@ -177,7 +177,7 @@
     "power": 60,
     "ct": "",
     "name": "Morsure",
-    "key": "bite"
+    "code": "bite"
   },
   {
     "is_cs": false,
@@ -186,7 +186,7 @@
     "power": 0,
     "ct": "",
     "name": "Repli",
-    "key": "withdraw"
+    "code": "withdraw"
   },
   {
     "is_cs": false,
@@ -195,7 +195,7 @@
     "power": 130,
     "ct": "",
     "name": "Coud'Krane",
-    "key": "skullBash"
+    "code": "skullBash"
   },
   {
     "is_cs": false,
@@ -204,6 +204,6 @@
     "power": 110,
     "ct": "",
     "name": "Hydrocanon",
-    "key": "hydroPump"
+    "code": "hydroPump"
   }
 ]

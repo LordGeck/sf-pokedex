@@ -40,12 +40,10 @@ class Test15Fixtures extends Fixture
             $attack->setPower($attacksArray[$i]['power']);
             $attack->setName($attacksArray[$i]['name']);
             $attack->setId($attacksArray[$i]['id']);
-            $attack->setKey($attacksArray[$i]['key']);
+            $attack->setCode($attacksArray[$i]['code']);
 
             array_push($attackObjects, $attack);
         }
-
-       var_dump($pokemonArray); 
 
         for($i=0; $i<sizeof($pokemonArray); $i++){
             $pokemon = new Pokemon();
@@ -80,15 +78,16 @@ class Test15Fixtures extends Fixture
                 $attackSlot = new AttackSlot();
                 $attackSlot->setGen($pokemonArray[$i]['attack_slots'][$j]['gen']);
                 $attackSlot->setLevel($pokemonArray[$i]['attack_slots'][$j]['level']);
-                $attackSlot->setAttackKey($pokemonArray[$i]['attack_slots'][$j]['attack_key']);
+                $attackSlot->setAttackCode($pokemonArray[$i]['attack_slots'][$j]['attack_code']);
+                $attackSlot->setNoPokedex($pokemonArray[$i]['no_pokedex']);
 
-                // deduct attack_id from attack_key in attack_slots here (see in attackArray)
+                // deduct attack_id from attack_code in attack_slots here (see in attackArray)
 
                 $pokemon->addAttackSlot($attackSlot);
                 
                 foreach($attackObjects as $attackObject){
 
-                        if($attackSlot->getAttackKey() === $attackObject->getKey()){
+                        if($attackSlot->getAttackCode() === $attackObject->getCode()){
                                 $attackSlot->setAttackId($attackObject->getId());
 
                                 $attackObject->addAttackSlot($attackSlot);
