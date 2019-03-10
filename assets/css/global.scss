@@ -25,54 +25,14 @@ body{
     margin-right: auto;
   }
 
-  // put in pokemon_detail.scss
-
-  .figure-center{
-    text-align: center;
-
-    figure{
-      display: inline-block;
-      margin-left: auto;
-      margin-right: auto;
-    }
+  //for pokemon_grid.scss
+  .card-pokemon{
+    width: 10rem;
   }
-  section{
-    text-align: center;
-  }
+}
 
-  // put in pokemon_grid.scss
-
-  table {
-    text-align: center;
-
-    thead {
-      tr {
-
-      }
-    }
-
-    tbody {
-      tr {
-        // pokemon block in pokemon_grid
-        td {
-          img{
-            margin-bottom: 15px;
-          }
-          p {
-            a {
-              button {
-
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .card-footer{
-    text-align: center;
-  }
+footer{
+  text-align: center;
 }
 
 /**
