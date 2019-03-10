@@ -1,0 +1,209 @@
+[
+  {
+    "is_cs": false,
+    "type": "normal",
+    "accuracy": 100,
+    "power": 50,
+    "ct": "",
+    "name": "Charge",
+    "code": "tackle"
+  },
+  {
+    "is_cs": false,
+    "type": "normal",
+    "accuracy": 100,
+    "power": 0,
+    "ct": "",
+    "name": "Rugissement",
+    "code": "growl"
+  },
+  {
+    "is_cs": false,
+    "type": "grass",
+    "accuracy": 90,
+    "power": 0,
+    "ct": "",
+    "name": "Vampigraine",
+    "code": "leechSeed"
+  },
+  {
+    "is_cs": false,
+    "type": "grass",
+    "accuracy": 100,
+    "power": 45,
+    "ct": "",
+    "name": "Fouet Lianes",
+    "code": "vineWhip"
+  },
+  {
+    "is_cs": false,
+    "type": "poison",
+    "accuracy": 75,
+    "power": 0,
+    "ct": "",
+    "name": "Poudre Toxik",
+    "code": "poisonPowder"
+  },
+  {
+    "is_cs": false,
+    "type": "grass",
+    "accuracy": 95,
+    "power": 55,
+    "ct": "",
+    "name": "Tranch'herbe",
+    "code": "razorLeaf"
+  },
+  {
+    "is_cs": false,
+    "type": "normal",
+    "accuracy": 100,
+    "power": 0,
+    "ct": "",
+    "name": "Croissance",
+    "code": "growth"
+  },
+  {
+    "is_cs": false,
+    "type": "grass",
+    "accuracy": 75,
+    "power": 0,
+    "ct": "",
+    "name": "Poudre dodo",
+    "code": "poisonPowder"
+  },
+  {
+    "is_cs": false,
+    "type": "grass",
+    "accuracy": 100,
+    "power": 100,
+    "ct": "",
+    "name": "Lance-soleil",
+    "code": "solarBeam"
+  },
+  {
+    "is_cs": false,
+    "type": "normal",
+    "accuracy": 100,
+    "power": 40,
+    "ct": "",
+    "name": "Griffe",
+    "code": "scratch"
+  },
+  {
+    "is_cs": false,
+    "type": "fire",
+    "accuracy": 100,
+    "power": 40,
+    "ct": "",
+    "name": "Flammèche",
+    "code": "ember"
+  },
+  {
+    "is_cs": false,
+    "type": "normal",
+    "accuracy": 100,
+    "power": 0,
+    "ct": "",
+    "name": "Groz'yeux",
+    "code": "leer"
+  },
+  {
+    "is_cs": false,
+    "type": "normal",
+    "accuracy": 100,
+    "power": 20,
+    "ct": "",
+    "name": "Frénésie",
+    "code": "rage"
+  },
+  {
+    "is_cs": false,
+    "type": "normal",
+    "accuracy": 100,
+    "power": 70,
+    "ct": "",
+    "name": "Tranche",
+    "code": "slash"
+  },
+  {
+    "is_cs": false,
+    "type": "fire",
+    "accuracy": 100,
+    "power": 90,
+    "ct": "",
+    "name": "Lance-flammes",
+    "code": "flameThrower"
+  },
+  {
+    "is_cs": false,
+    "type": "fire",
+    "accuracy": 85,
+    "power": 35,
+    "ct": "",
+    "name": "Danseflammes",
+    "code": "fireSpin"
+  },
+  {
+    "is_cs": false,
+    "type": "normal",
+    "accuracy": 100,
+    "power": 0,
+    "ct": "",
+    "name": "Mimi-queue",
+    "code": "tailWhip"
+  },
+  {
+    "is_cs": false,
+    "type": "water",
+    "accuracy": 100,
+    "power": 40,
+    "ct": "",
+    "name": "Ecume",
+    "code": "bubble"
+  },
+  {
+    "is_cs": false,
+    "type": "water",
+    "accuracy": 100,
+    "power": 40,
+    "ct": "",
+    "name": "Pistolet à O",
+    "code": "waterGun"
+  },
+  {
+    "is_cs": false,
+    "type": "normal",
+    "accuracy": 100,
+    "power": 60,
+    "ct": "",
+    "name": "Morsure",
+    "code": "bite"
+  },
+  {
+    "is_cs": false,
+    "type": "water",
+    "accuracy": 100,
+    "power": 0,
+    "ct": "",
+    "name": "Repli",
+    "code": "withdraw"
+  },
+  {
+    "is_cs": false,
+    "type": "normal",
+    "accuracy": 100,
+    "power": 130,
+    "ct": "",
+    "name": "Coud'Krane",
+    "code": "skullBash"
+  },
+  {
+    "is_cs": false,
+    "type": "water",
+    "accuracy": 80,
+    "power": 110,
+    "ct": "",
+    "name": "Hydrocanon",
+    "code": "hydroPump"
+  }
+]

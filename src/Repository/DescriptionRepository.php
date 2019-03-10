@@ -3,8 +3,10 @@
 namespace App\Repository;
 
 use App\Entity\Description;
+use App\Entity\Pokemon;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Doctrine\ORM\Query\ResultSetMappingBuilder;
 
 /**
  * @method Description|null find($id, $lockMode = null, $lockVersion = null)
@@ -19,32 +21,27 @@ class DescriptionRepository extends ServiceEntityRepository
         parent::__construct($registry, Description::class);
     }
 
-    // /**
-    //  * @return Description[] Returns an array of Description objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return Description[]
+     * Serves for pokemon_detail template
+     */
+    public function findByPokemon($pokemonNo): ?Description
     {
-        return $this->createQueryBuilder('d')
-            ->andWhere('d.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('d.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+        $em = $this->getEntityManager();
+        $qb = $em->createQueryBuilder();
 
-    /*
-    public function findOneBySomeField($value): ?Description
-    {
-        return $this->createQueryBuilder('d')
-            ->andWhere('d.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        $qb->select('d.description', 'd.gen')
+            ->from('description', 'd')
+            ->innerJoin('pokemon', 'p', Expr\Join::ON, 'p.id=d.pokemon_id')
+            ->where('d.pokemon_id=:pokemonNo')
+            ->setParameter('pokemonNo', (int)$pokemonNo);
+
+        $query = $qb->getQuery();
+
+        // debug
+        dump($query->getSql());
+
+        return $query->getResult();
     }
-    */
 }
+

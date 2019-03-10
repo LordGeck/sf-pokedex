@@ -38,6 +38,16 @@ class AttackSlot
      */
     private $attack;
 
+    /**
+     * @ORM\Column(type="string", length=255) 
+     */
+    private $attack_code;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $no_pokedex;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -91,6 +101,17 @@ class AttackSlot
         return $this;
     }
 
+    public function setAttackCode($attack_code): self
+    {
+            $this->attack_code = $attack_code;
+            return $this;
+    }
+
+    public function getAttackCode(): ?string
+    {
+        return $this->attack_code;
+    }
+
     public function getPokemon(): ?Pokemon
     {
         return $this->pokemon;
@@ -113,5 +134,21 @@ class AttackSlot
         $this->attack = $attack;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNoPokedex()
+    {
+        return $this->no_pokedex;
+    }
+
+    /**
+     * @param mixed $no_pokedex
+     */
+    public function setNoPokedex($no_pokedex): void
+    {
+        $this->no_pokedex = $no_pokedex;
     }
 }

@@ -1,10 +1,14 @@
 <?php
 
+//require __DIR__.'/../../vendor/autoload.php';
+
 namespace App\Repository;
 
-use App\Entity\Pokemon;
+use App\Entity\Pokemon as Pokemon;
+use App\Entity\Description as Description;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Doctrine\ORM\Query\Expr\Join;
 
 /**
  * @method Pokemon|null find($id, $lockMode = null, $lockVersion = null)
@@ -19,32 +23,70 @@ class PokemonRepository extends ServiceEntityRepository
         parent::__construct($registry, Pokemon::class);
     }
 
-    // /**
-    //  * @return Pokemon[] Returns an array of Pokemon objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return array
+     */
+    public function findAllWithDescription()
     {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+        $em = $this->getEntityManager();
 
-    /*
-    public function findOneBySomeField($value): ?Pokemon
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        $qb = $em->createQueryBuilder();
+        $qb->select('p.no_pokedex', 'p.location', 'p.name', 'p.image', 'p.type1', 'p.type2', 'p.size', 'p.weight', 'd.gen', 'd.description')
+            ->from('App\Entity\Pokemon', 'p')
+            // relationship to join, alias of join, expression, condition
+            ->innerJoin('App\Entity\Description', 'd');
+
+        $query = $qb->getQuery();
+
+        // debug
+        dump($query->getSql());
+
+        return $query->getResult();
     }
-    */
+
+    /**
+     * @return array
+     * For use in pokemon_detail view
+     */
+    public function findDetail($pokemonNo)
+    {
+        $em = $this->getEntityManager();
+        $qb = $em->createQueryBuilder();
+        $qb->select('p.no_pokedex',
+                    'p.hp',
+                    'p.atk',
+                    'p.def',
+                    'p.spe',
+                    'p.speed',
+                    'p.size',
+                    'p.weight',
+                    'p.location',
+                    'p.image',
+                    'p.type1',
+                    'p.type2',
+                    'd.gen',
+                    'd.description',
+                    'a_s.level',
+                    'a_s.gen',
+                    'a.is_cs',
+                    'a.type',
+                    'a.ct',
+                    'a.name')
+            ->from('App\Entity\Pokemon', 'p')
+            ->innerJoin('App\Entity\Description', 'd')
+            ->innerJoin('App\Entity\AttackSlot', 'a_s')
+            ->innerJoin('App\Entity\Attack', 'a')
+            ->where('p.no_pokedex = :pokemonNo')
+            ->setParameter('pokemonNo', (int)$pokemonNo);
+
+        $query = $qb->getQuery();
+
+        // debug
+        dump($query->getSql());
+
+        dump($query->getResult());
+
+        return $query->getOneOrNullResult();
+    }
 }
+

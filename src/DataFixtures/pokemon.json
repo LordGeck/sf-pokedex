@@ -1,0 +1,64 @@
+[
+  {
+    "no_pokedex": 1,
+    "hp": 45,
+    "atk": 49,
+    "def": 49,
+    "spe": 65,
+    "speed": 45,
+    "location": null,
+    "type1": "leaf",
+    "type2": "poison",
+    "size": 70,
+    "weight": 6.9,
+    "name": "Bulbizarre",
+    "descriptions": [
+      {
+        "gen": 1,
+        "description": "Il a une étrange graine plantée sur son dos. Elle grandit avec lui depuis la naissance."
+      }
+    ],
+    "attack_slots": [
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_code": "tackle"
+      },
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_code": "tailWhip"
+      },
+      {
+        "level": 8,
+        "gen": 1,
+        "attack_code": "bubble"
+      },
+      {
+        "level": 15,
+        "gen": 1,
+        "attack_code": "waterGun" 
+      },
+      {
+        "level": 24,
+        "gen": 1,
+        "attack_code": "bite"
+      },
+      {
+        "level": 31,
+        "gen": 1,
+        "attack_code": "withdraw" 
+      },
+      {
+        "level": 42,
+        "gen": 1,
+        "attack_code": "skullBash" 
+      },
+      {
+        "level": 52,
+        "gen": 1,
+        "attack_code": "hydroPump" 
+      }
+    ]
+  }
+]

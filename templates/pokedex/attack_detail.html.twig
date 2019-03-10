@@ -12,7 +12,37 @@
 
 {% block body %}
 
-    <h1>Attack Detail of {{ id }}</h1>
+    <h1>Attack Detail of {{ attack.id }}</h1>
+	
+	<div class="figure-center">
+		<figure class="figure text-center">
+			{# change to non hardcoded value when fixtures ready #}
+			<img class="figure-img img-fluid rounded" alt="Animation of {{ attack.name }}" src="{{ asset('build/assets/images/artworks/placeholder250x250.png') }}">
+			<figcaption class="figure-caption">Animation de {{ attack.name }}</figcaption>
+		</figure>
+	</div>
+	
+	<div class="row">
+		<div class="alert alert-primary col-md-9">
+			Utilise le select pour filtrer le type d'infos sur cette attaque !
+		</div>
+
+		{# this select triggers jQuery to filter displayed info blocks #}
+		<div class="col-md-3">
+			<select class="custom-select">
+				<option selected>Filtrer les infos...</option>
+			</select>
+		</div>
+	</div>
+
+	{#
+		Infos :
+		stats of attack
+		list of compatible pokemon with level at which they learn it (std) or CT/CS needed
+	#}
+
+	<section>
+	</section>	
 
 {% endblock %}
 

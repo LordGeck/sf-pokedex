@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\AttackSlot;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Doctrine\ORM\Query\ResultSetMappingBuilder;
 
 /**
  * @method AttackSlot|null find($id, $lockMode = null, $lockVersion = null)
@@ -19,32 +20,50 @@ class AttackSlotRepository extends ServiceEntityRepository
         parent::__construct($registry, AttackSlot::class);
     }
 
-    // /**
-    //  * @return AttackSlot[] Returns an array of AttackSlot objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return AttackSlot[]
+     */
+    public function findByPokemon($pokemonNo)
     {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('a.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+        $em = $this->getEntityManager();
 
-    /*
-    public function findOneBySomeField($value): ?AttackSlot
-    {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        $qb = $em->createQueryBuilder();
+        $qb->select('a_s.level', 'a_s.gen', 'a.name', 'a.`type`')
+            ->from('attack_slot', 'a_s')
+            // relationship to join, alias of join, expression, condition
+            ->innerJoin('attack', 'a', Expr\Join::ON, 'a_s.attack_id=a.id')
+            ->where('a_s.pokemon_id=:pokemonNo')
+            ->setParameter('pokemonNo', (int)$pokemonNo);
+
+        $query = $qb->getQuery();
+
+        // debug
+        dump($query->getSql());
+
+        return $query->getResult();
     }
-    */
+
+    /**
+     * @return AttackSlot[]
+     */
+    public function findByAttack($attackCode)
+    {
+        $em = $this->getEntityManager();
+        $qb = $em->createQueryBuilder();
+
+        $qb->select('a_s.level', 'a_s.gen', 'p.name')
+            ->from('App\Entity\AttackSlot', 'a_s')
+            // relationship to join, alias of join, expression, condition
+            ->innerJoin('App\Entity\Pokemon', 'p')
+            ->where('a_s.attack_code=:attackCode')
+            ->setParameter('attackCode', (int)$attackCode);
+
+        $query = $qb->getQuery();
+
+        // debug
+        dump($query->getSql());
+
+        return $query->getResult();
+    }
 }
+

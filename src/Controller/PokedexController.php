@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Pokemon;
 use App\Entity\Attack;
+use App\Entity\AttackSlot;
 
 class PokedexController extends AbstractController
 {
@@ -25,7 +26,9 @@ class PokedexController extends AbstractController
     public function pokemonGrid()
     {
         $repository = $this->getDoctrine()->getRepository(Pokemon::class);
-        $pokemons = $repository->findAll();
+        $pokemons = $repository->findAllWithDescription();
+
+        dump($pokemons);
 
         if (!$pokemons) {
             throw $this->createNotFoundException(
@@ -44,9 +47,19 @@ class PokedexController extends AbstractController
      */
     public function pokemonDetail($id)
     {
+        $repository = $this->getDoctrine()->getRepository(Pokemon::class);
+        //$pokemon = $repository->find($id);
+        $pokemonDetail = $repository->findDetail($id);
+
+        if(!$pokemonDetail){
+            throw $this->createNotFoundException(
+                'pokemon detail infos was not found'
+            );
+        }
+
         return $this->render('pokedex/pokemon_detail.html.twig', [
             'controller_name' => 'PokedexController',
-            'id' => $id,
+            'pokemon' => $pokemonDetail,
         ]);
     }
 
@@ -76,9 +89,22 @@ class PokedexController extends AbstractController
      */
     public function attackDetail($id)
     {
-        return $this->render('pokedex/attack_detail.html.twig', [
+	    $attackRepository = $this->getDoctrine()->getRepository(Attack::class);
+        $attack = $attackRepository->find($id);
+        // load related attack slots as well
+        $attackSlotRepository = $this->getDoctrine()->getRepository(AttackSlot::class);
+        $attackSlots = $attackSlotRepository->findByAttack($attack->getId());
+
+	    if(!$attack){
+		    throw $this->createNotFoundException(
+			    'attack of id '.$id.' was not found'
+		    );
+        }
+
+	    return $this->render('pokedex/attack_detail.html.twig', [
             'controller_name' => 'PokedexController',
-            'id' => $id,
+            'attack' => $attack,
+            'attackSlots' => $attackSlots
         ]);
     }
 

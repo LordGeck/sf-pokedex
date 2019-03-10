@@ -36,8 +36,12 @@
 		<tbody>
 		{# One raw by attack #}
 		{% for attack in attacks %}
-				<tr>
-					<td>{{ attack.name }}</td>
+			<tr>
+					<td>
+						<a href="{{ path('attack_detail', { 'id': attack.id }) }}">
+						{{ attack.name }}
+						</a>
+					</td>
 					<td>
 						<button type="button" class="btn btn-{{ attack.type }} btn-xs btn-dark custom-outline">{{ attack.type | upper }}</button>
 					</td>
@@ -47,7 +51,7 @@
 					<td>
 						{{ attack.accuracy }}
 					</td>
-				</tr>
+			</tr>
 		{% endfor %}
 
 		</tbody>
