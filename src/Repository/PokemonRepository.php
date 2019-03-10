@@ -31,7 +31,16 @@ class PokemonRepository extends ServiceEntityRepository
         $em = $this->getEntityManager();
 
         $qb = $em->createQueryBuilder();
-        $qb->select('p.no_pokedex', 'p.location', 'p.name', 'p.image', 'p.type1', 'p.type2', 'p.size', 'p.weight', 'd.gen', 'd.description')
+        $qb->select('p.no_pokedex',
+                    'p.location',
+                    'p.name',
+                    'p.image',
+                    'p.type1',
+                    'p.type2',
+                    'p.size',
+                    'p.weight',
+                    'd.gen',
+                    'd.description')
             ->from('App\Entity\Pokemon', 'p')
             // relationship to join, alias of join, expression, condition
             ->innerJoin('App\Entity\Description', 'd');
@@ -48,7 +57,7 @@ class PokemonRepository extends ServiceEntityRepository
      * @return array
      * For use in pokemon_detail view
      */
-    public function findDetail($pokemonNo)
+    public function findWithDesc($pokemonNo)
     {
         $em = $this->getEntityManager();
         $qb = $em->createQueryBuilder();
@@ -65,17 +74,9 @@ class PokemonRepository extends ServiceEntityRepository
                     'p.type1',
                     'p.type2',
                     'd.gen',
-                    'd.description',
-                    'a_s.level',
-                    'a_s.gen',
-                    'a.is_cs',
-                    'a.type',
-                    'a.ct',
-                    'a.name')
+                    'd.description')
             ->from('App\Entity\Pokemon', 'p')
             ->innerJoin('App\Entity\Description', 'd')
-            ->innerJoin('App\Entity\AttackSlot', 'a_s')
-            ->innerJoin('App\Entity\Attack', 'a')
             ->where('p.no_pokedex = :pokemonNo')
             ->setParameter('pokemonNo', (int)$pokemonNo);
 
@@ -86,7 +87,6 @@ class PokemonRepository extends ServiceEntityRepository
 
         dump($query->getResult());
 
-        return $query->getOneOrNullResult();
+        return $query->getResult();
     }
 }
-
