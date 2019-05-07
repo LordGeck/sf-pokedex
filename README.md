@@ -2,6 +2,8 @@
 Garald : separate SCSS files by page, card system for pokemon grid
 Prime : consistent entities and real fixture (9 first pkmns), joins for correct data set in each page
 
+Find DELETE strategy for table rows
+
 next week :
 - Determine JQuery sorts for each page, with controls
 - Feed sprite folder

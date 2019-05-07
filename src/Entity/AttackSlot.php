@@ -46,6 +46,11 @@ class AttackSlot
     /**
      * @ORM\Column(type="integer")
      */
+    private $attack_id;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
     private $no_pokedex;
 
     public function getId(): ?int
@@ -85,18 +90,6 @@ class AttackSlot
     public function setAttackId(int $attack_id): self
     {
         $this->attack_id = $attack_id;
-
-        return $this;
-    }
-
-    public function getPokemonId(): ?int
-    {
-        return $this->pokemon_id;
-    }
-
-    public function setPokemonId(int $pokemon_id): self
-    {
-        $this->pokemon_id = $pokemon_id;
 
         return $this;
     }

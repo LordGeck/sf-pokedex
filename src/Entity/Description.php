@@ -26,12 +26,6 @@ class Description
      */
     private $gen;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Pokemon", inversedBy="descriptions")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $pokemon;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -69,18 +63,6 @@ class Description
     public function setGen(int $gen): self
     {
         $this->gen = $gen;
-
-        return $this;
-    }
-
-    public function getPokemon(): ?Pokemon
-    {
-        return $this->pokemon;
-    }
-
-    public function setPokemon(?Pokemon $pokemon): self
-    {
-        $this->pokemon = $pokemon;
 
         return $this;
     }

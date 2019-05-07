@@ -4,8 +4,8 @@
 
 
 {% block stylesheets %}
-	{{ parent() }}
-	{{ encore_entry_link_tags('pokemon_detail') }}
+    {{ parent() }}
+    {{ encore_entry_link_tags('pokemon_detail') }}
 {% endblock %}
 
 
@@ -13,72 +13,108 @@
 {% block body %}
 
 
-	{# change id no no_pokedex when fixture are OK #}
-	<h1>Pokémon #{{ pokemon.id }} : {{ pokemon.name }}</h1>
+    {# change id no no_pokedex when fixture are OK #}
+    <h1>Pokémon #{{ pokemon.no_pokedex }} : {{ pokemon.name }}</h1>
 
-	<div class="figure-center">
-		<figure class="figure text-center">
-			{# change to non hardcoded value when fixtures ready #}
-			<img class="figure-img img-fluid rounded" alt="Image of {{ pokemon.name }}" src="{{ asset('build/assets/images/artworks/placeholder250x250.png') }}">
-			<figcaption class="figure-caption">Artwork de {{ pokemon.name }}</figcaption>
-		</figure>
-	</div>
+    <div class="figure-center">
+        <figure class="figure text-center">
+            {# change to non hardcoded value when fixtures ready #}
+            <img class="figure-img img-fluid rounded" alt="Image of {{ pokemon.name }}"
+                 src="{{ asset('build/assets/images/artworks/placeholder250x250.png') }}">
+            <figcaption class="figure-caption">Artwork de {{ pokemon.name }}</figcaption>
+        </figure>
+    </div>
 
-	<div class="row">
-		<div class="alert alert-primary col-md-9">
-			Utilise le select pour filtrer le type d'infos sur ce Pokémon !
-		</div>
+    <div class="row">
+        <div class="alert alert-primary col-md-9">
+            Utilise le select pour filtrer le type d'infos sur ce Pokémon !
+        </div>
 
-		{# this select triggers jQuery to filter displayed info blocks #}
-		<div class="col-md-3">
-			<select class="custom-select">
-				<option selected>Filtrer les infos...</option>
-				<option value="general">Infos générales</option>
-				<option value="attack_slots">Attaques apprises</option>
-				<option value="ct_cs">CT & CS</option>
-				<option value="sprites_gallery">Galerie de sprites</option>
-				<option value="descriptions">Descriptions Pokédex</option>
-				<option value="location">Localisation</option>
-			</select>
-		</div>
-	</div>
+        {# this select triggers jQuery to filter displayed info blocks #}
+        <div class="col-md-3">
+            <select class="custom-select">
+                <option selected>Filtrer les infos...</option>
+                <option value="general">Infos générales</option>
+                <option value="attack_slots">Attaques apprises</option>
+                <option value="ct_cs">CT & CS</option>
+                <option value="sprites_gallery">Galerie de sprites</option>
+                <option value="descriptions">Descriptions Pokédex</option>
+                <option value="location">Localisation</option>
+            </select>
+        </div>
+    </div>
 
-	<section id="general">
-		<h3>Infos générales</h3>
-		<div class="card">Pokémon ..., poids {{ pokemon.weight }}, taille {{ pokemon.size }}</div>
-		<span>Type 1 : <button type="button" class="btn btn-{{ pokemon.type1 }} btn-xs btn-dark">{{ pokemon.type1 | upper }}</button> Type 2 : <button type="button" class="btn btn-{{ pokemon.type2 }} btn-xs btn-dark">{{ pokemon.type2 | upper }}</button></span>
-		<p>HP : {{ pokemon.hp }}<br>
-			Attaque : {{ pokemon.atk }}<br>
-			Défense : {{ pokemon.def }}<br>
-			Spécial : {{ pokemon.spe }}<br>
-			Vitesse : {{ pokemon.speed }}</p>
+    <section id="general">
+        <h3>Infos générales</h3>
+        <div class="card">Pokémon {{ pokemon.nature }}, poids {{ pokemon.weight }}, taille {{ pokemon.size }}</div>
+        <span>Type 1 : <button type="button"
+                               class="btn btn-{{ pokemon.type1 }} btn-xs btn-dark">{{ pokemon.type1 | upper }}</button> Type 2 : <button
+                    type="button"
+                    class="btn btn-{{ pokemon.type2 }} btn-xs btn-dark">{{ pokemon.type2 | upper }}</button></span>
+        <p>HP : {{ pokemon.hp }}<br>
+            Attaque : {{ pokemon.atk }}<br>
+            Défense : {{ pokemon.def }}<br>
+            Spécial : {{ pokemon.spe }}<br>
+            Vitesse : {{ pokemon.speed }}</p>
 
-	</section>
+    </section>
 
-	<section id="attack_slots">
-		<h3>Attaques apprises</h3>
-	</section>
+    <section id="attack_slots">
+        <h3>Attaques apprises</h3>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <div class="alert alert-primary">
+                        Clique sur l'attaque pour voir sa description détaillée
+                    </div>
+                </tr>
+                <tr>
+                    <th>Niveau</th>
+                    <th>Nom</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for attack_slot in attack_slots %}
+                <tr>
+                    <td>
+                        {{ attack_slot.level }}
+                    </td>
+                    <td>
+                        {{ attack_slot.name }}
+                    </td>
+                    <td>
+                        <button type="button"
+                                class="btn btn-{{ attack_slot.type }} btn-xs btn-dark custom-outline">{{ attack_slot.type | upper }}</button>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
 
-	<section id="ct_cs">
-		<h3>CT et CS</h3>
-	</section>
 
-	<section id="sprites_gallery">
-		<h3>Galerie de sprites</h3>
-	</section>
+    <section id="ct_cs">
+        <h3>CT et CS</h3>
+    </section>
 
-	<section id="descriptions">
-		<h3>Descriptions du Pokédex</h3>
-	</section>
+    <section id="sprites_gallery">
+        <h3>Galerie de sprites</h3>
+    </section>
 
-	<section id="location">
-		<h3>Localisations</h3>
-	</section>
+    <section id="descriptions">
+        <h3>Descriptions du Pokédex</h3>
+        <p>{{ pokemon.description }}</p>
+    </section>
+
+    <section id="location">
+        <h3>Localisations</h3>
+    </section>
 
 {% endblock %}
 
 
 {% block javascripts %}
-	{{ parent() }}
-	{{ encore_entry_script_tags('pokemon_detail') }}
+    {{ parent() }}
+    {{ encore_entry_script_tags('pokemon_detail') }}
 {% endblock %}

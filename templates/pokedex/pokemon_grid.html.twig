@@ -3,42 +3,51 @@
 {% block title %}Pokemon Grid{% endblock %}
 
 {% block stylesheets %}
-	{{ parent() }}
-	{{ encore_entry_link_tags('pokemon_grid') }}
+    {{ parent() }}
+    {{ encore_entry_link_tags('pokemon_grid') }}
 {% endblock %}
 
 {% block body %}
 
-{% dump pokemons %}
+    {% dump pokemons %}
 
 
-	<h1>Grille des Pokémon</h1>
+    <h1>Grille des Pokémon</h1>
 
-	<div class="alert alert-primary">
-		Clique sur le Pokémon voulu pour voir ses informations !
-	</div>
+    <div class="alert alert-primary">
+        Clique sur le Pokémon voulu pour voir ses informations !
+    </div>
 
-	<div class="row no-gutters justify-content-center">
+    <div class="row no-gutters justify-content-center">
 
-		{% for pokemon in pokemons %}
+        {% set prefix_index = 0 %}
+        {% for pokemon in pokemons %}
 
-			<div class="col-1.5">
-				<div class="card text-center border-0 card-pokemon">
-					<div class="card-body">
-						<h5 class="card-title">{{ pokemon.name }}</h5>
-						<img src="{{ asset('build/assets/images/sprites/placeholder64.png') }}" alt="Image de {{ pokemon.name }}">
-				    <a href="{{ path('pokemon_detail', {'id': pokemon.id}) }}" class="btn btn-outline-primary">Voir les infos</a>
-				  </div>
-				</div>
-			</div>
+            <div class="col-1.5">
+                <div class="card text-center border-0 card-pokemon">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ pokemon.name }}</h5>
 
-		{% endfor %}
+                        {% set imgUrl = 'build/assets/images/artworks/' ~ prefixes[prefix_index] ~ '.png' %}
+                        <img src="{{ asset(imgUrl) }}" alt="Image de {{ pokemon.name }}" height="64", width="64">
 
-	</div>
+                        <a href="{{ path('pokemon_detail', {'noPokedex': pokemon.no_pokedex}) }}" class="btn btn-outline-primary">Voir
+                            les infos</a>
+                        {# debug #}
+                        {#						{{ prefixes[prefix_index] }}#}
+                    </div>
+                </div>
+            </div>
+
+            {% set prefix_index = prefix_index + 1 %}
+
+        {% endfor %}
+
+    </div>
 
 {% endblock %}
 
 {% block javascripts %}
-	{{ parent() }}
-	{{ encore_entry_script_tags('pokemon_grid') }}
+    {{ parent() }}
+    {{ encore_entry_script_tags('pokemon_grid') }}
 {% endblock %}

@@ -4,6 +4,8 @@
 
 namespace App\Repository;
 
+use App\Entity\Attack;
+use App\Entity\AttackSlot;
 use App\Entity\Pokemon as Pokemon;
 use App\Entity\Description as Description;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
@@ -31,10 +33,20 @@ class PokemonRepository extends ServiceEntityRepository
         $em = $this->getEntityManager();
 
         $qb = $em->createQueryBuilder();
-        $qb->select('p.no_pokedex', 'p.location', 'p.name', 'p.image', 'p.type1', 'p.type2', 'p.size', 'p.weight', 'd.gen', 'd.description')
-            ->from('App\Entity\Pokemon', 'p')
-            // relationship to join, alias of join, expression, condition
-            ->innerJoin('App\Entity\Description', 'd');
+        $qb->select(
+            'p.id',
+            'p.no_pokedex',
+            'p.location',
+            'p.name',
+            'p.image',
+            'p.type1',
+            'p.type2',
+            'p.size',
+            'p.weight',
+            'p.description',
+            'p.nature'
+        )
+            ->from('App\Entity\Pokemon', 'p');
 
         $query = $qb->getQuery();
 
@@ -57,6 +69,7 @@ class PokemonRepository extends ServiceEntityRepository
                     'p.atk',
                     'p.def',
                     'p.spe',
+                    'p.name',
                     'p.speed',
                     'p.size',
                     'p.weight',
@@ -64,27 +77,19 @@ class PokemonRepository extends ServiceEntityRepository
                     'p.image',
                     'p.type1',
                     'p.type2',
-                    'd.gen',
-                    'd.description',
-                    'a_s.level',
-                    'a_s.gen',
-                    'a.is_cs',
-                    'a.type',
-                    'a.ct',
-                    'a.name')
+                    'p.description',
+                    'p.nature'
+        )
             ->from('App\Entity\Pokemon', 'p')
-            ->innerJoin('App\Entity\Description', 'd')
-            ->innerJoin('App\Entity\AttackSlot', 'a_s')
-            ->innerJoin('App\Entity\Attack', 'a')
-            ->where('p.no_pokedex = :pokemonNo')
+            ->andWhere('p.no_pokedex = :pokemonNo')
             ->setParameter('pokemonNo', (int)$pokemonNo);
 
         $query = $qb->getQuery();
 
         // debug
-        dump($query->getSql());
+//        dump($query->getSql());
 
-        dump($query->getResult());
+//        dump($query->getResult());
 
         return $query->getOneOrNullResult();
     }

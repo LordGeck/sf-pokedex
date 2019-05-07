@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PokemonRepository")
@@ -19,7 +20,7 @@ class Pokemon
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", unique=true)
      */
     private $no_pokedex;
 
@@ -83,20 +84,61 @@ class Pokemon
      */
     private $attackSlots;
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Description", mappedBy="pokemon")
-     */
-    private $descriptions;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $name;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $nature;
+
+    /**
+     * @ORM\Column(type="string", length=510)
+     */
+    private $description;
+
     public function __construct()
     {
         $this->attackSlots = new ArrayCollection();
-        $this->descriptions = new ArrayCollection();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNature()
+    {
+        return $this->nature;
+    }
+
+    /**
+     * @param mixed $nature
+     * @return Pokemon
+     */
+    public function setNature($nature)
+    {
+        $this->nature = $nature;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     * @return Pokemon
+     */
+    public function setDescription($description): self
+    {
+        $this->description = $description;
+        return $this;
     }
 
     public function setId($id): self
@@ -279,37 +321,6 @@ class Pokemon
             // set the owning side to null (unless already changed)
             if ($attackSlot->getPokemon() === $this) {
                 $attackSlot->setPokemon(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Description[]
-     */
-    public function getDescriptions(): Collection
-    {
-        return $this->descriptions;
-    }
-
-    public function addDescription(Description $description): self
-    {
-        if (!$this->descriptions->contains($description)) {
-            $this->descriptions[] = $description;
-            $description->setPokemon($this);
-        }
-
-        return $this;
-    }
-
-    public function removeDescription(Description $description): self
-    {
-        if ($this->descriptions->contains($description)) {
-            $this->descriptions->removeElement($description);
-            // set the owning side to null (unless already changed)
-            if ($description->getPokemon() === $this) {
-                $description->setPokemon(null);
             }
         }
 

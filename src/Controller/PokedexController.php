@@ -28,28 +28,40 @@ class PokedexController extends AbstractController
         $repository = $this->getDoctrine()->getRepository(Pokemon::class);
         $pokemons = $repository->findAllWithDescription();
 
-        dump($pokemons);
-
         if (!$pokemons) {
             throw $this->createNotFoundException(
                 'No pokemon found.'
             );
         }
 
+        // prefixes for retrieving images
+        $prefixes = array();
+        foreach ($pokemons as $pokemon){
+//            dump($pokemon);
+            $prefixes[] = str_pad($pokemon['no_pokedex'], 3, '0', STR_PAD_LEFT);
+        }
+
+        dump($prefixes);
+
         return $this->render('pokedex/pokemon_grid.html.twig', [
             'controller_name' => 'PokedexController',
             'pokemons' => $pokemons,
+            'prefixes' => $prefixes
         ]);
     }
 
     /**
-     * @Route("/pokemon/{id}", name="pokemon_detail")
+     * @Route("/pokemon/{noPokedex}", name="pokemon_detail")
      */
-    public function pokemonDetail($id)
+    public function pokemonDetail($noPokedex)
     {
         $repository = $this->getDoctrine()->getRepository(Pokemon::class);
-        //$pokemon = $repository->find($id);
-        $pokemonDetail = $repository->findDetail($id);
+        $pokemonDetail = $repository->findDetail($noPokedex);
+
+        dump($pokemonDetail);
+
+        $slotsRepository = $this->getDoctrine()->getRepository(AttackSlot::class);
+        $pokemonAttackSlots = $slotsRepository->findByPokemon($noPokedex);
 
         if(!$pokemonDetail){
             throw $this->createNotFoundException(
@@ -60,6 +72,7 @@ class PokedexController extends AbstractController
         return $this->render('pokedex/pokemon_detail.html.twig', [
             'controller_name' => 'PokedexController',
             'pokemon' => $pokemonDetail,
+            'attack_slots' => $pokemonAttackSlots
         ]);
     }
 
@@ -76,7 +89,6 @@ class PokedexController extends AbstractController
                 'No attack found.'
             );
         }
-
 
         return $this->render('pokedex/attack_list.html.twig', [
             'controller_name' => 'PokedexController',

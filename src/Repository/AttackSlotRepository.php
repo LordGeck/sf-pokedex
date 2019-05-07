@@ -2,8 +2,10 @@
 
 namespace App\Repository;
 
+use App\Entity\Attack;
 use App\Entity\AttackSlot;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query\Expr\Join;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 use Doctrine\ORM\Query\ResultSetMappingBuilder;
 
@@ -23,22 +25,29 @@ class AttackSlotRepository extends ServiceEntityRepository
     /**
      * @return AttackSlot[]
      */
-    public function findByPokemon($pokemonNo)
+    public function findByPokemon($noPokedex)
     {
         $em = $this->getEntityManager();
 
         $qb = $em->createQueryBuilder();
-        $qb->select('a_s.level', 'a_s.gen', 'a.name', 'a.`type`')
-            ->from('attack_slot', 'a_s')
+        $qb->select(
+            'a_s.level',
+            'a_s.gen',
+            'a.is_cs',
+            'a.name',
+            'a.type',
+            'a.ct'
+        )
+            ->from('App\Entity\AttackSlot', 'a_s')
             // relationship to join, alias of join, expression, condition
-            ->innerJoin('attack', 'a', Expr\Join::ON, 'a_s.attack_id=a.id')
-            ->where('a_s.pokemon_id=:pokemonNo')
-            ->setParameter('pokemonNo', (int)$pokemonNo);
+            ->leftJoin('App\Entity\Attack', 'a', Join::WITH, 'a_s.attack_id=a.id')
+            ->where('a_s.no_pokedex=:noPokedex')
+            ->setParameter('noPokedex', (int)$noPokedex);
 
         $query = $qb->getQuery();
 
         // debug
-        dump($query->getSql());
+        dump($query->getResult());
 
         return $query->getResult();
     }
