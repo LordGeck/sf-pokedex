@@ -48,6 +48,8 @@ class Test15Fixtures extends Fixture
             $attack->setName($attacksArray[$i]['name']);
             $attack->setId($attacksArray[$i]['id']);
             $attack->setCode($attacksArray[$i]['code']);
+            $attack->setDescription($attacksArray[$i]['description']);
+            $attack->setPowerPoints($attacksArray[$i]['pp']);
 
             array_push($attackObjects, $attack);
         }

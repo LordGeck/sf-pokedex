@@ -39,8 +39,14 @@
 			<li class="nav-item">
 				<a class="nav-link" href="{{ path('attack_list') }}">Liste attaques</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="{{ path('create_resource') }}">Créer ressource</a>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Gérer
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="#">Gérer Pokémon</a>
+					<a class="dropdown-item" href="#">Gérer Attaques</a>
+				</div>
 			</li>
 
 			<li class="nav-item dropdown">

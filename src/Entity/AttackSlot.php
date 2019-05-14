@@ -28,13 +28,23 @@ class AttackSlot
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Pokemon", inversedBy="attackSlots")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(
+     *     name="pokemon_id",
+     *     referencedColumnName="id",
+     *     onDelete="CASCADE",
+     *     nullable=false
+     * )
      */
     private $pokemon;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Attack", inversedBy="attackSlots")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(
+     *     name="attack_id",
+     *     referencedColumnName="id",
+     *     onDelete="CASCADE",
+     *     nullable=false
+     * )
      */
     private $attack;
 

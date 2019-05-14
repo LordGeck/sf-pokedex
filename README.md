@@ -4,6 +4,11 @@ Prime : consistent entities and real fixture (9 first pkmns), joins for correct 
 
 Find DELETE strategy for table rows
 
+Manage enums with Doctrine : https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/cookbook/mysql-enums.html
+
+* Write unit tests to check enums
+* Compatible CT / CS for each pokemon
+
 next week :
 - Determine JQuery sorts for each page, with controls
 - Feed sprite folder

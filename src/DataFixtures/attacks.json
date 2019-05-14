@@ -6,7 +6,9 @@
     "power": 50,
     "ct": "",
     "name": "Charge",
-    "code": "tackle"
+    "code": "tackle",
+    "description": "Le lanceur charge l'ennemi et le percute de tout son corps",
+    "pp": 35
   },
   {
     "is_cs": false,
@@ -15,7 +17,9 @@
     "power": 0,
     "ct": "",
     "name": "Rugissement",
-    "code": "growl"
+    "code": "growl",
+    "description": "Le lanceur pousse un cri tout mimi pour tromper la vigilance de l’ennemi et baisser son Attaque.",
+    "pp": 40
   },
   {
     "is_cs": false,
@@ -24,7 +28,9 @@
     "power": 0,
     "ct": "",
     "name": "Vampigraine",
-    "code": "leechSeed"
+    "code": "leechSeed",
+    "description": "Une graine est semée sur l’ennemi. À chaque tour, elle lui dérobe des PV que le lanceur récupère.",
+    "pp": 10
   },
   {
     "is_cs": false,
@@ -33,7 +39,9 @@
     "power": 45,
     "ct": "",
     "name": "Fouet Lianes",
-    "code": "vineWhip"
+    "code": "vineWhip",
+    "description": "Fouette l’ennemi avec de fines lianes pour infliger des dégâts.",
+    "pp": 25
   },
   {
     "is_cs": false,
@@ -42,7 +50,9 @@
     "power": 0,
     "ct": "",
     "name": "Poudre Toxik",
-    "code": "poisonPowder"
+    "code": "poisonPowder",
+    "description": "Une poudre toxique empoisonne l’ennemi.",
+    "pp": 35
   },
   {
     "is_cs": false,
@@ -51,7 +61,9 @@
     "power": 55,
     "ct": "",
     "name": "Tranch'herbe",
-    "code": "razorLeaf"
+    "code": "razorLeaf",
+    "description": "Des feuilles aiguisées comme des rasoirs entaillent l’ennemi. Taux de critiques élevé.",
+    "pp": 25
   },
   {
     "is_cs": false,
@@ -60,7 +72,9 @@
     "power": 0,
     "ct": "",
     "name": "Croissance",
-    "code": "growth"
+    "code": "growth",
+    "description": "Le corps du lanceur se développe. Augmente l’Attaque et l’Attaque Spéciale.",
+    "pp": 20
   },
   {
     "is_cs": false,
@@ -69,7 +83,9 @@
     "power": 0,
     "ct": "",
     "name": "Poudre dodo",
-    "code": "sleepPowder"
+    "code": "sleepPowder",
+    "description": "Le lanceur répand une poudre soporifique qui endort la cible.",
+    "pp": 15
   },
   {
     "is_cs": false,
@@ -78,7 +94,9 @@
     "power": 100,
     "ct": "",
     "name": "Lance-soleil",
-    "code": "solarBeam"
+    "code": "solarBeam",
+    "description": "Absorbe la lumière au premier tour et envoie un rayon puissant au tour suivant.",
+    "pp": 10
   },
   {
     "is_cs": false,
@@ -87,7 +105,9 @@
     "power": 40,
     "ct": "",
     "name": "Griffe",
-    "code": "scratch"
+    "code": "scratch",
+    "description": "Lacère l’ennemi avec des griffes acérées pour lui infliger des dégâts.",
+    "pp": 35
   },
   {
     "is_cs": false,
@@ -96,7 +116,9 @@
     "power": 40,
     "ct": "",
     "name": "Flammèche",
-    "code": "ember"
+    "code": "ember",
+    "description": "L’ennemi est attaqué par de faibles flammes. Peut aussi le brûler.",
+    "pp": 25
   },
   {
     "is_cs": false,
@@ -105,7 +127,9 @@
     "power": 0,
     "ct": "",
     "name": "Groz'yeux",
-    "code": "leer"
+    "code": "leer",
+    "description": "Le lanceur fait les gros yeux à l’ennemi pour l’intimider et baisser sa Défense.",
+    "pp": 30
   },
   {
     "is_cs": false,
@@ -114,7 +138,9 @@
     "power": 20,
     "ct": "",
     "name": "Frénésie",
-    "code": "rage"
+    "code": "rage",
+    "description": "Une fois activée, cette capacité augmente l’Attaque du lanceur à mesure que celui-ci subit des attaques.",
+    "pp": 20
   },
   {
     "is_cs": false,
@@ -123,7 +149,9 @@
     "power": 70,
     "ct": "",
     "name": "Tranche",
-    "code": "slash"
+    "code": "slash",
+    "description": "Un coup de griffe ou autre tranche l’ennemi. Taux de critiques élevé.",
+    "pp": 20
   },
   {
     "is_cs": false,
@@ -132,7 +160,9 @@
     "power": 90,
     "ct": "",
     "name": "Lance-flammes",
-    "code": "flameThrower"
+    "code": "flameThrower",
+    "description": "L’ennemi reçoit un torrent de flammes. Peut aussi le brûler.",
+    "pp": 15
   },
   {
     "is_cs": false,
@@ -141,7 +171,9 @@
     "power": 35,
     "ct": "",
     "name": "Danseflammes",
-    "code": "fireSpin"
+    "code": "fireSpin",
+    "description": "Un tourbillon de flammes emprisonne l’ennemi pendant 4 à 5 tours.",
+    "pp": 15
   },
   {
     "is_cs": false,
@@ -150,7 +182,9 @@
     "power": 0,
     "ct": "",
     "name": "Mimi-queue",
-    "code": "tailWhip"
+    "code": "tailWhip",
+    "description": "Le lanceur remue son adorable queue pour tromper la vigilance de l’ennemi et baisser sa Défense.",
+    "pp": 30
   },
   {
     "is_cs": false,
@@ -159,7 +193,9 @@
     "power": 40,
     "ct": "",
     "name": "Ecume",
-    "code": "bubble"
+    "code": "bubble",
+    "description": "Des bulles frappent l’ennemi. Peut réduire sa Vitesse.",
+    "pp": 30
   },
   {
     "is_cs": false,
@@ -168,7 +204,9 @@
     "power": 40,
     "ct": "",
     "name": "Pistolet à O",
-    "code": "waterGun"
+    "code": "waterGun",
+    "description": "De l’eau est projetée sur l’ennemi en arc de cercle.",
+    "pp": 25
   },
   {
     "is_cs": false,
@@ -177,7 +215,9 @@
     "power": 60,
     "ct": "",
     "name": "Morsure",
-    "code": "bite"
+    "code": "bite",
+    "description": "L’ennemi est mordu par de tranchantes canines. Peut l’apeurer.",
+    "pp": 25
   },
   {
     "is_cs": false,
@@ -186,7 +226,9 @@
     "power": 0,
     "ct": "",
     "name": "Repli",
-    "code": "withdraw"
+    "code": "withdraw",
+    "description": "Le lanceur se recroqueville dans sa carapace, ce qui augmente sa Défense.",
+    "pp": 40
   },
   {
     "is_cs": false,
@@ -195,7 +237,9 @@
     "power": 130,
     "ct": "",
     "name": "Coud'Krane",
-    "code": "skullBash"
+    "code": "skullBash",
+    "description": "Le lanceur baisse la tête pour augmenter sa Défense au 1er tour et percuter l’ennemi au 2è.",
+    "pp": 10
   },
   {
     "is_cs": false,
@@ -204,6 +248,63 @@
     "power": 110,
     "ct": "",
     "name": "Hydrocanon",
-    "code": "hydroPump"
+    "code": "hydroPump",
+    "description": "Un puissant jet d’eau est dirigé sur l’ennemi.",
+    "pp": 5
+  },
+  {
+    "is_cs": true,
+    "type": "normal",
+    "accuracy": 95,
+    "power": 50,
+    "ct": "",
+    "name": "Coupe",
+    "code": "cut",
+    "description": "Coupe l’ennemi avec des lames ou des griffes. Hors combat, permet de couper des arbres fins.",
+    "pp": 30
+  },
+  {
+    "is_cs": true,
+    "type": "flying",
+    "accuracy": 95,
+    "power": 90,
+    "ct": "",
+    "name": "Vol",
+    "code": "fly",
+    "description": "Le lanceur s’envole au 1er tour et frappe au 2è. Permet aussi de voler jusqu’à une ville déjà visitée.",
+    "pp": 10
+  },
+  {
+    "is_cs": true,
+    "type": "water",
+    "accuracy": 100,
+    "power": 90,
+    "ct": "",
+    "name": "Surf",
+    "code": "surf",
+    "description": "Une énorme vague s’abat sur le champ de bataille. Permet aussi de voyager sur l’eau.",
+    "pp": 15
+  },
+  {
+    "is_cs": true,
+    "type": "normal",
+    "accuracy": 100,
+    "power": 80,
+    "ct": "",
+    "name": "Force",
+    "code": "strength",
+    "description": "Le lanceur cogne l’ennemi de toutes ses forces. Permet aussi de déplacer des rochers.",
+    "pp": 15
+  },
+  {
+    "is_cs": true,
+    "type": "normal",
+    "accuracy": 100,
+    "power": 0,
+    "ct": "",
+    "name": "Flash",
+    "code": "flash",
+    "description": "Explosion lumineuse qui fait baisser la Précision de l’ennemi. Permet aussi d’éclairer les grottes.",
+    "pp": 20
   }
 ]

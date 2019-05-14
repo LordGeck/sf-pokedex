@@ -12,6 +12,9 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  */
 class Pokemon
 {
+    // define pokemon types as constants
+
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -80,7 +83,7 @@ class Pokemon
     private $weight;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\AttackSlot", mappedBy="pokemon")
+     * @ORM\OneToMany(targetEntity="App\Entity\AttackSlot", mappedBy="pokemon", cascade={"persist", "remove"})
      */
     private $attackSlots;
 

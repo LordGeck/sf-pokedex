@@ -30,6 +30,8 @@
 			<th>Type</th>
 			<th>Puissance</th>
 			<th>Précision</th>
+			<th>Description</th>
+			<th>PP (Pts de Pouvoir)</th>
 		</tr>
 		</thead>
 
@@ -50,6 +52,12 @@
 					</td>
 					<td>
 						{{ attack.accuracy }}
+					</td>
+					<td>
+						{{ attack.description }}
+					</td>
+					<td>
+						{{ attack.powerPoints }}
 					</td>
 			</tr>
 		{% endfor %}
