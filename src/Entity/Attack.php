@@ -24,7 +24,7 @@ class Attack
     private $is_cs;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, columnDefinition="ENUM('grass', 'bug', 'poison', 'fire', 'water', 'ice', 'normal', 'dragon', 'flying','electric', 'psychic', 'fighting', 'ghost', 'rock', 'ground')")
      */
     private $type;
 
@@ -44,7 +44,7 @@ class Attack
     private $ct;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\AttackSlot", mappedBy="attack")
+     * @ORM\OneToMany(targetEntity="App\Entity\AttackSlot", mappedBy="attack", cascade={"persist", "remove"})
      */
     private $attackSlots;
 
@@ -58,9 +58,55 @@ class Attack
      */
     private $code;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $description = "";
+
+    /**
+     * @ORM\Column(type="smallint", nullable=true)
+     */
+    private $powerPoints = null;
+
     public function __construct()
     {
         $this->attackSlots = new ArrayCollection();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPowerPoints()
+    {
+        return $this->powerPoints;
+    }
+
+    /**
+     * @param mixed $powerPoints
+     * @return Attack
+     */
+    public function setPowerPoints($powerPoints)
+    {
+        $this->powerPoints = $powerPoints;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     * @return Attack
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+        return $this;
     }
 
     /**

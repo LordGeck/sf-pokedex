@@ -5,7 +5,6 @@ namespace App\Repository;
 use App\Entity\Attack;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
-use Doctrine\ORM\Query\ResultSetMappingBuilder;
 
 /**
  * @method Attack|null find($id, $lockMode = null, $lockVersion = null)

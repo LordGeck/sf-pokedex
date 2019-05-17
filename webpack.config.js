@@ -30,6 +30,10 @@ Encore
 	.addEntry('home', './assets/js/home.js')
 	.addEntry('pokemon_detail', './assets/js/pokemon_detail.js')
 	.addEntry('pokemon_grid', './assets/js/pokemon_grid.js')
+	.addEntry('admin_pokemon', './assets/js/admin_pokemon.js')
+	.addEntry('admin_attack', './assets/js/admin_attack.js')
+	.addEntry('admin_pokemon_edit', './assets/js/admin_pokemon_edit.js')
+	.addEntry('admin_attack_edit', './assets/js/admin_attack_edit.js')
 	.addStyleEntry('css/app', './assets/css/global.scss')
 
 
