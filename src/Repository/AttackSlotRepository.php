@@ -2,12 +2,10 @@
 
 namespace App\Repository;
 
-use App\Entity\Attack;
 use App\Entity\AttackSlot;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\Query\Expr\Join;
 use Symfony\Bridge\Doctrine\RegistryInterface;
-use Doctrine\ORM\Query\ResultSetMappingBuilder;
 
 /**
  * @method AttackSlot|null find($id, $lockMode = null, $lockVersion = null)
@@ -46,9 +44,6 @@ class AttackSlotRepository extends ServiceEntityRepository
 
         $query = $qb->getQuery();
 
-        // debug
-        dump($query->getResult());
-
         return $query->getResult();
     }
 
@@ -68,9 +63,6 @@ class AttackSlotRepository extends ServiceEntityRepository
             ->setParameter('attackCode', (int)$attackCode);
 
         $query = $qb->getQuery();
-
-        // debug
-        dump($query->getSql());
 
         return $query->getResult();
     }

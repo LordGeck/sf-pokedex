@@ -1,16 +1,10 @@
 <?php
 
-//require __DIR__.'/../../vendor/autoload.php';
-
 namespace App\Repository;
 
-use App\Entity\Attack;
-use App\Entity\AttackSlot;
 use App\Entity\Pokemon as Pokemon;
-use App\Entity\Description as Description;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
-use Doctrine\ORM\Query\Expr\Join;
 
 /**
  * @method Pokemon|null find($id, $lockMode = null, $lockVersion = null)
@@ -49,10 +43,6 @@ class PokemonRepository extends ServiceEntityRepository
             ->from('App\Entity\Pokemon', 'p');
 
         $query = $qb->getQuery();
-
-        // debug
-        dump($query->getSql());
-
         return $query->getResult();
     }
 
@@ -85,12 +75,6 @@ class PokemonRepository extends ServiceEntityRepository
             ->setParameter('pokemonNo', (int)$pokemonNo);
 
         $query = $qb->getQuery();
-
-        // debug
-//        dump($query->getSql());
-
-//        dump($query->getResult());
-
         return $query->getOneOrNullResult();
     }
 }

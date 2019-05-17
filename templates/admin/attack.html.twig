@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gérer attaques{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('admin_attack') }}
+{% endblock %}
+
+{% block body %}
+
+    <div class="container mt-4">
+        <h1>Gérer les attaques</h1>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Nom attaque</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for attack in attacks %}
+                <tr>
+                    <td>{{ attack.name }}</td>
+                    <td>
+                        <a href="{{ path('admin_attack_edit', {id: attack.id}) }}" class="btn btn-secondary">Editer</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+{% endblock %}
+
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('admin_attack') }}
+{% endblock %}
