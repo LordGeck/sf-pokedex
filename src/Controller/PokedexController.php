@@ -2,14 +2,43 @@
 
 namespace App\Controller;
 
+use App\Entity\Attack;
+use App\Entity\Pokemon;
+use App\Form\AttackType;
+use App\Form\PokemonType;
+use App\Repository\AttackRepository;
+use App\Repository\PokemonRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\Pokemon;
-use App\Entity\Attack;
 use App\Entity\AttackSlot;
 
+/**
+ * Class PokedexController
+ * @package App\Controller
+ */
 class PokedexController extends AbstractController
 {
+    /**
+     * @var PokemonRepository
+     */
+    private $pokemonRepository;
+
+    /**
+     * @var AttackRepository
+     */
+    private $attackRepository;
+
+    /**
+     * PokedexController constructor.
+     * @param PokemonRepository $pokemonRepository
+     * @param AttackRepository $attackRepository
+     */
+    public function __construct(PokemonRepository $pokemonRepository, AttackRepository $attackRepository)
+    {
+        $this->pokemonRepository = $pokemonRepository;
+        $this->attackRepository = $attackRepository;
+    }
+
     /**
      * @Route("/", name="home")
      */
@@ -25,10 +54,8 @@ class PokedexController extends AbstractController
      */
     public function pokemonGrid()
     {
-        $repository = $this->getDoctrine()->getRepository(Pokemon::class);
-        $pokemons = $repository->findAllWithDescription();
-
-        dump($pokemons);
+        // use of injected repo
+        $pokemons = $this->pokemonRepository->findAllWithDescription();
 
         if (!$pokemons) {
             throw $this->createNotFoundException(
@@ -36,28 +63,28 @@ class PokedexController extends AbstractController
             );
         }
 
+        // prefixes for retrieving images
+        $prefixes = array();
+        foreach ($pokemons as $pokemon){
+            $prefixes[] = str_pad($pokemon['no_pokedex'], 3, '0', STR_PAD_LEFT);
+        }
+
         return $this->render('pokedex/pokemon_grid.html.twig', [
             'controller_name' => 'PokedexController',
             'pokemons' => $pokemons,
+            'prefixes' => $prefixes
         ]);
     }
 
     /**
-     * @Route("/pokemon/{id}", name="pokemon_detail")
+     * @Route("/pokemon/{noPokedex}", name="pokemon_detail")
      */
-    public function pokemonDetail($id)
+    public function pokemonDetail($noPokedex)
     {
-        $pokemonRepository = $this->getDoctrine()->getRepository(Pokemon::class);
-        $attackSlotRepository = $this->getDoctrine()->getRepository(AttackSlot::class);
-        //$pokemon = $repository->find($id);
-        $pokemonWithDesc = $pokemonRepository->findWithDesc($id);
-        $attackSlots = $attackSlotRepository->findByPokemon($id);
+        $pokemonDetail = $this->pokemonRepository->findDetail($noPokedex);
 
-        if(!$pokemonWithDesc){
-            throw $this->createNotFoundException(
-                'pokemon '.$id.' details were not found'
-            );
-        }
+        $slotsRepository = $this->getDoctrine()->getRepository(AttackSlot::class);
+        $pokemonAttackSlots = $slotsRepository->findByPokemon($noPokedex);
 
         if(!$attackSlots){
             throw $this->createNotFoundException(
@@ -67,8 +94,8 @@ class PokedexController extends AbstractController
 
         return $this->render('pokedex/pokemon_detail.html.twig', [
             'controller_name' => 'PokedexController',
-            'pokemon' => $pokemonWithDesc,
-            'attack_slots' => $attackSlots
+            'pokemon' => $pokemonDetail,
+            'attack_slots' => $pokemonAttackSlots
         ]);
     }
 
@@ -77,15 +104,13 @@ class PokedexController extends AbstractController
      */
     public function attackList()
     {
-        $repository = $this->getDoctrine()->getRepository(Attack::class);
-        $attacks = $repository->findAll();
+        $attacks = $this->attackRepository->findAll();
 
         if (!$attacks) {
             throw $this->createNotFoundException(
                 'No attack found.'
             );
         }
-
 
         return $this->render('pokedex/attack_list.html.twig', [
             'controller_name' => 'PokedexController',
@@ -98,8 +123,7 @@ class PokedexController extends AbstractController
      */
     public function attackDetail($id)
     {
-	    $attackRepository = $this->getDoctrine()->getRepository(Attack::class);
-        $attack = $attackRepository->find($id);
+        $attack = $this->attackRepository->find($id);
         // load related attack slots as well
         $attackSlotRepository = $this->getDoctrine()->getRepository(AttackSlot::class);
         $attackSlots = $attackSlotRepository->findByAttack($attack->getId());
@@ -115,6 +139,52 @@ class PokedexController extends AbstractController
             'attack' => $attack,
             'attackSlots' => $attackSlots
         ]);
+    }
+
+    /**
+     * @Route("/admin/attack", name="admin_attack")
+     */
+    public function attackAdminPanel()
+    {
+        $attacks = $this->attackRepository->findAll();
+        return $this->render('admin/attack.html.twig', [
+            'attacks' => $attacks
+        ]);
+    }
+
+    /**
+     * @Route("/admin/attack/{id}", name="admin_attack_edit", requirements={"id":"\d+"})
+     */
+    public function attackAdminEdit(Attack $attack)
+    {
+        $form = $this->createForm(AttackType::class, $attack);
+        return $this->render('admin/attack.edit.html.twig', array(
+            'attack' => $attack,
+            'form' => $form->createView()
+        ));
+    }
+
+    /**
+     * @Route("/admin/pokemon", name="admin_pokemon")
+     */
+    public function pokemonAdminPanel()
+    {
+        $pokemons = $this->pokemonRepository->findAllWithDescription();
+        return $this->render('admin/pokemon.html.twig', [
+            'pokemons' => $pokemons
+        ]);
+    }
+
+    /**
+     * @Route("/admin/pokemon/{id}", name="admin_pokemon_edit", requirements={"id":"\d+"})
+     */
+    public function pokemonAdminEdit(Pokemon $pokemon)
+    {
+        $form = $this->createForm(PokemonType::class, $pokemon);
+        return $this->render('admin/pokemon.edit.html.twig', array(
+            'pokemon' => $pokemon,
+            'form' => $form->createView()
+        ));
     }
 
     /**

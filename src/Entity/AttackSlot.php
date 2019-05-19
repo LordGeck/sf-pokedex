@@ -28,13 +28,23 @@ class AttackSlot
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Pokemon", inversedBy="attackSlots")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(
+     *     name="pokemon_id",
+     *     referencedColumnName="id",
+     *     onDelete="CASCADE",
+     *     nullable=false
+     * )
      */
     private $pokemon;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Attack", inversedBy="attackSlots")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(
+     *     name="attack_id",
+     *     referencedColumnName="id",
+     *     onDelete="CASCADE",
+     *     nullable=false
+     * )
      */
     private $attack;
 
@@ -42,6 +52,11 @@ class AttackSlot
      * @ORM\Column(type="string", length=255) 
      */
     private $attack_code;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $attack_id;
 
     /**
      * @ORM\Column(type="integer")
@@ -85,18 +100,6 @@ class AttackSlot
     public function setAttackId(int $attack_id): self
     {
         $this->attack_id = $attack_id;
-
-        return $this;
-    }
-
-    public function getPokemonId(): ?int
-    {
-        return $this->pokemon_id;
-    }
-
-    public function setPokemonId(int $pokemon_id): self
-    {
-        $this->pokemon_id = $pokemon_id;
 
         return $this;
     }

@@ -36,4 +36,8 @@ composer.lock
 /.php_cs.cache
 ###< friendsofphp/php-cs-fixer ###
 
+# vscode folder
 /.vscode/
+
+# vim specific
+/tags

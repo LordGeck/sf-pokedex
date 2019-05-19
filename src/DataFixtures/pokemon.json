@@ -12,12 +12,372 @@
     "size": 70,
     "weight": 6.9,
     "name": "Bulbizarre",
-    "descriptions": [
+    "nature": "Graine",
+    "description": "Il a une étrange graine plantée sur son dos. Elle grandit avec lui depuis la naissance.",
+    "attack_slots": [
       {
+        "level": 1,
         "gen": 1,
-        "description": "Il a une étrange graine plantée sur son dos. Elle grandit avec lui depuis la naissance."
+        "attack_code": "tackle"
+      },
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_code": "growl"
+      },
+      {
+        "level": 7,
+        "gen": 1,
+        "attack_code": "leechSeed"
+      },
+      {
+        "level": 13,
+        "gen": 1,
+        "attack_code": "vineWhip"
+      },
+      {
+        "level": 20,
+        "gen": 1,
+        "attack_code": "poisonPowder"
+      },
+      {
+        "level": 27,
+        "gen": 1,
+        "attack_code": "razorLeaf"
+      },
+      {
+        "level": 34,
+        "gen": 1,
+        "attack_code": "growth"
+      },
+      {
+        "level": 41,
+        "gen": 1,
+        "attack_code": "sleepPowder"
+      },
+      {
+        "level": 48,
+        "gen": 1,
+        "attack_code": "solarBeam"
       }
-    ],
+    ]
+  },
+  {
+    "no_pokedex": 2,
+    "hp": 60,
+    "atk": 62,
+    "def": 63,
+    "spe": 80,
+    "speed": 60,
+    "location": null,
+    "type1": "leaf",
+    "type2": "poison",
+    "size": 100,
+    "weight": 13,
+    "name": "Herbizarre",
+    "nature": "Graine",
+    "description": "Son bulbe dorsal devient si gros qu'il ne peut plus se tenir sur ses membres postérieurs.",
+    "attack_slots": [
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_code": "tackle"
+      },
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_code": "growl"
+      },
+      {
+        "level": 7,
+        "gen": 1,
+        "attack_code": "leechSeed"
+      },
+      {
+        "level": 13,
+        "gen": 1,
+        "attack_code": "vineWhip"
+      },
+      {
+        "level": 20,
+        "gen": 1,
+        "attack_code": "poisonPowder"
+      },
+      {
+        "level": 30,
+        "gen": 1,
+        "attack_code": "razorLeaf"
+      },
+      {
+        "level": 38,
+        "gen": 1,
+        "attack_code": "growth"
+      },
+      {
+        "level": 46,
+        "gen": 1,
+        "attack_code": "sleepPowder"
+      },
+      {
+        "level": 54,
+        "gen": 1,
+        "attack_code": "solarBeam"
+      }
+    ]
+  },
+  {
+    "no_pokedex": 3,
+    "hp": 80,
+    "atk": 82,
+    "def": 83,
+    "spe": 100,
+    "speed": 80,
+    "location": null,
+    "type1": "leaf",
+    "type2": "poison",
+    "size": 200,
+    "weight": 100,
+    "name": "Florizarre",
+    "nature": "Graine",
+    "description": "Sa plante mûrit en absorbant les rayons du soleil. Il migre souvent vers les endroits ensoleillés.",
+    "attack_slots": [
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_code": "tackle"
+      },
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_code": "growl"
+      },
+      {
+        "level": 7,
+        "gen": 1,
+        "attack_code": "leechSeed"
+      },
+      {
+        "level": 13,
+        "gen": 1,
+        "attack_code": "vineWhip"
+      },
+      {
+        "level": 22,
+        "gen": 1,
+        "attack_code": "poisonPowder"
+      },
+      {
+        "level": 30,
+        "gen": 1,
+        "attack_code": "razorLeaf"
+      },
+      {
+        "level": 43,
+        "gen": 1,
+        "attack_code": "growth"
+      },
+      {
+        "level": 55,
+        "gen": 1,
+        "attack_code": "sleepPowder"
+      },
+      {
+        "level": 65,
+        "gen": 1,
+        "attack_code": "solarBeam"
+      }
+    ]
+  },
+  {
+    "no_pokedex": 4,
+    "hp": 39,
+    "atk": 52,
+    "def": 43,
+    "spe": 50,
+    "speed": 65,
+    "location": null,
+    "type1": "fire",
+    "type2": null,
+    "size": 60,
+    "weight": 8.5,
+    "name": "Salamèche",
+    "nature": "Lézard",
+    "description": "Il préfère les endroits chauds. En cas de pluie, de la vapeur se forme autour de sa queue.",
+    "attack_slots": [
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_code": "scratch"
+      },
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_code": "growl"
+      },
+      {
+        "level": 9,
+        "gen": 1,
+        "attack_code": "ember"
+      },
+      {
+        "level": 15,
+        "gen": 1,
+        "attack_code": "leer"
+      },
+      {
+        "level": 22,
+        "gen": 1,
+        "attack_code": "rage"
+      },
+      {
+        "level": 30,
+        "gen": 1,
+        "attack_code": "slash"
+      },
+      {
+        "level": 38,
+        "gen": 1,
+        "attack_code": "flameThrower"
+        
+      },
+      {
+        "level": 46,
+        "gen": 1,
+        "attack_code": "fireSpin"
+      }
+    ]
+  },
+  {
+    "no_pokedex": 5,
+    "hp": 58,
+    "atk": 64,
+    "def": 58,
+    "spe": 65,
+    "speed": 80,
+    "location": null,
+    "type1": "fire",
+    "type2": null,
+    "size": 110,
+    "weight": 19,
+    "name": "Reptincel",
+    "nature": "Flamme",
+    "description": "En agitant sa queue, il peut élever le niveau de la température à un degré incroyable.",
+    "attack_slots": [
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_code": "scratch"
+      },
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_code": "growl"
+      },
+      {
+        "level": 9,
+        "gen": 1,
+        "attack_code": "ember"
+      },
+      {
+        "level": 15,
+        "gen": 1,
+        "attack_code": "leer"
+      },
+      {
+        "level": 24,
+        "gen": 1,
+        "attack_code": "rage"
+      },
+      {
+        "level": 33,
+        "gen": 1,
+        "attack_code": "slash"
+      },
+      {
+        "level": 42,
+        "gen": 1,
+        "attack_code": "flameThrower"
+      },
+      {
+        "level": 56,
+        "gen": 1,
+        "attack_code": "fireSpin"
+      }
+    ]
+  },
+  {
+    "no_pokedex": 6,
+    "hp": 78,
+    "atk": 84,
+    "def": 78,
+    "spe": 85,
+    "speed": 100,
+    "location": null,
+    "type1": "fire",
+    "type2": "flight",
+    "size": 170,
+    "weight": 90.5,
+    "name": "Dracaufeu",
+    "nature": "Flamme",
+    "description": "Il peut fondre la roche de son souffle brûlant. Il est souvent la cause de nombreux incendies.",
+    "attack_slots": [
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_code": "scratch"
+      },
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_code": "growl"
+      },
+      {
+        "level": 9,
+        "gen": 1,
+        "attack_code": "ember"
+      },
+      {
+        "level": 15,
+        "gen": 1,
+        "attack_code": "leer"
+      },
+      {
+        "level": 24,
+        "gen": 1,
+        "attack_code": "rage"
+      },
+      {
+        "level": 36,
+        "gen": 1,
+        "attack_code": "slash"
+      },
+      {
+        "level": 46,
+        "gen": 1,
+        "attack_code": "flameThrower"
+      },
+      {
+        "level": 55,
+        "gen": 1,
+        "attack_code": "fireSpin"
+      }
+    ]
+  },
+  {
+    "no_pokedex": 7,
+    "hp": 44,
+    "atk": 48,
+    "def": 65,
+    "spe": 50,
+    "speed": 43,
+    "location": null,
+    "type1": "water",
+    "type2": null,
+    "size": 50,
+    "weight": 9,
+    "name": "Carapuce",
+    "nature": "Minitortue",
+    "description": "Son dos durcit avec l'âge et devient une super carapace. Il peut cracher des jets d'écume.",
     "attack_slots": [
       {
         "level": 1,
@@ -37,7 +397,65 @@
       {
         "level": 15,
         "gen": 1,
-        "attack_code": "waterGun" 
+        "attack_code": "waterGun"
+      },
+      {
+        "level": 22,
+        "gen": 1,
+        "attack_code": "bite"
+      },
+      {
+        "level": 28,
+        "gen": 1,
+        "attack_code": "withdraw"
+      },
+      {
+        "level": 35,
+        "gen": 1,
+        "attack_code": "skullBash"
+      },
+      {
+        "level": 42,
+        "gen": 1,
+        "attack_code": "hydroPump"
+      }
+    ]
+  },
+  {
+    "no_pokedex": 8,
+    "hp": 59,
+    "atk": 63,
+    "def": 80,
+    "spe": 65,
+    "speed": 58,
+    "location": null,
+    "type1": "water",
+    "type2": null,
+    "size": 100,
+    "weight": 22.5,
+    "name": "Carabaffe",
+    "nature": "Tortue",
+    "description": "Il se cache au fond de l'eau pour guetter sa proie. Ses oreilles sont des gouvernails.",
+    "attack_slots": [
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_code": "tackle"
+      },
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_code": "tailWhip"
+      },
+      {
+        "level": 8,
+        "gen": 1,
+        "attack_code": "bubble"
+      },
+      {
+        "level": 15,
+        "gen": 1,
+        "attack_code": "waterGun"
       },
       {
         "level": 24,
@@ -47,17 +465,75 @@
       {
         "level": 31,
         "gen": 1,
-        "attack_code": "withdraw" 
+        "attack_code": "withdraw"
+      },
+      {
+        "level": 39,
+        "gen": 1,
+        "attack_code": "skullBash"
+      },
+      {
+        "level": 47,
+        "gen": 1,
+        "attack_code": "hydroPump"
+      }
+    ]
+  },
+  {
+    "no_pokedex": 9,
+    "hp": 79,
+    "atk": 83,
+    "def": 100,
+    "spe": 85,
+    "speed": 78,
+    "location": null,
+    "type1": "water",
+    "type2": null,
+    "size": 160,
+    "weight": 85.5,
+    "name": "Tortank",
+    "nature": "Carapace",
+    "description": "Un POKÉMON brutal armé de canons hydrauliques. Ses puissants jets d'eau sont dévastateurs.",
+    "attack_slots": [
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_code": "tackle"
+      },
+      {
+        "level": 1,
+        "gen": 1,
+        "attack_code": "tailWhip"
+      },
+      {
+        "level": 8,
+        "gen": 1,
+        "attack_code": "bubble"
+      },
+      {
+        "level": 15,
+        "gen": 1,
+        "attack_code": "waterGun"
+      },
+      {
+        "level": 24,
+        "gen": 1,
+        "attack_code": "bite"
+      },
+      {
+        "level": 31,
+        "gen": 1,
+        "attack_code": "withdraw"
       },
       {
         "level": 42,
         "gen": 1,
-        "attack_code": "skullBash" 
+        "attack_code": "skullBash"
       },
       {
         "level": 52,
         "gen": 1,
-        "attack_code": "hydroPump" 
+        "attack_code": "hydroPump"
       }
     ]
   }
