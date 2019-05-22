@@ -9,8 +9,12 @@ use App\Form\PokemonType;
 use App\Repository\AttackRepository;
 use App\Repository\PokemonRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\AttackSlot;
+use Symfony\Component\Stopwatch\Stopwatch;
+use Psr\Log\LoggerInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * Class PokedexController
@@ -29,14 +33,49 @@ class PokedexController extends AbstractController
     private $attackRepository;
 
     /**
+     * @var LoggerInterface
+     */
+    private $logger;
+
+    /**
+     * @var RequestStack
+     */
+    private $requestStack;
+
+    /**
+     * @var \Symfony\Component\HttpFoundation\Request|null
+     */
+    private $request;
+
+    /**
+     * @var Symfony\Component\Stopwatch\Stopwatch;
+     */
+    private $stopwatch;
+
+    /**
      * PokedexController constructor.
      * @param PokemonRepository $pokemonRepository
      * @param AttackRepository $attackRepository
+     * @param LoggerInterface $logger
+     * @param Request $request
      */
-    public function __construct(PokemonRepository $pokemonRepository, AttackRepository $attackRepository)
+    public function __construct(PokemonRepository $pokemonRepository, AttackRepository $attackRepository, LoggerInterface $logger, RequestStack $requestStack, Stopwatch $stopwatch)
     {
         $this->pokemonRepository = $pokemonRepository;
         $this->attackRepository = $attackRepository;
+        $this->logger = $logger;
+        $this->request = $requestStack->getCurrentRequest();
+        $this->stopwatch = $stopwatch;
+    }
+
+    /**
+     * @param $routeName
+     * @param Request $request
+     * @param Stopwatch $stopwatch
+     */
+    public function logPerformance($routeName){
+        $event = $this->stopwatch->stop($routeName);
+        $this->logger->info('Completed route "'.$routeName.'". Path : '.$this->request->getRequestUri().'. Duration : '.$event->getDuration().' ms, Max Memory Usage : '.$event->getMemory().' octets');
     }
 
     /**
@@ -44,6 +83,11 @@ class PokedexController extends AbstractController
      */
     public function index()
     {
+        $this->stopwatch->start('home');
+
+        // log route name, duration and max memory usage
+        $this->logPerformance('home');
+
         return $this->render('pokedex/index.html.twig', [
             'controller_name' => 'PokedexController',
         ]);
@@ -54,6 +98,8 @@ class PokedexController extends AbstractController
      */
     public function pokemonGrid()
     {
+        $this->stopwatch->start('pokemon_grid');
+
         // use of injected repo
         $pokemons = $this->pokemonRepository->findAllWithDescription();
 
@@ -69,6 +115,9 @@ class PokedexController extends AbstractController
             $prefixes[] = str_pad($pokemon['no_pokedex'], 3, '0', STR_PAD_LEFT);
         }
 
+        // log route name, duration and max memory usage
+        $this->logPerformance('pokemon_grid');
+
         return $this->render('pokedex/pokemon_grid.html.twig', [
             'controller_name' => 'PokedexController',
             'pokemons' => $pokemons,
@@ -81,6 +130,8 @@ class PokedexController extends AbstractController
      */
     public function pokemonDetail($noPokedex)
     {
+        $this->stopwatch->start('pokemon_detail');
+
         $pokemonDetail = $this->pokemonRepository->findDetail($noPokedex);
 
         $slotsRepository = $this->getDoctrine()->getRepository(AttackSlot::class);
@@ -91,6 +142,9 @@ class PokedexController extends AbstractController
                 'pokemon detail infos was not found'
             );
         }
+
+        // log route name, duration and max memory usage
+        $this->logPerformance('pokemon_detail');
 
         return $this->render('pokedex/pokemon_detail.html.twig', [
             'controller_name' => 'PokedexController',
@@ -104,6 +158,8 @@ class PokedexController extends AbstractController
      */
     public function attackList()
     {
+        $this->stopwatch->start('attack_list');
+
         $attacks = $this->attackRepository->findAll();
 
         if (!$attacks) {
@@ -111,6 +167,9 @@ class PokedexController extends AbstractController
                 'No attack found.'
             );
         }
+
+        // log route name, duration and max memory usage
+        $this->logPerformance('attack_list');
 
         return $this->render('pokedex/attack_list.html.twig', [
             'controller_name' => 'PokedexController',
@@ -123,6 +182,8 @@ class PokedexController extends AbstractController
      */
     public function attackDetail($id)
     {
+        $this->stopwatch->start('attack_detail');
+
         $attack = $this->attackRepository->find($id);
         // load related attack slots as well
         $attackSlotRepository = $this->getDoctrine()->getRepository(AttackSlot::class);
@@ -133,6 +194,9 @@ class PokedexController extends AbstractController
 			    'attack of id '.$id.' was not found'
 		    );
         }
+
+        // log route name, duration and max memory usage
+        $this->logPerformance('attack_detail');
 
 	    return $this->render('pokedex/attack_detail.html.twig', [
             'controller_name' => 'PokedexController',
@@ -146,7 +210,13 @@ class PokedexController extends AbstractController
      */
     public function attackAdminPanel()
     {
+        $this->stopwatch->start('admin_attack');
+
         $attacks = $this->attackRepository->findAll();
+
+        // log route name, duration and max memory usage
+        $this->logPerformance('admin_attack');
+
         return $this->render('admin/attack.html.twig', [
             'attacks' => $attacks
         ]);
@@ -157,7 +227,13 @@ class PokedexController extends AbstractController
      */
     public function attackAdminEdit(Attack $attack)
     {
+        $this->stopwatch->start('admin_attack_edit');
+
         $form = $this->createForm(AttackType::class, $attack);
+
+        // log route name, duration and max memory usage
+        $this->logPerformance('admin_attack_edit');
+
         return $this->render('admin/attack.edit.html.twig', array(
             'attack' => $attack,
             'form' => $form->createView()
@@ -169,7 +245,13 @@ class PokedexController extends AbstractController
      */
     public function pokemonAdminPanel()
     {
+        $this->stopwatch->start('admin_pokemon');
+
         $pokemons = $this->pokemonRepository->findAllWithDescription();
+
+        // log route name, duration and max memory usage
+        $this->logPerformance('admin_pokemon');
+
         return $this->render('admin/pokemon.html.twig', [
             'pokemons' => $pokemons
         ]);
@@ -180,7 +262,13 @@ class PokedexController extends AbstractController
      */
     public function pokemonAdminEdit(Pokemon $pokemon)
     {
+        $this->stopwatch->start('admin_pokemon_edit');
+
         $form = $this->createForm(PokemonType::class, $pokemon);
+
+        // log route name, duration and max memory usage
+        $this->logPerformance('admin_pokemon_edit');
+
         return $this->render('admin/pokemon.edit.html.twig', array(
             'pokemon' => $pokemon,
             'form' => $form->createView()
@@ -192,8 +280,14 @@ class PokedexController extends AbstractController
      */
     public function createResource()
     {
+        $this->stopwatch->start('create_resource');
+
+        // log route name, duration and max memory usage
+        $this->logPerformance('create_resource');
+
         return $this->render('pokedex/create_resource.html.twig', [
             'controller_name' => 'PokedexController',
         ]);
     }
 }
+

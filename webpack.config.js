@@ -59,6 +59,13 @@ Encore
 // import webpack config
 var config = Encore.getWebpackConfig();
 
+// disable AMD loader
+config.module.rules.unshift({
+	parser: {
+		amd: false,
+	}
+});
+
 config.watchOptions = { poll: true, ignored: /node_modules/ };
 
 module.exports = config;
