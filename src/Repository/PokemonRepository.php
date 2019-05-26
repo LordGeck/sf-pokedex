@@ -50,7 +50,7 @@ class PokemonRepository extends ServiceEntityRepository
      * @return array
      * For use in pokemon_detail view
      */
-    public function findWithDesc($pokemonNo)
+    public function findDetail($pokemonNo)
     {
         $em = $this->getEntityManager();
         $qb = $em->createQueryBuilder();
@@ -78,3 +78,4 @@ class PokemonRepository extends ServiceEntityRepository
         return $query->getOneOrNullResult();
     }
 }
+

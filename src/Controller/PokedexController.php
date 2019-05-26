@@ -86,9 +86,9 @@ class PokedexController extends AbstractController
         $slotsRepository = $this->getDoctrine()->getRepository(AttackSlot::class);
         $pokemonAttackSlots = $slotsRepository->findByPokemon($noPokedex);
 
-        if(!$attackSlots){
+        if(!$pokemonDetail){
             throw $this->createNotFoundException(
-                'attack slots for pokemon '.$id.' were not found'
+                'pokemon detail infos was not found'
             );
         }
 
