@@ -3,7 +3,9 @@
 namespace App\Form;
 
 use App\Entity\Pokemon;
+use App\Enum\TypeEnum;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -20,8 +22,22 @@ class PokemonType extends AbstractType
             ->add('speed')
             ->add('location')
             ->add('image')
-            ->add('type1')
-            ->add('type2')
+            ->add('type1', 'choice', array(
+                'required' => true,
+                'choices' => TypeEnum::getAvailableTypes(),
+                'choices_as_values' => true,
+                'choice_label' => function($choice) {
+                    return TypeEnum::getTypeName($choice);
+                },
+            ))
+            ->add('type2', 'choice', array(
+                'required' => true,
+                'choices' => TypeEnum::getAvailableTypes(),
+                'choices_as_values' => true,
+                'choice_label' => function($choice) {
+                    return TypeEnum::getTypeName($choice);
+                },
+            ))
             ->add('size')
             ->add('weight')
             ->add('name')
@@ -34,6 +50,7 @@ class PokemonType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Pokemon::class,
+            'translation_domain' => 'forms'
         ]);
-    }
+    }   
 }

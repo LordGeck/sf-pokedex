@@ -193,6 +193,10 @@ class Attack
 
     public function setType(string $type): self
     {
+        if (!in_array($type, TypeEnum::getAvailableTypes())) {
+            throw new \InvalidArgumentException("Invalid type");
+        }
+        
         $this->type = $type;
 
         return $this;

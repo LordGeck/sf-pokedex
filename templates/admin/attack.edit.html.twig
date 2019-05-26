@@ -5,7 +5,47 @@
         <h1>Editer attaque {{ attack.name }}</h1>
 
         {{ form_start(form) }}
+            <div class="row">
+                <div class="col-md-8">{{ form_row(form.name) }}</div>
+                <p class="col-md-4">Nom de l'attaque.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-8">{{ form_row(form.type) }}</div>
+                <p class="col-md-4">Type élémentaire.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-8">{{ form_row(form.code) }}</div>
+                <p class="col-md-4">Clé de nommage de l'attaque.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-8">{{ form_row(form.description) }}</div>
+                <p class="col-md-4">Description de l'effet.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-8">{{ form_row(form.powerPoints) }}</div>
+                <p class="col-md-4">Nombre d'utilisation.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-8">{{ form_row(form.accuracy) }}</div>
+                <p class="col-md-4">Chance de toucher en %.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-8">{{ form_row(form.power) }}</div>
+                <p class="col-md-4">Puissance.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-8">{{ form_row(form.ct) }}</div>
+                <p class="col-md-4">Nom de la CT contenant l'attaque.</p>
+            </div>
+            <div class="row">
+                <p class="col-md-8">L'attaque est-elle dans une CS ?</p>
+                <div class="col-md-4">{{ form_row(form.is_cs) }}</div>
+            </div>
+            
+            {{ form_widget(form) }}
+            <button class="btn btn-primary">Editer</button>
         {{ form_end(form) }}
+
 
     </div>
 {% endblock %}
