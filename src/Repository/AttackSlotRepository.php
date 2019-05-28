@@ -67,4 +67,3 @@ class AttackSlotRepository extends ServiceEntityRepository
         return $query->getResult();
     }
 }
-

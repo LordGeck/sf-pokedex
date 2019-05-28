@@ -5,6 +5,8 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Enum\TypeEnum;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PokemonRepository")
@@ -254,6 +256,9 @@ class Pokemon
 
     public function setType1(string $type1): self
     {
+        if (!in_array($type1, TypeEnum::getAvailableTypes())) {
+            throw new \InvalidArgumentException("Invalid type");
+        }
         $this->type1 = $type1;
 
         return $this;
@@ -266,6 +271,10 @@ class Pokemon
 
     public function setType2(?string $type2): self
     {
+        if (!in_array($type2, TypeEnum::getAvailableTypes())) {
+            throw new \InvalidArgumentException("Invalid type");
+        }
+        
         $this->type2 = $type2;
 
         return $this;

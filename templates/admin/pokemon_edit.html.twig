@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container mt-4">
+        <h1>Editer {{ pokemon.name }}</h1>
+        {{ include('admin/pokemon_form.html.twig', { button: 'Editer'}) }}        
+    </div>
+
+{% endblock %}
+
+{% block title %}
+    Editer {{ pokemon.name }}
+{% endblock %}

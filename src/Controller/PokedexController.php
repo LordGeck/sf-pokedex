@@ -15,6 +15,7 @@ use App\Entity\AttackSlot;
 use Symfony\Component\Stopwatch\Stopwatch;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Doctrine\Common\Persistence\ObjectManager;
 
 /**
  * Class PokedexController
@@ -48,9 +49,14 @@ class PokedexController extends AbstractController
     private $request;
 
     /**
-     * @var Symfony\Component\Stopwatch\Stopwatch;
+     * @var Symfony\Component\Stopwatch\Stopwatch
      */
     private $stopwatch;
+
+    /**
+     * @var Doctrine\Common\Persistence\ObjectManager
+     */
+    private $om;
 
     /**
      * PokedexController constructor.
@@ -59,13 +65,14 @@ class PokedexController extends AbstractController
      * @param LoggerInterface $logger
      * @param Request $request
      */
-    public function __construct(PokemonRepository $pokemonRepository, AttackRepository $attackRepository, LoggerInterface $logger, RequestStack $requestStack, Stopwatch $stopwatch)
+    public function __construct(PokemonRepository $pokemonRepository, AttackRepository $attackRepository, LoggerInterface $logger, RequestStack $requestStack, Stopwatch $stopwatch, ObjectManager $om)
     {
         $this->pokemonRepository = $pokemonRepository;
         $this->attackRepository = $attackRepository;
         $this->logger = $logger;
         $this->request = $requestStack->getCurrentRequest();
         $this->stopwatch = $stopwatch;
+        $this->om = $om;
     }
 
     /**
@@ -223,21 +230,74 @@ class PokedexController extends AbstractController
     }
 
     /**
-     * @Route("/admin/attack/{id}", name="admin_attack_edit", requirements={"id":"\d+"})
+     * @Route("/admin/attack/create", name="admin_attack_create")
+     */
+    public function attackAdminCreate()
+    {
+        $this->stopwatch->start('admin_attack_create');
+
+        $attack = new Attack();
+        $form = $this->createForm(AttackType::class, $attack);
+        $form->handleRequest($this->request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->om->persist($attack);
+            $this->om->flush();
+            return $this->redirectToRoute('admin_attack');
+        }
+
+        // log route name, duration and max memory usage
+        $this->logPerformance('admin_attack_create');
+
+        return $this->render('admin/attack_create.html.twig', array(
+            'attack' => $attack,
+            'form' => $form->createView()
+        ));
+    }
+
+    /**
+     * @Route("/admin/attack/{id}", name="admin_attack_edit", requirements={"id":"\d+"}, methods={"GET","POST"})
      */
     public function attackAdminEdit(Attack $attack)
     {
         $this->stopwatch->start('admin_attack_edit');
 
         $form = $this->createForm(AttackType::class, $attack);
+        $form->handleRequest($this->request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->om->flush();
+            return $this->redirectToRoute('admin_attack');
+        }
+
 
         // log route name, duration and max memory usage
         $this->logPerformance('admin_attack_edit');
 
-        return $this->render('admin/attack.edit.html.twig', array(
+        return $this->render('admin/attack_edit.html.twig', array(
             'attack' => $attack,
             'form' => $form->createView()
         ));
+    }
+
+    /**
+     * @Route("/admin/attack/{id}", name="admin_attack_delete", requirements={"id":"\d+"}, methods={"DELETE"})
+     * @param Attack $attack
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function attackAdminDelete(Attack $attack)
+    {
+        $this->stopwatch->start('admin_attack_delete');
+
+        if ($this->isCsrfTokenValid('delete' . $attack->getId(), $this->request->get('_token'))) {
+            $this->om->remove($attack);
+            $this->om->flush();
+        }
+
+        // log route name, duration and max memory usage
+        $this->logPerformance('admin_attack_delete');
+
+        return $this->redirectToRoute('admin_attack');
     }
 
     /**
@@ -258,36 +318,75 @@ class PokedexController extends AbstractController
     }
 
     /**
-     * @Route("/admin/pokemon/{id}", name="admin_pokemon_edit", requirements={"id":"\d+"})
+     * @Route("/admin/pokemon/create", name="admin_pokemon_create")
      */
-    public function pokemonAdminEdit(Pokemon $pokemon)
+    public function pokemonAdminCreate()
     {
-        $this->stopwatch->start('admin_pokemon_edit');
+        $this->stopwatch->start('admin_pokemon_create');
 
+        $pokemon = new Pokemon();
         $form = $this->createForm(PokemonType::class, $pokemon);
+        $form->handleRequest($this->request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->om->persist($pokemon);
+            $this->om->flush();
+            return $this->redirectToRoute('admin_pokemon');
+        }
 
         // log route name, duration and max memory usage
-        $this->logPerformance('admin_pokemon_edit');
+        $this->logPerformance('admin_pokemon_create');
 
-        return $this->render('admin/pokemon.edit.html.twig', array(
+        return $this->render('admin/pokemon_create.html.twig', array(
             'pokemon' => $pokemon,
             'form' => $form->createView()
         ));
     }
 
     /**
-     * @Route("/create", name="create_resource")
+     * @Route("/admin/pokemon/{id}", name="admin_pokemon_edit", requirements={"id":"\d+"}, methods={"GET","POST"})
+     * @param Pokemon $pokemon
      */
-    public function createResource()
+    public function pokemonAdminEdit(Pokemon $pokemon)
     {
-        $this->stopwatch->start('create_resource');
+        $this->stopwatch->start('admin_pokemon_edit');
+
+        $form = $this->createForm(PokemonType::class, $pokemon);
+        $form->handleRequest($this->request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->om->flush();
+            return $this->redirectToRoute('admin_pokemon');
+        }
 
         // log route name, duration and max memory usage
-        $this->logPerformance('create_resource');
+        $this->logPerformance('admin_pokemon_edit');
 
-        return $this->render('pokedex/create_resource.html.twig', [
-            'controller_name' => 'PokedexController',
-        ]);
+        return $this->render('admin/pokemon_edit.html.twig', array(
+            'pokemon' => $pokemon,
+            'form' => $form->createView()
+        ));
     }
+
+    /**
+     * @Route("/admin/pokemon/{id}", name="admin_pokemon_delete", requirements={"id":"\d+"}, methods={"DELETE"})
+     * @param Pokemon $pokemon
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function pokemonAdminDelete(Pokemon $pokemon)
+    {
+        $this->stopwatch->start('admin_pokemon_delete');
+
+        if ($this->isCsrfTokenValid('delete' . $pokemon->getId(), $this->request->get('_token'))) {
+            $this->om->remove($pokemon);
+            $this->om->flush();
+        }
+
+        // log route name, duration and max memory usage
+        $this->logPerformance('admin_pokemon_delete');
+
+        return $this->redirectToRoute('admin_pokemon');
+    }
+    
 }
 

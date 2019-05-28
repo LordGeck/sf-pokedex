@@ -1,0 +1,45 @@
+{{ form_start(form) }}
+            <div class="row">
+                <div class="col-md-8">{{ form_row(form.name) }}</div>
+                <p class="col-md-4">Nom du pokémon.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-8">{{ form_row(form.no_pokedex) }}</div>
+                <p class="col-md-4">Numéro pokédex national.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4">{{ form_row(form.type1) }}</div>
+                <div class="col-md-4">{{ form_row(form.type2) }}</div>
+                <p class="col-md-4">Les types élémentaires du pokemon.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-8">{{ form_row(form.description) }}</div>
+                <p class="col-md-4">Description première génération.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-8">{{ form_row(form.nature) }}</div>
+                <p class="col-md-4">Espèce du pokémon.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4">{{ form_row(form.size) }}</div>
+                <div class="col-md-4">{{ form_row(form.weight) }}</div>
+                <p class="col-md-4">Taille en cm et poids en Kg.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-8">{{ form_row(form.image) }}</div>
+                <p class="col-md-4">Image TO DO.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-8">{{ form_row(form.location) }}</div>
+                <p class="col-md-4">Lieux de capture.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-2">{{ form_row(form.hp) }}</div>
+                <div class="col-md-2">{{ form_row(form.atk) }}</div>
+                <div class="col-md-2">{{ form_row(form.def) }}</div>
+                <div class="col-md-2">{{ form_row(form.spe) }}</div>
+                <div class="col-md-2">{{ form_row(form.speed) }}</div>
+            </div>
+            {{ form_widget(form) }}
+            <button class="btn btn-primary">{{ button|default('Enregistrer')}}</button>
+        {{ form_end(form) }}

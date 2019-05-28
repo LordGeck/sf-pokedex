@@ -3,11 +3,12 @@
 {% block body %}
 
     <div class="container mt-4">
-        <h2>Editer {{ pokemon.name }}</h2>
+        <h1>Créer une attaque</h1>
+        {{ include('admin/attack_form.html.twig', { button: 'Créer'}) }}
     </div>
-
+    
 {% endblock %}
 
 {% block title %}
-    {{ pokemon.name }} - édition
+    Créer attaque
 {% endblock %}

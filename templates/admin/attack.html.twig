@@ -12,6 +12,10 @@
     <div class="container mt-4">
         <h1>Gérer les attaques</h1>
 
+        <div class="create_button">
+            <a href="{{ path('admin_attack_create') }}" class="btn btn-primary">Créer une attaque</a>
+        </div>
+
         <table class="table table-striped">
             <thead>
             <tr>
@@ -25,6 +29,11 @@
                     <td>{{ attack.name }}</td>
                     <td>
                         <a href="{{ path('admin_attack_edit', {id: attack.id}) }}" class="btn btn-secondary">Editer</a>
+                        <form method="post" action="{{ path('admin_attack_delete', {id: attack.id}) }}" style="display: inline-block" onsubmit="return confirm ('Etes-vous sur ?')">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ attack.id) }}">
+                            <button class="btn btn-danger">Supprimer</button>
+                        </form>
                     </td>
                 </tr>
             {% endfor %}
