@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container mt-4">
+        <h1>Editer attaque {{ attack.name }}</h1>
+        {{ include('admin/attack_form.html.twig', { button: 'Editer'}) }}
+    </div>
+    
+{% endblock %}
+
+{% block title %}
+    Editer attaque {{ attack.name }}
+{% endblock %}

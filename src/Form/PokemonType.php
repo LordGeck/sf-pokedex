@@ -22,22 +22,20 @@ class PokemonType extends AbstractType
             ->add('speed')
             ->add('location')
             ->add('image')
-            ->add('type1', 'choice', array(
+            ->add('type1', ChoiceType::class, [
                 'required' => true,
                 'choices' => TypeEnum::getAvailableTypes(),
-                'choices_as_values' => true,
                 'choice_label' => function($choice) {
                     return TypeEnum::getTypeName($choice);
                 },
-            ))
-            ->add('type2', 'choice', array(
+            ])
+            ->add('type2', ChoiceType::class, [
                 'required' => true,
                 'choices' => TypeEnum::getAvailableTypes(),
-                'choices_as_values' => true,
                 'choice_label' => function($choice) {
                     return TypeEnum::getTypeName($choice);
                 },
-            ))
+            ])
             ->add('size')
             ->add('weight')
             ->add('name')

@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Attack;
 use App\Enum\TypeEnum;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -14,14 +15,13 @@ class AttackType extends AbstractType
     {
         $builder
             ->add('is_cs')
-            ->add('type', 'choice', array(
+            ->add('type', ChoiceType::class, [
                 'required' => true,
                 'choices' => TypeEnum::getAvailableTypes(),
-                'choices_as_values' => true,
                 'choice_label' => function($choice) {
                     return TypeEnum::getTypeName($choice);
                 },
-            ))
+            ])
             ->add('accuracy')
             ->add('power')
             ->add('ct')

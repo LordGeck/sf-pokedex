@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container mt-4">
+        <h1>Créer une attaque</h1>
+        {{ include('admin/attack_form.html.twig', { button: 'Créer'}) }}
+    </div>
+    
+{% endblock %}
+
+{% block title %}
+    Créer attaque
+{% endblock %}

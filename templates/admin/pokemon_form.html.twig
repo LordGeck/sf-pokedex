@@ -1,10 +1,4 @@
-{% extends 'base.html.twig' %}
-
-{% block body %}
-
-    <div class="container mt-4">
-        <h2>Editer {{ pokemon.name }}</h2>
-        {{ form_start(form) }}
+{{ form_start(form) }}
             <div class="row">
                 <div class="col-md-8">{{ form_row(form.name) }}</div>
                 <p class="col-md-4">Nom du pokémon.</p>
@@ -47,13 +41,5 @@
                 <div class="col-md-2">{{ form_row(form.speed) }}</div>
             </div>
             {{ form_widget(form) }}
-            <button class="btn btn-primary">Editer</button>
+            <button class="btn btn-primary">{{ button|default('Enregistrer')}}</button>
         {{ form_end(form) }}
-
-    </div>
-
-{% endblock %}
-
-{% block title %}
-    {{ pokemon.name }} - édition
-{% endblock %}

@@ -12,6 +12,10 @@
     <div class="container mt-4">
         <h1>Gérer les pokémon</h1>
 
+        <div class="create_button">
+            <a href="{{ path('admin_pokemon_create') }}" class="btn btn-primary">Créer un pokemon</a>
+        </div>
+
         <table class="table table-striped">
             <thead>
             <tr>
@@ -24,7 +28,12 @@
                 <tr>
                     <td>{{ pokemon.name }}</td>
                     <td>
-                        <a href="{{ path('admin_pokemon_edit', {'id': pokemon.id}) }}" class="btn btn-secondary">Editer</a>
+                        <a href="{{ path('admin_pokemon_edit', {id: pokemon.id}) }}" class="btn btn-secondary">Editer</a>
+                        <form method="post" action="{{ path('admin_pokemon_delete', {id: pokemon.id}) }}" style="display: inline-block" onsubmit="return confirm ('Etes-vous sur ?')">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ pokemon.id) }}">
+                            <button class="btn btn-danger">Supprimer</button>
+                        </form>
                     </td>
                 </tr>
             {% endfor %}
