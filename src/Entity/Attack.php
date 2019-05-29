@@ -70,6 +70,16 @@ class Attack
      */
     private $powerPoints = null;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $createdAt = null;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $editedAt = null;
+
     public function __construct()
     {
         $this->attackSlots = new ArrayCollection();
@@ -196,6 +206,7 @@ class Attack
     public function setType(string $type): self
     {
         if (!in_array($type, TypeEnum::getAvailableTypes())) {
+            echo "$type\n";
             throw new \InvalidArgumentException("Invalid type");
         }
         
@@ -257,4 +268,27 @@ class Attack
         $this->code = $code;
         return $this;
     }
+
+    public function getCreatedAt(): ?\DateTime
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(): self
+    {
+        $this->createdAt = new \DateTime();
+        return $this;
+    }
+
+    public function getEditedAt(): ?\DateTime
+    {
+        return $this->editedAt;
+    }
+
+    public function setEditedAt(): self
+    {
+        $this->editedAt = new \DateTime();
+        return $this;
+    }
 }
+

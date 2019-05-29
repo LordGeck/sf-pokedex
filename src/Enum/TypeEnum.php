@@ -12,7 +12,7 @@ abstract class TypeEnum
     const ICE = "ice";
     const NORMAL = "normal";
     const DRAGON = "dragon";
-    const FLIGHT = "flight";
+    const FLIGHT = "flying";
     const ELECTRIC = "electric";
     const PSYCHIC = "psychic";
     const FIGHTING = "fighting";
@@ -71,7 +71,8 @@ abstract class TypeEnum
             self::FIGHTING,
             self::GHOST,
             self::ROCK,
-            self::GROUND
+            self::GROUND,
+            null
         ];
     }
 }

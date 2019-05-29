@@ -237,6 +237,7 @@ class PokedexController extends AbstractController
         $this->stopwatch->start('admin_attack_create');
 
         $attack = new Attack();
+        $attack->setCreatedAt();
         $form = $this->createForm(AttackType::class, $attack);
         $form->handleRequest($this->request);
 
@@ -266,6 +267,7 @@ class PokedexController extends AbstractController
         $form->handleRequest($this->request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $attack->setEditedAt();
             $this->om->flush();
             return $this->redirectToRoute('admin_attack');
         }
@@ -329,6 +331,7 @@ class PokedexController extends AbstractController
         $form->handleRequest($this->request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $pokemon->setCreatedAt();
             $this->om->persist($pokemon);
             $this->om->flush();
             return $this->redirectToRoute('admin_pokemon');
@@ -355,6 +358,7 @@ class PokedexController extends AbstractController
         $form->handleRequest($this->request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $pokemon->setEditedAt();
             $this->om->flush();
             return $this->redirectToRoute('admin_pokemon');
         }

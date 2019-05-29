@@ -13,6 +13,9 @@ class PokemonType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $available1 = TypeEnum::getAvailableTypes();
+        $available1 = array_diff($available1, array(null));
+        
         $builder
             ->add('no_pokedex')
             ->add('hp')
@@ -24,7 +27,7 @@ class PokemonType extends AbstractType
             ->add('image')
             ->add('type1', ChoiceType::class, [
                 'required' => true,
-                'choices' => TypeEnum::getAvailableTypes(),
+                'choices' => $available1,
                 'choice_label' => function($choice) {
                     return TypeEnum::getTypeName($choice);
                 },
