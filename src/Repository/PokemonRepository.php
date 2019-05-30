@@ -38,7 +38,9 @@ class PokemonRepository extends ServiceEntityRepository
             'p.size',
             'p.weight',
             'p.description',
-            'p.nature'
+            'p.nature',
+            'p.createdAt',
+            'p.editedAt'
         )
             ->from('App\Entity\Pokemon', 'p');
 

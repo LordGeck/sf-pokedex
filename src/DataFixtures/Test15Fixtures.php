@@ -49,6 +49,7 @@ class Test15Fixtures extends Fixture
             $attack->setCode($attacksArray[$i]['code']);
             $attack->setDescription($attacksArray[$i]['description']);
             $attack->setPowerPoints($attacksArray[$i]['pp']);
+            $attack->setCreatedAt();
 
             array_push($attackObjects, $attack);
         }
@@ -73,8 +74,8 @@ class Test15Fixtures extends Fixture
             }
             $pokemon->setSize($pokemonArray[$i]['size']);
             $pokemon->setWeight($pokemonArray[$i]['weight']);
-
             $pokemon->setDescription($pokemonArray[$i]['description']);
+            $pokemon->setCreatedAt();
 
             for ($j = 0; $j < sizeof($pokemonArray[$i]['attack_slots']); $j++) {
                 $attackSlot = new AttackSlot();

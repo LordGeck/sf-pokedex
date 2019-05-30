@@ -36,7 +36,10 @@ class PokemonType extends AbstractType
                 'required' => true,
                 'choices' => TypeEnum::getAvailableTypes(),
                 'choice_label' => function($choice) {
-                    return TypeEnum::getTypeName($choice);
+                    if($choice === null)
+                        return 'Aucun type';
+                    else
+                        return TypeEnum::getTypeName($choice);
                 },
             ])
             ->add('size')

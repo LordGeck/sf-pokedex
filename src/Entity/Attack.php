@@ -71,7 +71,7 @@ class Attack
     private $powerPoints = null;
 
     /**
-     * @ORM\Column(type="datetime", nullable=true)
+     * @ORM\Column(type="datetime")
      */
     private $createdAt = null;
 

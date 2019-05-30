@@ -37,10 +37,8 @@
                     </td>
                     <td>
                         {% if pokemon.editedAt is defined and pokemon.editedAt is not null %}
-                            COUCOU
                             édité le {{ pokemon.editedAt | date("m/d/y H:i") }}
                         {% elseif pokemon.createdAt is defined and pokemon.createdAt is not null %}
-                            COUCOU EDITE
                             créé le {{ pokemon.createdAt | date("m/d/y H:i") }}
                         {% endif %}
                     </td>
