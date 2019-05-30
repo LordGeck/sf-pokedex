@@ -1,6 +1,6 @@
 # TODO list
-Garald : separate SCSS files by page, card system for pokemon grid
-Prime : consistent entities and real fixture (9 first pkmns), joins for correct data set in each page
+Garald : separate SCSS files by page, add flash message on deletion, use regex for capital letter names
+Prime : consistent entities and real fixture (9 first pkmns), joins for correct data set in each page, float (size ans weight fields) don't work properly in the database
 
 Find DELETE strategy for table rows
 

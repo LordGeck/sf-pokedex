@@ -6,10 +6,20 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Enum\TypeEnum;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PokemonRepository")
+ * @UniqueEntity(
+ *  fields="no_pokedex",
+ *  message="Ce numero pokedex existe déjà." 
+ * )
+ * @UniqueEntity(
+ *  fields="name",
+ *  message="Ce pokemon existe déjà." 
+ * )
  */
 class Pokemon
 {
@@ -22,51 +32,63 @@ class Pokemon
 
     /**
      * @ORM\Column(type="integer", unique=true)
+     * @Assert\Type("integer")
      */
     private $no_pokedex;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Type("integer")
      */
     private $hp;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Type("integer")
      */
     private $atk;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Type("integer")
      */
     private $def;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\Type("integer")
      */
     private $spe;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Type("integer")
      */
     private $speed;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Type("string")
      */
     private $location;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Type("string")
      */
     private $image;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Type("string")
+     * @Assert\Choice(callback = {"App\Enum\TypeEnum", "getAvailableTypes"})
      */
     private $type1;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Type("string")
+     * @Assert\Choice(callback = {"App\Enum\TypeEnum", "getAvailableTypes"})
      */
     private $type2;
 
@@ -88,16 +110,19 @@ class Pokemon
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Type("string")
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Type("string")
      */
     private $nature;
 
     /**
      * @ORM\Column(type="string", length=510)
+     * @Assert\Type("string")
      */
     private $description;
 

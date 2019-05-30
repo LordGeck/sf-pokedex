@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AttackSlotRepository")
@@ -18,11 +20,14 @@ class AttackSlot
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Type("integer")
+     * @Assert\LessThanOrEqual(100)
      */
     private $level;
 
     /**
      * @ORM\Column(type="smallint")
+     * @Assert\Type("integer")
      */
     private $gen;
 
