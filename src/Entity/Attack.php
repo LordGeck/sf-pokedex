@@ -6,10 +6,20 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Enum\TypeEnum;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AttackRepository")
+ * @UniqueEntity(
+ *  fields="name",
+ *  message="Cette attaque existe déjà." 
+ * )
+ * @UniqueEntity(
+ *  fields="code",
+ *  message="Ce code d'attaque existe déjà."
+ * )
  */
 class Attack
 {
@@ -22,26 +32,37 @@ class Attack
 
     /**
      * @ORM\Column(type="boolean")
+     * @Assert\Type("bool")
      */
     private $is_cs;
 
     /**
      * @ORM\Column(type="string", length=255, columnDefinition="ENUM('grass', 'bug', 'poison', 'fire', 'water', 'ice', 'normal', 'dragon', 'flying','electric', 'psychic', 'fighting', 'ghost', 'rock', 'ground')")
+     * @Assert\Type("string")
+     * @Assert\Choice(callback = {"App\Enum\TypeEnum", "getAvailableTypes"})
      */
     private $type;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Type("integer")
+     * @Assert\LessThanOrEqual(100)
      */
     private $accuracy;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Type("integer")
      */
     private $power;
 
     /**
      * @ORM\Column(type="string", length=6, nullable=true)
+     * @Assert\Type("string")
+     * @Assert\Length(
+     *   max = 6,
+     *   maxMessage = "Ne dépassez pas 6 caractères."
+     * ) 
      */
     private $ct;
 
@@ -52,21 +73,26 @@ class Attack
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Type("string")
      */
     private $name;
 
     /**
      * @ORM\Column(name="code", type="string", length=255)
+     * @Assert\Type("string")
      */
     private $code;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\Type("string")
      */
     private $description = "";
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
+     * @Assert\Type("integer")
+     * @Assert\LessThanOrEqual(40) 
      */
     private $powerPoints = null;
 
