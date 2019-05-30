@@ -101,6 +101,16 @@ class Pokemon
      */
     private $description;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $editedAt;
+
     public function __construct()
     {
         $this->attackSlots = new ArrayCollection();
@@ -346,4 +356,27 @@ class Pokemon
 
         return $this;
     }
+
+    public function getCreatedAt(): ?\Datetime
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(): self
+    {
+        $this->createdAt = new \Datetime;
+        return $this;
+    }
+
+    public function getEditedAt(): ?\Datetime
+    {
+        return $this->editedAt;
+    }
+
+    public function setEditedAt(): self
+    {
+        $this->editedAt = new \Datetime;
+        return $this;
+    }
 }
+

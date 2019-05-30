@@ -35,6 +35,13 @@
                             <button class="btn btn-danger">Supprimer</button>
                         </form>
                     </td>
+                    <td>
+                        {% if attack.editedAt is defined and attack.editedAt is not null %}
+                            édité le {{ attack.editedAt | date("m/d/y H:i") }}
+                        {% elseif attack.createdAt is defined and attack.createdAt is not null %}
+                            créé le {{ attack.editedAt | date("m/d/y H:i") }}
+                        {% endif %}
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>

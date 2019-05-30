@@ -7,7 +7,7 @@
     "spe": 65,
     "speed": 45,
     "location": null,
-    "type1": "leaf",
+    "type1": "grass",
     "type2": "poison",
     "size": 70,
     "weight": 6.9,
@@ -70,7 +70,7 @@
     "spe": 80,
     "speed": 60,
     "location": null,
-    "type1": "leaf",
+    "type1": "grass",
     "type2": "poison",
     "size": 100,
     "weight": 13,
@@ -133,7 +133,7 @@
     "spe": 100,
     "speed": 80,
     "location": null,
-    "type1": "leaf",
+    "type1": "grass",
     "type2": "poison",
     "size": 200,
     "weight": 100,
@@ -314,7 +314,7 @@
     "speed": 100,
     "location": null,
     "type1": "fire",
-    "type2": "flight",
+    "type2": "flying",
     "size": 170,
     "weight": 90.5,
     "name": "Dracaufeu",
@@ -538,3 +538,4 @@
     ]
   }
 ]
+

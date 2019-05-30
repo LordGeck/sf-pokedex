@@ -8,16 +8,20 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use App\Form\Utils;
 
 class AttackType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $availableTypes = TypeEnum::getAvailableTypes();
+        $availableTypes = array_diff($availableTypes, array(null));
+        
         $builder
             ->add('is_cs')
             ->add('type', ChoiceType::class, [
                 'required' => true,
-                'choices' => TypeEnum::getAvailableTypes(),
+                'choices' => $availableTypes,
                 'choice_label' => function($choice) {
                     return TypeEnum::getTypeName($choice);
                 },
