@@ -93,12 +93,12 @@ class Pokemon
     private $type2;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="decimal", precision=10, scale=1)
      */
     private $size;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="decimal", precision=10, scale=1)
      */
     private $weight;
 

@@ -3,6 +3,7 @@
 {% block body %}
 
     <div class="container mt-4">
+        {{ dump(pokemon) }}
         <h1>Editer {{ pokemon.name }}</h1>
         {{ include('admin/pokemon_form.html.twig', { button: 'Editer'}) }}        
     </div>

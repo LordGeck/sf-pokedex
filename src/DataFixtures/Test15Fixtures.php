@@ -7,6 +7,7 @@ use App\Entity\AttackSlot;
 use App\Entity\Pokemon;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
+use App\Entity\Utils;
 
 class Test15Fixtures extends Fixture
 {
@@ -72,8 +73,11 @@ class Test15Fixtures extends Fixture
             if (isset($pokemonArray[$i]['type2'])) {
                 $pokemon->setType2($pokemonArray[$i]['type2']);
             }
-            $pokemon->setSize($pokemonArray[$i]['size']);
-            $pokemon->setWeight($pokemonArray[$i]['weight']);
+
+            // adapt size and weight to locale
+            $pokemon->setSize(Utils::floatNumberLocaleParse($pokemonArray[$i]['size']));
+            $pokemon->setWeight(Utils::floatNumberLocaleParse($pokemonArray[$i]['weight']));
+
             $pokemon->setDescription($pokemonArray[$i]['description']);
             $pokemon->setCreatedAt();
 
