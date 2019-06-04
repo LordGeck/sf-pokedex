@@ -74,9 +74,14 @@ class Test15Fixtures extends Fixture
                 $pokemon->setType2($pokemonArray[$i]['type2']);
             }
 
-            // adapt size and weight to locale
-            $pokemon->setSize(Utils::floatNumberLocaleParse($pokemonArray[$i]['size']));
-            $pokemon->setWeight(Utils::floatNumberLocaleParse($pokemonArray[$i]['weight']));
+            // test size and weight values
+            echo "Size : \n";
+            echo $pokemonArray[$i]['size'];
+            echo "Weight : \n";
+            echo $pokemonArray[$i]['weight'];
+
+            $pokemon->setSize($pokemonArray[$i]['size']);
+            $pokemon->setWeight($pokemonArray[$i]['weight']);
 
             $pokemon->setDescription($pokemonArray[$i]['description']);
             $pokemon->setCreatedAt();

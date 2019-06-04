@@ -7,6 +7,8 @@
 
 // any CSS you require will output into a single css file (app.css in this case)
 import '../css/global.scss';
+import '../css/admin_attack.scss';
+import '../css/admin_attack_edit.scss';
 
 global.jQuery = require('jquery');
 const $ = require('jquery');
