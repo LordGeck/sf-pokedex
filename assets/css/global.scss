@@ -29,18 +29,16 @@ body{
   .card-pokemon{
     width: 10rem;
   }
-
-  // remove up/down buttons from numeric input field
 }
 
-// does not work w/ bootstrap now
-form input[type=integer]::-webkit-inner-spin-button,
-form input[type=integer]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      margin: 0;
-  }
+// // does not work w/ bootstrap now
+// form input[type=integer]::-webkit-inner-spin-button,
+// form input[type=integer]::-webkit-outer-spin-button {
+//       -webkit-appearance: none;
+//       -moz-appearance: none;
+//       appearance: none;
+//       margin: 0;
+//   }
 
 footer{
   text-align: center;

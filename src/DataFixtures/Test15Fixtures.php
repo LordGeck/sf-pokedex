@@ -74,14 +74,8 @@ class Test15Fixtures extends Fixture
                 $pokemon->setType2($pokemonArray[$i]['type2']);
             }
 
-            // test size and weight values
-            echo "Size : \n";
-            echo $pokemonArray[$i]['size'];
-            echo "Weight : \n";
-            echo $pokemonArray[$i]['weight'];
-
-            $pokemon->setSize($pokemonArray[$i]['size']);
-            $pokemon->setWeight($pokemonArray[$i]['weight']);
+            $pokemon->setSize($pokemonArray[$i]['size'] * 100);
+            $pokemon->setWeight($pokemonArray[$i]['weight'] * 1000);
 
             $pokemon->setDescription($pokemonArray[$i]['description']);
             $pokemon->setCreatedAt();
