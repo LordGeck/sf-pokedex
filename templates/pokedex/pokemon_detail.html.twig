@@ -42,7 +42,11 @@
 
     <section id="general">
         <h3>Infos générales</h3>
-        <div class="card">Pokémon {{ pokemon.nature }}, poids {{ pokemon.weight }}, taille {{ pokemon.size }}</div>
+        {# set variables for weight and size formatting #}
+        {% set dispWeight = pokemon.weight / 1000 %}
+        {% set dispSize = pokemon.size / 100 %}
+
+        <div class="card">Pokémon {{ pokemon.nature }}, poids {{ dispWeight | number_format(1, ',', ' ') }} Kg, taille {{ dispSize | number_format(1, ',', ' ') }} m</div>
         <span>Type 1 : <button type="button"
                                class="btn btn-{{ pokemon.type1 }} btn-xs btn-dark">{{ pokemon.type1 | upper }}</button> Type 2 : <button
                     type="button"

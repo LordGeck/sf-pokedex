@@ -2,6 +2,8 @@
 Garald : separate SCSS files by page, add flash message on deletion, use regex for capital letter names
 Prime : consistent entities and real fixture (9 first pkmns), joins for correct data set in each page, float (size ans weight fields) don't work properly in the database
 
+Update : added php intl module to make number formatting work
+
 Find DELETE strategy for table rows
 
 Manage enums with Doctrine : https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/cookbook/mysql-enums.html
