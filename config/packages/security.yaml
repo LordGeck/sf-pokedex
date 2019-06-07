@@ -11,6 +11,9 @@ security:
             security: false
         main:
             anonymous: true
+            logout:
+                path: /logout
+                target: /
 
             # activate different ways to authenticate
 
@@ -26,3 +29,8 @@ security:
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+
+    encoders:
+        App\Entity\User:
+            algorithm: bcrypt
+            cost: 12
