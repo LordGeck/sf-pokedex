@@ -10,27 +10,14 @@
 
 {% block body %}
 
-    {% if error %}
-
-        <div class="alert alert-danger">
-            {{ error.messageKey }}
-        </div>
-
-    {% endif %}
-
-    <div class="container mt-6">
         <form action="{{ path('login') }}" method="post">
-            <div class="form-group">
                 <label for="username">Nom d'utilisateur</label>
-                <input type="text" id="username" name"_username" class="form-control" value="{{ last_username }}">
-            </div>
-            <div class="form-group">
+                <input type="text" id="username" name="_username" class="form-control" value="toto">
+
                 <label for="password">Mot de passe</label>
-                <input type="text" id="password" name"_password" class="form-control">
-            </div>
+                <input type="text" id="password" name="_password" class="form-control">
             <button type="submit" class="btn btn-primary">Se connecter</button> 
         </form>
-    </div>
 
 {% endblock %}
 
