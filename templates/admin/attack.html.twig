@@ -12,6 +12,12 @@
     <div class="container mt-4">
         <h1>Gérer les attaques</h1>
 
+        {% for message in app.flashes('success') %}
+            <div class='alert alert-success'>
+                {{ message }}
+            </div>
+        {% endfor %}
+
         <div class="create_button">
             <a href="{{ path('admin_attack_create') }}" class="btn btn-primary">Créer une attaque</a>
         </div>
