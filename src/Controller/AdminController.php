@@ -109,6 +109,7 @@ class AdminController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->om->persist($attack);
             $this->om->flush();
+            $this->addFlash('success', 'Créé avec succès');
             return $this->redirectToRoute('admin_attack');
         }
 
@@ -134,6 +135,7 @@ class AdminController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $attack->setEditedAt();
             $this->om->flush();
+            $this->addFlash('success', 'Modifié avec succès');
             return $this->redirectToRoute('admin_attack');
         }
 
@@ -159,6 +161,7 @@ class AdminController extends AbstractController
         if ($this->isCsrfTokenValid('delete' . $attack->getId(), $this->request->get('_token'))) {
             $this->om->remove($attack);
             $this->om->flush();
+            $this->addFlash('success', 'Supprimé avec succès');
         }
 
         // log route name, duration and max memory usage
@@ -199,6 +202,7 @@ class AdminController extends AbstractController
             $pokemon->setCreatedAt();
             $this->om->persist($pokemon);
             $this->om->flush();
+            $this->addFlash('success', 'Créé avec succès');
             return $this->redirectToRoute('admin_pokemon');
         }
 
@@ -225,6 +229,7 @@ class AdminController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $pokemon->setEditedAt();
             $this->om->flush();
+            $this->addFlash('success', 'Modifié avec succès');
             return $this->redirectToRoute('admin_pokemon');
         }
 
@@ -249,6 +254,7 @@ class AdminController extends AbstractController
         if ($this->isCsrfTokenValid('delete' . $pokemon->getId(), $this->request->get('_token'))) {
             $this->om->remove($pokemon);
             $this->om->flush();
+            $this->addFlash('success', 'Supprimé avec succès');
         }
 
         // log route name, duration and max memory usage
