@@ -1,5 +1,5 @@
 # TODO list
-Garald : separate SCSS files by page, add flash message on deletion, use regex for capital letter names
+Garald : separate SCSS files by page, add flash message on deletion, use regex for capital letter names, add group to fixtures
 Prime : consistent entities and real fixture (9 first pkmns), joins for correct data set in each page, float (size ans weight fields) don't work properly in the database
 
 Update : added php intl module to make number formatting work

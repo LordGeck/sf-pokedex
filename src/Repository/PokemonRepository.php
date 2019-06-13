@@ -4,6 +4,8 @@ namespace App\Repository;
 
 use App\Entity\Pokemon as Pokemon;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query;
+use Doctrine\ORM\QueryBuilder;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
@@ -22,12 +24,28 @@ class PokemonRepository extends ServiceEntityRepository
     /**
      * @return array
      */
-    public function findAllWithDescription()
+    public function findAllWithDescription(): array
+    {
+        return $this->findWithDescription()->getQuery()->getResult();
+    }
+
+    /**
+     * @return Query
+     */
+    public function findAllWithDescriptionQuery(): Query
+    {
+        return $this->findWithDescription()->getQuery();
+    }
+
+    /**
+     * @return QueryBuilder
+     */
+    private function findWithDescription(): QueryBuilder
     {
         $em = $this->getEntityManager();
 
         $qb = $em->createQueryBuilder();
-        $qb->select(
+        return $qb->select(
             'p.id',
             'p.no_pokedex',
             'p.location',
@@ -43,9 +61,6 @@ class PokemonRepository extends ServiceEntityRepository
             'p.editedAt'
         )
             ->from('App\Entity\Pokemon', 'p');
-
-        $query = $qb->getQuery();
-        return $query->getResult();
     }
 
     /**

@@ -17,6 +17,7 @@ use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Doctrine\Common\Persistence\ObjectManager;
 use App\Controller\Utils;
+use Knp\Component\Pager\PaginatorInterface;
 
 /**
  * Class PokedexController
@@ -94,12 +95,16 @@ class PokedexController extends AbstractController
     /**
      * @Route("/pokemon", name="pokemon_grid")
      */
-    public function pokemonGrid()
+    public function pokemonGrid(PaginatorInterface $paginator)
     {
         $this->stopwatch->start('pokemon_grid');
 
         // use of injected repo
-        $pokemons = $this->pokemonRepository->findAllWithDescription();
+        $pokemons = $paginator->paginate(
+            $this->pokemonRepository->findAllWithDescriptionQuery(),
+            $this->request->query->getInt('page', 1),
+            3
+        );
 
         if (!$pokemons) {
             throw $this->createNotFoundException(
