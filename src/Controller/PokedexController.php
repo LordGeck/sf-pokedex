@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Attack;
 use App\Entity\Pokemon;
+use App\Entity\PokemonSearch;
 use App\Form\AttackType;
 use App\Form\PokemonType;
 use App\Repository\AttackRepository;
@@ -18,6 +19,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use Doctrine\Common\Persistence\ObjectManager;
 use App\Controller\Utils;
 use Knp\Component\Pager\PaginatorInterface;
+use App\Form\PokemonSearchType;
 
 /**
  * Class PokedexController
@@ -99,9 +101,13 @@ class PokedexController extends AbstractController
     {
         $this->stopwatch->start('pokemon_grid');
 
+        $search = new PokemonSearch();
+        $form = $this->createForm(PokemonSearchType::class, $search);
+        $form->handleRequest($this->request);
+
         // use of injected repo
         $pokemons = $paginator->paginate(
-            $this->pokemonRepository->findAllWithDescriptionQuery(),
+            $this->pokemonRepository->findAllWithDescriptionQuery($search),
             $this->request->query->getInt('page', 1),
             3
         );
@@ -124,7 +130,8 @@ class PokedexController extends AbstractController
         return $this->render('pokedex/pokemon_grid.html.twig', [
             'controller_name' => 'PokedexController',
             'pokemons' => $pokemons,
-            'prefixes' => $prefixes
+            'prefixes' => $prefixes,
+            'form' => $form->createView()
         ]);
     }
 

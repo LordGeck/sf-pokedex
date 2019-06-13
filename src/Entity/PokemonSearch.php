@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 class PokemonSearch
 {
     /**
@@ -11,11 +13,15 @@ class PokemonSearch
 
     /**
      * @var string|null
+     * @Assert\Type("string")
+     * @Assert\Choice(callback = {"App\Enum\TypeEnum", "getAvailableTypes"})
      */
     private $type1;
 
     /**
      * @var string|null
+     * @Assert\Type("string")
+     * @Assert\Choice(callback = {"App\Enum\TypeEnum", "getAvailableTypes"})
      */
     private $type2;
 

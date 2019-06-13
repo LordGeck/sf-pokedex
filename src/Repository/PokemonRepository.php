@@ -7,6 +7,7 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\Query;
 use Doctrine\ORM\QueryBuilder;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use App\Form\PokemonSearch;
 
 /**
  * @method Pokemon|null find($id, $lockMode = null, $lockVersion = null)
@@ -30,11 +31,27 @@ class PokemonRepository extends ServiceEntityRepository
     }
 
     /**
+     * @param PokemonSearch $search
      * @return Query
      */
-    public function findAllWithDescriptionQuery(): Query
+    public function findAllWithDescriptionQuery(PokemonSearch $search): Query
     {
-        return $this->findWithDescription()->getQuery();
+        $queryBuilder = $this->findWithDescription();
+
+        if($search->getName()){
+            $queryBuilder = $queryBuilder->andWhere('p.name = :name')
+                ->setParameter('name', $search->getName());
+        }
+        if($search->getType1()){
+            $queryBuilder = $queryBuilder->andWhere('p.type1 = :type1')
+                ->setParameter('type1', $search->getType1());
+        }
+        if($search->getType2()){
+            $queryBuilder = $queryBuilder->andWhere('p.type2 = :type2')
+                ->setParameter('type2', $search->getType2());
+        }
+
+        return $query->getQuery();
     }
 
     /**
