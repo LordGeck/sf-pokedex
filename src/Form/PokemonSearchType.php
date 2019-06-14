@@ -8,32 +8,45 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use App\Enum\TypeEnum;
 
 class PokemonSearchType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        // build correct set of label => value for choice fields
+        $typeChoices = [];
+        $typeLabels = TypeEnum::getTypeLabels();
+        $availableTypes = TypeEnum::getAvailableTypes(false);
+        for($i=0; $i<sizeof($typeLabels); $i++)
+        {
+            $typeChoices[$typeLabels[$i]] = $availableTypes[$i];
+        }
+
         $builder
-            ->add('Nom', TextareaType::class, [
+            ->add('name', TextareaType::class, [
                 'required' => false,
                 'label' => false,
                 'attr' => [
                     'placeholder' => 'Nom du pokémon'
                 ]
             ])
-            ->add('Type1', TextareaType::class, [
+            ->add('type1', ChoiceType::class, [
                 'required' => false,
                 'label' => false,
                 'attr' => [
-                    'placeholder' => 'Type 1 du pokémon'
-                ]
+                    'placeholder' => 'Sélectionnez type 1'
+                ],
+                'choices' => $typeChoices
             ])
-            ->add('Type2', TextareaType::class, [
+            ->add('type2', ChoiceType::class, [
                 'required' => false,
                 'label' => false,
                 'attr' => [
                     'placeholder' => 'Type 2 du pokémon'
-                ]
+                ],
+                'choices' => $typeChoices
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Rechercher'

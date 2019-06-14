@@ -52,11 +52,12 @@ abstract class TypeEnum
     }
 
     /**
+     * @param bool $nullWanted
      * @return array<string>
      */
-    public static function getAvailableTypes()
+    public static function getAvailableTypes($nullWanted = true)
     {
-        return [
+        $types = [
             self::GRASS,
             self::BUG,
             self::POISON,
@@ -71,8 +72,35 @@ abstract class TypeEnum
             self::FIGHTING,
             self::GHOST,
             self::ROCK,
-            self::GROUND,
-            null
+            self::GROUND
+        ];
+        if($nullWanted)
+            $types[] = null;
+
+        return $types;
+    }
+
+    /**
+     * @param string $lang
+     * @return array<string>
+     */
+    public static function getTypeLabels($lang = 'fr'){
+        return [
+            'Plante',
+            'Insecte',
+            'Poison',
+            'Feu',
+            'Eau',
+            'Glace',
+            'Normal',
+            'Dragon',
+            'Vol',
+            'Electrik',
+            'Psy',
+            'Combat',
+            'Spectre',
+            'Roche',
+            'Sol'
         ];
     }
 }

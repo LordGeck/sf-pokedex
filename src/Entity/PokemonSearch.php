@@ -28,7 +28,7 @@ class PokemonSearch
     /**
      * @return string|null
      */
-    public function getName()
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -46,7 +46,7 @@ class PokemonSearch
     /**
      * @return string|null
      */
-    public function getType1(): string
+    public function getType1(): ?string
     {
         return $this->type1;
     }
@@ -64,7 +64,7 @@ class PokemonSearch
     /**
      * @return string|null
      */
-    public function getType2(): string
+    public function getType2(): ?string
     {
         return $this->type2;
     }

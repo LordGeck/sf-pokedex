@@ -7,7 +7,7 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\Query;
 use Doctrine\ORM\QueryBuilder;
 use Symfony\Bridge\Doctrine\RegistryInterface;
-use App\Form\PokemonSearch;
+use App\Entity\PokemonSearch;
 
 /**
  * @method Pokemon|null find($id, $lockMode = null, $lockVersion = null)
@@ -51,7 +51,7 @@ class PokemonRepository extends ServiceEntityRepository
                 ->setParameter('type2', $search->getType2());
         }
 
-        return $query->getQuery();
+        return $queryBuilder->getQuery();
     }
 
     /**
