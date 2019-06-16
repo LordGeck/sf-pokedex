@@ -9,7 +9,28 @@
 
 {% block body %}
 
-    {% dump pokemons %}
+    <div class="jumbotron">
+        <div class="container">
+            {{ form_start(form) }}
+                <div class="form-row align-items-end">
+                    <div class="col">
+                        {{ form_row(form.name) }}
+                    </div>
+                    <div class="col">
+                        {{ form_row(form.type1) }}
+                    </div>
+                    <div class="col">
+                        {{ form_row(form.type2) }}
+                    </div>
+                    <!-- <div class="col"> -->
+                    <!--     <div class="form-group"> -->
+                    <!--         <button class="btn btn-primary">Rechercher</button> -->
+                    <!--     </div> -->
+                    <!-- </div> -->
+                </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
 
     <h1>Grille des Pokémon</h1>
 
