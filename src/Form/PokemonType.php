@@ -24,6 +24,9 @@ class PokemonType extends AbstractType
             ->add('spe')
             ->add('speed')
             ->add('location')
+            ->add('imageFile', FileType::class, [
+                'required' => false
+            ])
             ->add('image')
             ->add('type1', ChoiceType::class, [
                 'required' => true,

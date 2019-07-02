@@ -6,6 +6,8 @@
 	{% block stylesheets %}
 		{# 'app' is the first argument to addEntry in webpack.config.js #}
 		{{ encore_entry_link_tags('app') }}
+        
+        <!-- <link rel="stylesheet" href="{{ asset('build/app.css') }}"> -->
 
 		<link rel="stylesheet" href="/build/app.css">
 
@@ -33,6 +35,8 @@
 			<li class="nav-item">
 				<a class="nav-link" href="{{ path('attack_list') }}">Liste attaques</a>
 			</li>
+
+            {% if app.user %}
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Gérer
@@ -42,32 +46,28 @@
                     <a class="dropdown-item" href="{{ path('admin_attack') }}">Gérer Attaques</a>
 				</div>
 			</li>
+		    {% endif %}
 
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Mon compte
-				</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="#">Connexion</a>
-					<a class="dropdown-item" href="#">Mon compte</a>
-					<a class="dropdown-item" href="#">Déconnexion</a>
-				</div>
-			</li>
 		</ul>
 		{# Searchbar #}
-		<form class="form-inline my-2 my-lg-0">
+		<form class="form-inline my-2 my-lg-0 navbar-src">
 			<input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Rechercher">
 			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
 		</form>
 
-        {% if app.user %}
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="{{ path('logout') }}" class="nav-link">Déconnexion</a>
-                </li>
-            </ul>
-        {% endif %}
-
+            {% if app.user %}
+	        <div class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle btn btn-outline-primary" href="#" role="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Mon compte
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="#">Mon compte</a>
+                    <a class="dropdown-item" href="{{ path('logout') }}">Déconnexion</a>
+				</div>
+			</div>
+                {% else %}
+                    <a class="nav-link btn btn-outline-primary" href="{{ path('login') }}">Connexion</a>
+            {% endif %}
 	</div>
 </nav>
 

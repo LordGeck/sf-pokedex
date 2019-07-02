@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Enum\TypeEnum;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 
 /**
@@ -20,6 +21,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  *  fields="name",
  *  message="Ce pokemon existe déjà." 
  * )
+ * @Vich\Uploadable()
  */
 class Pokemon
 {
@@ -29,6 +31,18 @@ class Pokemon
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @var string|null
+     * @ORM\Column(type="string", length=255)
+     */
+    private $fileName;
+
+    /**
+     * @var File|null
+     * @Vich\UploadableField(mapping="pokemon_image", fileNameProperty="fileName")
+     */
+    private $imageFile;
 
     /**
      * @ORM\Column(type="integer", unique=true)
@@ -139,6 +153,42 @@ class Pokemon
     public function __construct()
     {
         $this->attackSlots = new ArrayCollection();
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getFileName(): ?string
+    {
+        return $this->fileName;
+    }
+
+    /**
+     * @param null|string $fileName
+     * @return Pokemon
+     */
+    public function setFileName(?string $fileName): Pokemon
+    {
+        $this->fileName = $fileName;
+        return $this;
+    }
+
+    /**
+     * @return null|File
+     */
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    /**
+     * @param null|File $imageFile
+     * @return Pokemon
+     */
+    public function setImageFile(?File $imageFile): Pokemon
+    {
+        $this->imageFile = $imageFile;
+        return $this;
     }
 
     /**
