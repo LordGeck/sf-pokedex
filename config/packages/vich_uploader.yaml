@@ -10,3 +10,4 @@ vich_uploader:
         pokemon_image:
             uri_prefix: /images/pokemon
             upload_destination: '%kernel.project_dir%/public/images/pokemon'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer

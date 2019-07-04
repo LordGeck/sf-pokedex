@@ -15,8 +15,15 @@
 
     <div class="figure-center">
         <figure class="figure text-center">
-            <img class="figure-img img-fluid rounded" alt="Image of {{ pokemon.name }}"
-                 src="{{ asset('build/assets/images/artworks/placeholder250x250.png') }}">
+
+            {% if pokemon.fileName %}
+                <img class="card-img" src="{{ vich_uploader_asset(pokemon, 'imageFile', 'App\\Entity\\Pokemon') | imagine_filter('medium') }}" alt="card-img-top">
+                {% else %}
+                <img src="{{ 'images/pokemon/empty.png' | imagine_filter('medium') }}" alt="card-img-top">
+            {% endif %}
+
+            <!-- <img class="figure-img img-fluid rounded" alt="Image of {{ pokemon.name }}" -->
+                 <!-- src="{{ asset('build/assets/images/artworks/placeholder250x250.png') }}"> -->
             <figcaption class="figure-caption">Artwork de {{ pokemon.name }}</figcaption>
         </figure>
     </div>

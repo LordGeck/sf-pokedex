@@ -9,6 +9,7 @@ use App\Enum\TypeEnum;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 
 /**
@@ -40,6 +41,11 @@ class Pokemon
 
     /**
      * @var File|null
+     * @Assert\File(
+     *      maxSize = "1024k",
+     *      mimeTypes = { "image/png" },
+     *      mimeTypesMessage = "Please upload valid PNG"
+     * )
      * @Vich\UploadableField(mapping="pokemon_image", fileNameProperty="fileName")
      */
     private $imageFile;
