@@ -36,7 +36,6 @@ Encore
 	.addEntry('admin_attack_edit', './assets/js/admin_attack_edit.js')
 	.addStyleEntry('css/app', './assets/css/global.scss')
 
-
 	// will require an extra script tag for runtime.js
 	// but, you probably want this, unless you're building a single-page app
 	.enableSingleRuntimeChunk()

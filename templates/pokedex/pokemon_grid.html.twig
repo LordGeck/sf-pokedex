@@ -43,10 +43,18 @@
 
             <div class="col-1.5">
                 <div class="card text-center border-0 card-pokemon">
+
+
                     <div class="card-body">
                         <h5 class="card-title">{{ pokemon.name }}</h5>
-                        {% set imgUrl = 'build/assets/images/artworks/' ~ prefixes[prefix_index] ~ '.png' %}
-                        <img src="{{ asset(imgUrl) }}" alt="Image de {{ pokemon.name }}" height="64", width="64">
+                            {% if pokemon.fileName %}
+                                <img src="{{ vich_uploader_asset(pokemon, 'imageFile', 'App\\Entity\\Pokemon') | imagine_filter('thumb') }}" alt="card-img-top">
+                                {% else %}
+                                <img src="{{ 'images/pokemon/empty.png' | imagine_filter('thumb') }}" alt="card-img-top">
+                            {% endif %}
+
+                        <!-- {% set imgUrl = 'build/assets/images/artworks/' ~ prefixes[prefix_index] ~ '.png' %} -->
+                        <!-- <img src="{{ asset(imgUrl) }}" alt="Image de {{ pokemon.name }}" height="64", width="64"> -->
                         <a href="{{ path('pokemon_detail', {'noPokedex': pokemon.no_pokedex}) }}" class="btn btn-outline-primary">Voir
                             les infos</a>
                     </div>

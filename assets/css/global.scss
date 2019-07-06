@@ -3,15 +3,26 @@
 $primary: darken(#428bca, 20%);
 
 @import "~bootstrap/scss/bootstrap";
-//@import "~bootstrap/scss/_carousel";
 
+@import "admin_attack.scss";
+@import "admin_attack_edit.scss";
+@import "admin_pokemon.scss";
+@import "admin_pokemon_edit.scss";
+@import "attack_detail.scss";
+@import "attack_list.scss";
+@import "home.scss";
+@import "pokemon_detail.scss";
+@import "pokemon_grid.scss";
 
 body{
   width: 80%;
   margin: auto;
 
   nav{
-
+    .navbar-src {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
   }
 
   h1{

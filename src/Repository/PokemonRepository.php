@@ -75,7 +75,8 @@ class PokemonRepository extends ServiceEntityRepository
             'p.description',
             'p.nature',
             'p.createdAt',
-            'p.editedAt'
+            'p.editedAt',
+            'p.fileName'
         )
             ->from('App\Entity\Pokemon', 'p');
     }
@@ -102,7 +103,8 @@ class PokemonRepository extends ServiceEntityRepository
                     'p.type1',
                     'p.type2',
                     'p.description',
-                    'p.nature'
+                    'p.nature',
+                    'p.fileName'
         )
             ->from('App\Entity\Pokemon', 'p')
             ->andWhere('p.no_pokedex = :pokemonNo')

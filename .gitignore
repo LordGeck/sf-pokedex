@@ -42,3 +42,10 @@ composer.lock
 
 # vim specific
 /tags
+
+###> liip/imagine-bundle ###
+/public/media/cache/
+###< liip/imagine-bundle ###
+#
+# images
+/public/images/pokemon/

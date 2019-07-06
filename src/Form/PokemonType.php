@@ -6,6 +6,7 @@ use App\Entity\Pokemon;
 use App\Enum\TypeEnum;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -24,6 +25,9 @@ class PokemonType extends AbstractType
             ->add('spe')
             ->add('speed')
             ->add('location')
+            ->add('imageFile', FileType::class, [
+                'required' => false
+            ])
             ->add('image')
             ->add('type1', ChoiceType::class, [
                 'required' => true,
