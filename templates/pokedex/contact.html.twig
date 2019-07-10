@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+
+{% block stylesheets %}
+	{{ parent() }}
+	{{ encore_entry_link_tags('home') }}
+{% endblock %}
+
+{% block body %}
+    {% for success_msg in app.flashes('success') %}
+        <div class='alert alert-success'>
+            {{ success_msg }}
+        </div>
+    {% endfor %}
+    {% for failure_msg in app.flashes('failure') %}
+        <div class='alert alert-danger'>
+            {{ failure_msg }}
+        </div>
+    {% endfor %}
+
+    <h1>Nous envoyer un mail</h1>
+
+    <div id="contactForm" class="container mt-6">
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col">{{ form_row(form.firstName) }}</div>
+            <div class="col">{{ form_row(form.lastName) }}</div>
+        </div>
+        <div class="row">
+            <div class="col">{{ form_row(form.phone) }}</div>
+            <div class="col">{{ form_row(form.email) }}</div>
+        </div>
+        {{ form_rest(form) }}
+        <div class="form-group">
+            <button class="btn btn-primary">Envoyer</button>
+        </div>
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('home') }}
+{% endblock %}

@@ -5,10 +5,13 @@ namespace App\Controller;
 use App\Entity\Attack;
 use App\Entity\Pokemon;
 use App\Entity\PokemonSearch;
+use App\Entity\Contact;
 use App\Form\AttackType;
 use App\Form\PokemonType;
+use App\Form\ContactType;
 use App\Repository\AttackRepository;
 use App\Repository\PokemonRepository;
+use App\Notification\ContactNotification;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -212,6 +215,33 @@ class PokedexController extends AbstractController
             'controller_name' => 'PokedexController',
             'attack' => $attack,
             'attackSlots' => $attackSlots
+        ]);
+    }
+
+    /**
+     * @Route("/contact", name="contact")
+     */
+    public function contact(ContactNotification $notification)
+    {
+        $this->stopwatch->start('contact');
+
+        $contact = new Contact();
+        $form = $this->createForm(ContactType::class, $contact);
+        $form->handleRequest($this->request);
+
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                $notification->notify($contact);
+                $this->addFlash('success', 'Votre email a bien été envoyé');
+            }
+            else {
+                $this->addFlash('failure', 'Informations non valides, l\'email n\'a pas pu être envoyé');
+            }
+            return $this->redirectToRoute('contact');
+        }
+
+        return $this->render('pokedex/contact.html.twig', [
+            'form' => $form->createView()
         ]);
     }
 }
