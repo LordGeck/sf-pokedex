@@ -112,7 +112,7 @@ class PokedexController extends AbstractController
         $pokemons = $paginator->paginate(
             $this->pokemonRepository->findAllWithDescriptionQuery($search),
             $this->request->query->getInt('page', 1),
-            3
+            15
         );
 
         if (!$pokemons) {

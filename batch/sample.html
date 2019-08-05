@@ -1,0 +1,713 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><script type="text/javascript">
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function ChangeUrl(sel) {
+	if (sel.selectedIndex != 0) {
+		var newurl = sel.options[sel.selectedIndex].value+'&mode=Rouge';
+		location.href = newurl;
+	} else { alert('Veuillez choisir une destination.'); }
+}
+</script>
+
+	<link href="CSS/style.css" rel="stylesheet" type="text/css" media="screen">
+	<!--[if IE]>
+		<link href="CSS/bars.css" rel="stylesheet" type="text/css" media="screen">
+	<![endif]-->
+	<link href="CSS/pages.css" rel="stylesheet" type="text/css" media="screen">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>Pok&eacute;dex - Pok&eacute;lord - Florizarre</title>
+</head>
+
+<body>
+<div style="margin: auto; text-align: center;">
+<div id="consoles">Cliquez sur la console qui correspond
+	au jeu &agrave; utiliser pour changer de mode:</div><br>
+<a href="?mode=Bleu&amp;act=3&amp;page=5"><img class="console" src="Images/Consoles/bleu.gif" alt="Pok&eacute;mon Bleu" width="47" height="47"></a>
+<a href="?mode=Rouge&amp;act=3&amp;page=5"><img class="console" id="console_cour" src="Images/Consoles/rouge.gif" alt="Pok&eacute;mon Rouge" width="47" height="47"></a>
+<a href="?mode=Jaune&amp;act=3&amp;page=5"><img class="console" src="Images/Consoles/jaune.gif" alt="Pok&eacute;mon Jaune" width="47" height="47"></a>
+<a href="?mode=Or&amp;act=3&amp;page=5"><img class="console" src="Images/Consoles/or.gif" alt="Pok&eacute;mon Or" width="47" height="47"></a>
+<a href="?mode=Argent&amp;act=3&amp;page=5"><img class="console" src="Images/Consoles/argent.gif" alt="Pok&eacute;mon Argent" width="47" height="47"></a>
+<a href="?mode=Crystal&amp;act=3&amp;page=5"><img class="console" src="Images/Consoles/crystal.gif" alt="Pok&eacute;mon Crystal" width="47" height="47"></a>
+<a href="?mode=Rubis&amp;act=3&amp;page=5"><img class="console" src="Images/Consoles/rubis.gif" alt="Pok&eacute;mon Rubis" width="47" height="47"></a>
+<a href="?mode=Saphir&amp;act=3&amp;page=5"><img class="console" src="Images/Consoles/saphir.gif" alt="Pok&eacute;mon Saphir" width="47" height="47"></a>
+<a href="?mode=Rouge-Feu&amp;act=3&amp;page=5"><img class="console" src="Images/Consoles/rouge-feu.gif" alt="Pok&eacute;mon Rouge-Feu" width="47" height="47"></a>
+<a href="?mode=Vert-Feuille&amp;act=3&amp;page=5"><img class="console" src="Images/Consoles/vert-feuille.gif" alt="Pok&eacute;mon Vert-Feuille" width="47" height="47"></a>
+<table width="100%" cellpadding="0" cellspacing="0">
+	<tr><td style="width: 30%; margin: auto; vertical-align: middle">
+		<p style="font-weight: bold; color: #CCF;">Accès direct</p>
+	<form name="formList" action="?" method="get"><p>
+		<select class="sel" onChange="ChangeUrl(this)" size="1" name="UrlKanto">
+			<option>-#001 -> #151 (Kanto)-</option>
+			<option value="?act=1&amp;page=5">#001 - Bulbizarre</option>
+<option value="?act=2&amp;page=5">#002 - Herbizarre</option>
+<option value="?act=3&amp;page=5">#003 - Florizarre</option>
+<option value="?act=4&amp;page=5">#004 - Salameche</option>
+<option value="?act=5&amp;page=5">#005 - Reptincel</option>
+<option value="?act=6&amp;page=5">#006 - Dracaufeu</option>
+<option value="?act=7&amp;page=5">#007 - Carapuce</option>
+<option value="?act=8&amp;page=5">#008 - Carabaffe</option>
+<option value="?act=9&amp;page=5">#009 - Tortank</option>
+<option value="?act=10&amp;page=5">#010 - Chenipan</option>
+<option value="?act=11&amp;page=5">#011 - Chrysacier</option>
+<option value="?act=12&amp;page=5">#012 - Papilusion</option>
+<option value="?act=13&amp;page=5">#013 - Aspicot</option>
+<option value="?act=14&amp;page=5">#014 - Coconfort</option>
+<option value="?act=15&amp;page=5">#015 - Dardargnan</option>
+<option value="?act=16&amp;page=5">#016 - Roucool</option>
+<option value="?act=17&amp;page=5">#017 - Roucoups</option>
+<option value="?act=18&amp;page=5">#018 - Roucarnage</option>
+<option value="?act=19&amp;page=5">#019 - Rattata</option>
+<option value="?act=20&amp;page=5">#020 - Rattatac</option>
+<option value="?act=21&amp;page=5">#021 - Piafabec</option>
+<option value="?act=22&amp;page=5">#022 - Rapasdepic</option>
+<option value="?act=23&amp;page=5">#023 - Abo</option>
+<option value="?act=24&amp;page=5">#024 - Arbok</option>
+<option value="?act=25&amp;page=5">#025 - Pikachu</option>
+<option value="?act=26&amp;page=5">#026 - Raichu</option>
+<option value="?act=27&amp;page=5">#027 - Sabelette</option>
+<option value="?act=28&amp;page=5">#028 - Sablaireau</option>
+<option value="?act=29&amp;page=5">#029 - Nidoran</option>
+<option value="?act=30&amp;page=5">#030 - Nidorina</option>
+<option value="?act=31&amp;page=5">#031 - Nidoqueen</option>
+<option value="?act=32&amp;page=5">#032 - Nidoran</option>
+<option value="?act=33&amp;page=5">#033 - Nidorino</option>
+<option value="?act=34&amp;page=5">#034 - Nidoking</option>
+<option value="?act=35&amp;page=5">#035 - Melofee</option>
+<option value="?act=36&amp;page=5">#036 - Melodelfe</option>
+<option value="?act=37&amp;page=5">#037 - Goupix</option>
+<option value="?act=38&amp;page=5">#038 - Feunard</option>
+<option value="?act=39&amp;page=5">#039 - Rondoudou</option>
+<option value="?act=40&amp;page=5">#040 - Grodoudou</option>
+<option value="?act=41&amp;page=5">#041 - Nosferapti</option>
+<option value="?act=42&amp;page=5">#042 - Nosferalto</option>
+<option value="?act=43&amp;page=5">#043 - Mystherbe</option>
+<option value="?act=44&amp;page=5">#044 - Ortide</option>
+<option value="?act=45&amp;page=5">#045 - Rafflesia</option>
+<option value="?act=46&amp;page=5">#046 - Paras</option>
+<option value="?act=47&amp;page=5">#047 - Parasect</option>
+<option value="?act=48&amp;page=5">#048 - Mimitoss</option>
+<option value="?act=49&amp;page=5">#049 - Aeromite</option>
+<option value="?act=50&amp;page=5">#050 - Taupiqueur</option>
+<option value="?act=51&amp;page=5">#051 - Triopikeur</option>
+<option value="?act=52&amp;page=5">#052 - Miaouss</option>
+<option value="?act=53&amp;page=5">#053 - Persian</option>
+<option value="?act=54&amp;page=5">#054 - Psykokwak</option>
+<option value="?act=55&amp;page=5">#055 - Akwakwak</option>
+<option value="?act=56&amp;page=5">#056 - Ferosinge</option>
+<option value="?act=57&amp;page=5">#057 - Colossinge</option>
+<option value="?act=58&amp;page=5">#058 - Caninos</option>
+<option value="?act=59&amp;page=5">#059 - Arcanin</option>
+<option value="?act=60&amp;page=5">#060 - Ptitard</option>
+<option value="?act=61&amp;page=5">#061 - Tetarte</option>
+<option value="?act=62&amp;page=5">#062 - Tartard</option>
+<option value="?act=63&amp;page=5">#063 - Abra</option>
+<option value="?act=64&amp;page=5">#064 - Kadabra</option>
+<option value="?act=65&amp;page=5">#065 - Alakazam</option>
+<option value="?act=66&amp;page=5">#066 - Machoc</option>
+<option value="?act=67&amp;page=5">#067 - Machopeur</option>
+<option value="?act=68&amp;page=5">#068 - Mackogneur</option>
+<option value="?act=69&amp;page=5">#069 - Chetiflor</option>
+<option value="?act=70&amp;page=5">#070 - Boustiflor</option>
+<option value="?act=71&amp;page=5">#071 - Empiflor</option>
+<option value="?act=72&amp;page=5">#072 - Tentacool</option>
+<option value="?act=73&amp;page=5">#073 - Tentacruel</option>
+<option value="?act=74&amp;page=5">#074 - Racaillou</option>
+<option value="?act=75&amp;page=5">#075 - Gravalanch</option>
+<option value="?act=76&amp;page=5">#076 - Grolem</option>
+<option value="?act=77&amp;page=5">#077 - Ponyta</option>
+<option value="?act=78&amp;page=5">#078 - Galopa</option>
+<option value="?act=79&amp;page=5">#079 - Ramoloss</option>
+<option value="?act=80&amp;page=5">#080 - Flagadoss</option>
+<option value="?act=81&amp;page=5">#081 - Magneti</option>
+<option value="?act=82&amp;page=5">#082 - Magneton</option>
+<option value="?act=83&amp;page=5">#083 - Canarticho</option>
+<option value="?act=84&amp;page=5">#084 - Doduo</option>
+<option value="?act=85&amp;page=5">#085 - Dodrio</option>
+<option value="?act=86&amp;page=5">#086 - Otaria</option>
+<option value="?act=87&amp;page=5">#087 - Lamantine</option>
+<option value="?act=88&amp;page=5">#088 - Tadmorv</option>
+<option value="?act=89&amp;page=5">#089 - Grotadmorv</option>
+<option value="?act=90&amp;page=5">#090 - Kokiyas</option>
+<option value="?act=91&amp;page=5">#091 - Crustabri</option>
+<option value="?act=92&amp;page=5">#092 - Fantominus</option>
+<option value="?act=93&amp;page=5">#093 - Spectrum</option>
+<option value="?act=94&amp;page=5">#094 - Ectoplasma</option>
+<option value="?act=95&amp;page=5">#095 - Onix</option>
+<option value="?act=96&amp;page=5">#096 - Soporifik</option>
+<option value="?act=97&amp;page=5">#097 - Hypnomade</option>
+<option value="?act=98&amp;page=5">#098 - Krabby</option>
+<option value="?act=99&amp;page=5">#099 - Krabboss</option>
+<option value="?act=100&amp;page=5">#100 - Voltorbe</option>
+<option value="?act=101&amp;page=5">#101 - Electrode</option>
+<option value="?act=102&amp;page=5">#102 - Noeunoeuf</option>
+<option value="?act=103&amp;page=5">#103 - Noadkoko</option>
+<option value="?act=104&amp;page=5">#104 - Osselait</option>
+<option value="?act=105&amp;page=5">#105 - Ossatueur</option>
+<option value="?act=106&amp;page=5">#106 - Kicklee</option>
+<option value="?act=107&amp;page=5">#107 - Tygnon</option>
+<option value="?act=108&amp;page=5">#108 - Excelangue</option>
+<option value="?act=109&amp;page=5">#109 - Smogo</option>
+<option value="?act=110&amp;page=5">#110 - Smogogo</option>
+<option value="?act=111&amp;page=5">#111 - Rhinocorne</option>
+<option value="?act=112&amp;page=5">#112 - Rhinoferos</option>
+<option value="?act=113&amp;page=5">#113 - Leveinard</option>
+<option value="?act=114&amp;page=5">#114 - Saquedeneu</option>
+<option value="?act=115&amp;page=5">#115 - Kangourex</option>
+<option value="?act=116&amp;page=5">#116 - Hypotrempe</option>
+<option value="?act=117&amp;page=5">#117 - Hypocean</option>
+<option value="?act=118&amp;page=5">#118 - Poissirene</option>
+<option value="?act=119&amp;page=5">#119 - Poissoroy</option>
+<option value="?act=120&amp;page=5">#120 - Stari</option>
+<option value="?act=121&amp;page=5">#121 - Staross</option>
+<option value="?act=122&amp;page=5">#122 - M. mime</option>
+<option value="?act=123&amp;page=5">#123 - Insecateur</option>
+<option value="?act=124&amp;page=5">#124 - Lippoutou</option>
+<option value="?act=125&amp;page=5">#125 - Elektek</option>
+<option value="?act=126&amp;page=5">#126 - Magmar</option>
+<option value="?act=127&amp;page=5">#127 - Scarabrute</option>
+<option value="?act=128&amp;page=5">#128 - Tauros</option>
+<option value="?act=129&amp;page=5">#129 - Magicarpe</option>
+<option value="?act=130&amp;page=5">#130 - Leviator</option>
+<option value="?act=131&amp;page=5">#131 - Lokhlass</option>
+<option value="?act=132&amp;page=5">#132 - Metamorph</option>
+<option value="?act=133&amp;page=5">#133 - Evoli</option>
+<option value="?act=134&amp;page=5">#134 - Aquali</option>
+<option value="?act=135&amp;page=5">#135 - Voltali</option>
+<option value="?act=136&amp;page=5">#136 - Pyroli</option>
+<option value="?act=137&amp;page=5">#137 - Porygon</option>
+<option value="?act=138&amp;page=5">#138 - Amonita</option>
+<option value="?act=139&amp;page=5">#139 - Amonistar</option>
+<option value="?act=140&amp;page=5">#140 - Kabuto</option>
+<option value="?act=141&amp;page=5">#141 - Kabutops</option>
+<option value="?act=142&amp;page=5">#142 - Ptera</option>
+<option value="?act=143&amp;page=5">#143 - Ronflex</option>
+<option value="?act=144&amp;page=5">#144 - Artikodin</option>
+<option value="?act=145&amp;page=5">#145 - Electhor</option>
+<option value="?act=146&amp;page=5">#146 - Sulfura</option>
+<option value="?act=147&amp;page=5">#147 - Minidraco</option>
+<option value="?act=148&amp;page=5">#148 - Draco</option>
+<option value="?act=149&amp;page=5">#149 - Dracolosse</option>
+<option value="?act=150&amp;page=5">#150 - Mewtwo</option>
+<option value="?act=151&amp;page=5">#151 - Mew</option>
+		</select>
+
+		</p>
+	</form>
+
+    </td>
+    <td style="width: 40%">
+    	<div id="logo">
+    		<a href="./?mode=Rouge"><img src="Images/pokedex.jpg"
+    			alt="Accueil" height="80" width="250"></a>
+		</div>
+
+		<table cellpadding="7" cellspacing="0"
+			style="width: 25em; border: 2px outset #009; background-color: #FFF">
+			<tr>
+				<td style="text-align: center;"><h1 id="fiche_pkmn">
+					003 - FLORIZARRE				</h1></td>
+			</tr>
+		</table>
+
+      <div id="navigation">
+        <a href="?mode=Rouge&amp;page=5&amp;act=2">&lt; Pr&eacute;c&eacute;dent</a> -
+        <a href="search.php?mode=Rouge">
+		Recherche</a> - <a href="?mode=Rouge&amp;page=5&amp;act=4">Suivant &gt;</a></div></td><td style="width: 30%">
+		<form action="" method="post" name="formNav">
+		<div><input type="hidden" name="mode" value="Rouge"></div>
+
+        <table border="1" cellspacing="0" cellpadding="0"
+        	style="width: 18em; background-color: #6C6">
+          <tr>
+            <td style="font-weight: bold; font-style: italic; color: #360">Consultation Rapide</td>
+          </tr>
+          <tr>
+            <td>
+            	<select name="pages" onchange="ChangeUrl(this)" class="sel">
+                <option selected>- Informations disponibles -</option>
+				<option value="?act=3&amp;page=0">Informations g&eacute;n&eacute;rales</option>
+				<option value="?act=3&amp;page=1">Statistiques et tactiques</option>
+				<option value="?act=3&amp;page=2">Reproduction</option>
+				<option value="?act=3&amp;page=3">Capacit&eacute;s (Attaques)</option>
+				<option value="?act=3&amp;page=4">Imagerie</option>
+				<option value="?act=3&amp;page=5">Toutes les donn&eacute;es</option>
+              </select></td>
+          </tr>
+        </table>
+      </form>
+	</td>
+  </tr>
+</table>
+
+<h2>Fiche d'identité:</h2>
+<div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td style="width: 25%" valign="top">
+		<table width="96%" border="1" cellpadding="0" cellspacing="0">
+			<tr><td style="height: 36px;" class="titre">Aperçu:</td></tr>
+
+			<tr>
+			<td style="height: 112px;" class="contenu">
+				<a href="?act=3&amp;page=4&amp;mode=Rouge">
+				<img src="Images/Thumbs/003.gif"
+					alt="Voir d'autres images de ce Pokémon..." width="77" height="80"
+					style="border: 0">
+				</a>
+			</td>
+			</tr>
+			<tr>
+			<td style="height: 36px;" class="titre">N° National/Hoenn:</td>
+			</tr>
+			<tr class="contenu">
+			<td style="height: 36px;"> 003/205</td>
+			</tr>
+			<tr>
+			<td style="height: 36px;" class="titre">Attribut:</td>
+			</tr>
+			<tr class="contenu">
+			<td style="height: 36px;">
+			Graine</td>
+			</tr>
+		</table></td>
+		<td style="width: 25%; vertical-align: top;">
+			<table width="96%" border="1" cellpadding="0" cellspacing="0">
+				<tr>
+					<td style="height: 36px;" class="titre">Nom Français:</td>
+				</tr>
+			<tr class="contenu">
+			<td style="height: 36px;">Florizarre</td>
+			</tr>
+			<tr>
+			<td style="height: 36px;" class="titre">Nom Anglais:</td>
+			</tr>
+			<tr class="contenu">
+			<td style="height: 36px;">Venusaur</td>
+			</tr>
+			<tr>
+			<td style="height: 36px;" class="titre">Nom Allemand:</td>
+			</tr>
+			<tr class="contenu">
+			<td style="height: 36px;">Bisaflor</td>
+			</tr>
+			<tr>
+			<td style="height: 36px;" class="titre">Nom Japonais:</td>
+			</tr>
+			<tr class="contenu">
+			<td style="height: 36px;">Fushigibana</td>
+			</tr>
+		</table></td>
+		<td style="vertical-align: top;">
+		<table width="96%" border="1" cellpadding="0" cellspacing="0">
+			<tr>
+			<td style="height: 36px; width: 40%;"
+			class="titre">Généalogie:</td>
+			</tr>
+
+			<tr class="contenu">
+			<td style="height: 282px; vertical-align: top;">
+				<div style="text-align: left; font-family: monospace"><a href="?mode=Rouge&amp;act=001"><img style="border: 2px white" src="Images/Icons/001.gif" alt="BULBIZARRE"></a><br>
+&#xA0;&#xA0;`-&#xA0;<a href="?mode=Rouge&amp;act=002"><img style="border: 2px white" alt="HERBIZARRE" src="Images/Icons/002.gif"></a> (Nv. 16)<br>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;`-&#xA0;<a href="?mode=Rouge&amp;act=003"><img style="border: 2px white" alt="FLORIZARRE" src="Images/Icons/003.gif"></a> (Nv. 32)</div>			</td></tr>
+		</table></td>
+	</tr>
+	</table>
+
+	<h2>Etymologie:</h2>
+	<table width="100%" border="1" cellpadding="0" cellspacing="0"
+		class="table" style="text-align: left;">
+	<tr class="titre"><td colspan="2">Origine du nom dans différentes langues:</td></tr>
+	<tr>
+		<td style="width: 80px;" class="titre4">Français:</td>
+		<td style="width: 900px" class="contenu">
+		Flore + Bizarre		</td>
+	</tr>
+	<tr>
+		<td style="width: 80px" class="titre4">Anglais:</td>
+		<td class="contenu"> Venom (Venin) + ???</td>
+	</tr>
+	<tr>
+		<td style="width: 80px" class="titre4">Allemand:</td>
+		<td class="contenu"> </td>
+	</tr>
+	<tr>
+		<td style="width: 80px" class="titre4">Japonais:</td>
+		<td class="contenu"></td>
+	</tr>
+	</table>
+
+	<h2>Informations supplémentaires:</h2>
+	<table width="100%" border="1" cellspacing="0" cellpadding="0" class="table">
+	<tr class="titre">
+		<td style="width: 20%;">Type 1:</td>
+		<td style="width: 20%;">Type 2:</td>
+		<td style="width: 20%;">Répartition:</td>
+		<td style="width: 20%;">Taille:</td>
+		<td style="width: 20%;">Poids:</td>
+	</tr>
+	<tr class="contenu">
+		<td style="width: 20%;"><img src="Images/Types/12.gif"
+			alt="PLANTE" width="32" height="14"></td>
+		<td style="width: 20%;">
+			<img src="Images/Types/03.gif" width="32" height="14" alt="POISON">		</td>
+		<td style="width: 20%;">
+		<table width="171" border="1" cellpadding="2" cellspacing="0">
+			<tr>
+			<td style="width: 170px"><strong style="color: #009">Mâle &#9794;</strong></td>
+						<td style="width: 71px; text-align: right">- %</td>
+			</tr>
+			<tr>
+			<td><strong style="color: #E0E">Femelle &#9792;</strong></td>
+			<td style="text-align: right">- %</td>
+			</tr>
+		</table></td>
+		<td style="width: 20%;">2 m</td>
+		<td style="width: 20%;">100 Kg</td>
+	</tr>
+	<tr align="center" class="titre">
+		<td style="width: 20%;">Objet tenu:<br>
+		(commun)</td>
+		<td style="width: 20%;">Objet tenu:<br>
+		(rare)</td>
+		<td style="width: 20%;">Expérience minimale<br>
+		remportée (combat):</td>
+		<td style="width: 20%;">Couleur:</td>
+		<td style="width: 20%;">Capacité spéciale:</td>
+	</tr>
+	<tr align="center" class="contenu">
+		<td style="width: 20%;">
+		-		</td>
+		<td style="width: 20%;">
+		-		</td>
+		<td style="width: 20%;">208 points</td>
+		<td style="width: 20%;">&lt;Non présent&gt;</td><td style="width: 20%;">
+		&lt;Non présent&gt;</td>
+	</tr>
+	</table>
+
+	<h2>Description &amp; Localisation:</h2>
+	<table width="100%" border="1" cellpadding="2" cellspacing="0">
+	<tr>
+		<td style="width: 70px" class="contenu"><strong>Desc.:</strong></td>
+		<td class="rouge">Sa plante m&ucirc;rit en absorbant les rayons du soleil. Il migre souvent vers les endroits ensoleill&eacute;s.
+</td>
+		<tr>
+		<td style="width: 70px" class="contenu"><strong>Lieu:</strong></td>
+		<td class="rouge">
+			Non disponible...</td></tr></table>
+
+	<h2>Echelle de grandeur:</h2>
+	<table width="100%" border="1" cellpadding="0" cellspacing="0">
+	<tr class="titre">
+		<td>Aperçu à une échelle proche de la réalité:</td>
+	</tr>
+	<tr class="contenu">
+		<td>
+			<img alt="Ombre du Pokémon" src="Images/Shadows.php?shiny=2&amp;from=RSFace/003" width="128" height="128"><img alt="Ombre du dresseur" src="Images/Shadows.php?shiny=2&amp;from=0" width="96" height="96">			<br>
+			<em><strong>Notes:</strong></em> - L'aperçu n'est pas tout à
+			fait le même que dans Pokémon R/S.<br>
+			- Il est réalisé en supposant que le personnage mesure
+			1.50m...<br>
+			- Il ne s'agit que d'une représentation (très) approximative
+			de la réalité!<br>
+		</td>
+	</tr>
+	</table>
+</div>
+<h2>Statistiques:</h2>
+
+<form name="stats" method="get" action="">
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+		<td colspan="2" rowspan="2">
+			<input type="hidden" name="act" value="3">
+		  	<input type="hidden" name="page" value="1">
+		  	<input type="hidden" name="mode" value="Rouge">
+		  <div class="contenu">
+			<p>Niveau:
+			  <input name="level" type="text" id="level" value="100" size="5" maxlength="3">
+			  			  DV:
+			  <input name="dv" type="text" id="dv"
+				value="15" size="4" maxlength="2">
+			  EV:
+			  <input name="ev" type="text" id="ev"
+				value="63" size="5" maxlength="3">
+			  &nbsp;
+			  <input type="submit" value="Voir les stats!">
+			</p>
+			<p><strong><em>Note:</em></strong> Les DV (Diversification Values)
+			  peuvent varier entre 0 et 15.<br>
+			  Les EV (Efforts Values) peuvent varier entre 0 et 63.<br>Pour obtenir les stats max,
+			  r&egrave;glez les DV sur 15 et			  les EV sur 63.<br><strong>
+			  <em>Attention:</em></strong> Un Pok&eacute;mon ne poss&egrave;dera jamais
+			  les stats max partout!<br></p></div></td>
+		<td style="width: 25%" class="titre">Vitesse de croissance:</td>
+	  </tr>
+	  <tr>
+		<td style="width: 25%; height: 100px" class="contenu">
+		  Parabolique<br><br>Au Niveau 100, il a au maximum<br>1 059 860 points d'exp&eacute;rience!		</td></tr><tr><td colspan="3"><table width="100%" border="1" cellpadding="0" cellspacing="0">
+		<tr class="titre">
+		<td style="width: 18%; color: #9FF; font-style: italic; font-weight: bold">
+			Florizarre</td>
+			<td style="width: 17%">HP</td>
+			<td style="width: 13%">Attaque</td>
+			<td style="width: 13%">D&eacute;fense</td>
+			<td style="width: 13%">Vitesse</td><td style="width: 13%">Sp&eacute;cial</td>			</tr><tr align="center" class="contenu">
+			  <td style="width: 18%" class="titre4">Stats de Base<br>
+				dans Rouge:</td>
+			  <td style="width: 17%">80</td>
+			  <td style="width: 13%">82</td>
+			  <td style="width: 13%">83</td>
+			  <td style="width: 13%">80</td>
+			<td style="width: 13%">100</td>			</tr>
+			<tr align="center" class="contenu">
+			  <td style="width: 18%" class="titre4">Nv. 100				, DV = 15,<br>EV = 63				</td>
+			  <td style="width: 13%">363</td>
+<td style="width: 13%">262</td>
+<td style="width: 13%">264</td>
+<td style="width: 13%">258</td>
+<td style="width: 13%">298</td>
+</tr></table></td>
+	  </tr>
+	</table>
+</form>
+
+  <h2>Exemple(s) de Moveset(s) pour Pokémon Rubis/Saphir:</h2>
+  <table width="100%" border="1" cellpadding="0" cellspacing="0">
+	<tr class="titre">
+	  <td>Moveset(s) propos&eacute;(s):</td>
+	  <td>Explications/Commentaires:</td>
+	</tr>
+	<tr class="contenu"><td style="width: 35%">
+Florizarre @ Restes/Baie maron<br> <br> Danse lames<br> Bomb&#039;berk<br> Vampigraine/Seisme/Giga Sangsue/Poudre dodo<br> Repos/Synth&egrave;se/Vampigraine<br> <br> ou<br> <br> Vampigraine<br> Toxic/Poudre dodo<br> Giga sangsue/Feuille magik/Bomb&#039;berk/Clonage<br> Repos/Synth&egrave;se/Clonage<br> <br> Pour rouge, bleu, et jaune:<br> <br> Florizarre<br> <br> Tranch&#039;herbe<br> poudre dodo<br> vampigraine<br> croissance<br>
+</td><td style="width: 65%">Un bon starter, aux possibilit&eacute;s int&eacute;ressantes ...<br>
+ Le premier set, en sweeper physique, me semble le meilleur, Bomb&#039;berk stab&eacute;e fera mal, Vampigraine ou Poudre dodo &eacute;tant pour moi les meilleurs choix pour compl&eacute;ter, car les autres attaques ne couvriront pas tous les Pok&eacute;mon r&eacute;sistants &agrave; Bomb&#039;berk.<br>
+ Le second set est plut&ocirc;t ennuyeur, utilisant Vampigraine et Restes pour regagner des PV ...<br>
+ <br>
+ <br>
+ <br>
+ Pour rouge, bleu, et jaune:<br>
+ <br>
+ Avec de bonnes stats (BS rien en dessous de 80) ce pokemon est reelement bon. Bien que je pr&eacute;fert Noadkoko (qui a un meilleur special et un type qui est tres interessant).Cet Sexy plante peux faire un bon annoyer du fait de son staying power et ainsi etre un pilier de l&#039;equipe offrant la possibilit&eacute; de sweeper plus ou moins facilement. Il apprends danse lammes mais n&#039;a rien d&#039;int&eacute;ressant pour en faire usage, dommage :p</td></tr>
+</table>
+<strong style="color: #9FF; font-size: 12pt;">
+	<em>Dans ce jeu, les Pokémon étaient incapables
+	de se reproduire entre eux.</em></strong><h2>Ses capacit&eacute;s:</h2>
+  <table width="100%" border="0" cellpadding="3" cellspacing="0">
+    <tr>
+      <td colspan="3"><table width="100%" border="1" cellpadding="2" cellspacing="0">
+          <tr class="titre">
+            <td style="width: 33%"><strong>Par Niveau [Total: 11]:</strong></td>
+            <td style="width: 33%"><strong>Par CT/CS [Total: 16]:</strong></td>
+            <td style="width: 33%"><strong>Par Accouplement [Total: 0]:</strong></td>
+          </tr>
+          <tr class="contenu">
+            <td style="vertical-align: top">
+            <table style="height: 100%; width: 97%" border="1" cellpadding="2" cellspacing="0">
+                <tr class="titre3">
+                  <td style="width: 15%">Nv</td>
+                  <td>Attaque</td>
+                  <td style="width: 40px">Type</td>
+                </tr>
+                <tr><td>1</td><td>Charge</td><td><img alt="NORMAL"src="Images/Types/00.gif" width="32" height="14"></td></tr>
+<tr><td>1</td><td>Fouet Lianes</td><td><img alt="PLANTE"src="Images/Types/12.gif" width="32" height="14"></td></tr>
+<tr><td>1</td><td>Rugissement</td><td><img alt="NORMAL"src="Images/Types/00.gif" width="32" height="14"></td></tr>
+<tr><td>1</td><td>Vampigraine</td><td><img alt="PLANTE"src="Images/Types/12.gif" width="32" height="14"></td></tr>
+<tr><td>7</td><td>Vampigraine</td><td><img alt="PLANTE"src="Images/Types/12.gif" width="32" height="14"></td></tr>
+<tr><td>13</td><td>Fouet Lianes</td><td><img alt="PLANTE"src="Images/Types/12.gif" width="32" height="14"></td></tr>
+<tr><td>22</td><td>Poudre Toxik</td><td><img alt="POISON"src="Images/Types/03.gif" width="32" height="14"></td></tr>
+<tr><td>30</td><td>Tranch'herbe</td><td><img alt="PLANTE"src="Images/Types/12.gif" width="32" height="14"></td></tr>
+<tr><td>43</td><td>Croissance</td><td><img alt="NORMAL"src="Images/Types/00.gif" width="32" height="14"></td></tr>
+<tr><td>55</td><td>Poudre Dodo</td><td><img alt="PLANTE"src="Images/Types/12.gif" width="32" height="14"></td></tr>
+<tr><td>65</td><td>Lance-soleil</td><td><img alt="PLANTE"src="Images/Types/12.gif" width="32" height="14"></td></tr>
+              </table></td>
+            <td style="vertical-align: top">
+            	<table style="height: 100%; width: 97%" border="1" cellpadding="2" cellspacing="0">
+                <tr class="titre3">
+                  <td style="width: 15%">N°</td>
+                  <td>CT/CS</td>
+                  <td style="width: 40px">Type</td>
+                </tr>
+                <tr><td>CT03</td>
+						<td>Danse-lames</td>
+						<td><img alt="NORMAL" src="Images/Types/00.gif" width="32" height="14"></td></tr>
+<tr><td>CT06</td>
+						<td>Toxik</td>
+						<td><img alt="POISON" src="Images/Types/03.gif" width="32" height="14"></td></tr>
+<tr><td>CT08</td>
+						<td>Plaquage</td>
+						<td><img alt="NORMAL" src="Images/Types/00.gif" width="32" height="14"></td></tr>
+<tr><td>CT09</td>
+						<td>Belier</td>
+						<td><img alt="NORMAL" src="Images/Types/00.gif" width="32" height="14"></td></tr>
+<tr><td>CT10</td>
+						<td>Damocles</td>
+						<td><img alt="NORMAL" src="Images/Types/00.gif" width="32" height="14"></td></tr>
+<tr><td>CT15</td>
+						<td>Ultralaser</td>
+						<td><img alt="NORMAL" src="Images/Types/00.gif" width="32" height="14"></td></tr>
+<tr><td>CT20</td>
+						<td>Frenesie</td>
+						<td><img alt="NORMAL" src="Images/Types/00.gif" width="32" height="14"></td></tr>
+<tr><td>CT21</td>
+						<td>Mega-sangsue</td>
+						<td><img alt="PLANTE" src="Images/Types/12.gif" width="32" height="14"></td></tr>
+<tr><td>CT22</td>
+						<td>Lance-soleil</td>
+						<td><img alt="PLANTE" src="Images/Types/12.gif" width="32" height="14"></td></tr>
+<tr><td>CT31</td>
+						<td>Copie</td>
+						<td><img alt="NORMAL" src="Images/Types/00.gif" width="32" height="14"></td></tr>
+<tr><td>CT32</td>
+						<td>Reflet</td>
+						<td><img alt="NORMAL" src="Images/Types/00.gif" width="32" height="14"></td></tr>
+<tr><td>CT33</td>
+						<td>Protection</td>
+						<td><img alt="PSY" src="Images/Types/14.gif" width="32" height="14"></td></tr>
+<tr><td>CT34</td>
+						<td>Patience</td>
+						<td><img alt="NORMAL" src="Images/Types/00.gif" width="32" height="14"></td></tr>
+<tr><td>CT44</td>
+						<td>Repos</td>
+						<td><img alt="PSY" src="Images/Types/14.gif" width="32" height="14"></td></tr>
+<tr><td>CT50</td>
+						<td>Clonage</td>
+						<td><img alt="NORMAL" src="Images/Types/00.gif" width="32" height="14"></td></tr>
+<tr><td>CS01</td>
+						<td>Coupe</td>
+						<td><img alt="NORMAL" src="Images/Types/00.gif" width="32" height="14"></td></tr>
+              </table></td>
+            <td style="vertical-align: top"><table style="height: 100%; width: 97%" border="1" cellpadding="2" cellspacing="0">
+                <tr class="titre3">
+                  <td>Attaque</td>
+                  <td style="width: 40px">Type</td>
+                </tr>
+                			</table>L'accouplement n'existait pas encore!</td></tr>
+        </table></td>
+</tr></table>
+<h2>Imagerie:</h2>
+
+<form method="post" action="">
+
+  <table width="100%" border="1" cellpadding="0" cellspacing="0">
+	<tr class="titre">
+	  <td style="width: 12%; height: 26px;">Pokémon...</td>
+	  <td style="width: 22%;">Normal (de face)</td>
+	  <td style="width: 22%;">Normal (de dos)</td>
+	  <td style="width: 22%;">Shiny (de face)</td>
+	  <td style="width: 22%;">Shiny (de dos)</td>
+	</tr>
+		<tr class="contenu">
+	  <td class="titre4">Vert</td>
+	  <td><img alt="Pokémon Vert (de face, normal)"
+	  	src="Images/Shadows.php?shiny=0&amp;from=Vert/3"></td>
+	  <td rowspan="3">@ venir</td>
+	  <td rowspan="3">Inexistant</td>
+	  <td rowspan="3">Inexistant</td>
+	</tr>
+	<tr class="contenu">
+	  <td class="titre4">Rouge/Bleu</td>
+	  <td><img alt="Pokémon Rouge/Bleu (de face, normal)"
+	  	src="Images/Shadows.php?shiny=0&amp;from=BRFace/3"></td>
+	</tr>
+	<tr class="contenu">
+	  <td class="titre4">Jaune</td>
+	  <td><img alt="Pokémon Jaune (de face, normal)"
+	  	src="Images/Games/Jaune/003.gif"></td>
+	</tr>	<tr class="contenu">
+	  <td class="titre4">Or</td>
+	  <td><img alt="Pokémon Or (de face, normal)"
+	  	src="Images/Shadows.php?shiny=0&amp;from=Or/3"></td>
+	  <td rowspan="3"><img alt="Pokémon Or (de dos, normal)"
+	  	src="Images/Shadows.php?shiny=0&amp;from=OACBack/3"></td>
+	  <td><img alt="Pokémon Or (de face, shiny)"
+	  	src="Images/Shadows.php?shiny=1&amp;from=Or/3"></td>
+	  <td rowspan="3"><img alt="Pokémon Or (de dos, shiny)"
+	  	src="Images/Shadows.php?shiny=1&amp;from=OACBack/3"></td>
+	</tr>
+	<tr class="contenu">
+	  <td class="titre4">Argent</td>
+	  <td><img alt="Pokémon Argent (de face, normal)"
+	  	src="Images/Shadows.php?shiny=0&amp;from=Argent/3"></td>
+	  <td><img alt="Pokémon Argent (de face, shiny)"
+	  	src="Images/Shadows.php?shiny=1&amp;from=Argent/3"></td>
+	</tr>
+	<tr class="contenu">
+	  <td class="titre4">Crystal</td>
+	  <td><img alt="Pokémon Crystal (de face, normal)"
+	  	src="Images/Games/Crystal/003.gif"></td>
+	  <td><img alt="Pokémon Crystal (de face, shiny)"
+	  	src="Images/Games/CrystalS/003.gif"></td>
+	</tr>	<tr class="contenu">
+	  <td class="titre4">Rubis<br>Saphire</td>
+	  <td><img alt="Pokémon Rubis/Saphire (de face, normal)"
+	  	src="Images/Shadows.php?shiny=0&amp;from=RSFace/3"></td>
+	  <td rowspan="3">
+	  	<img alt="Pokémon Rubis/Saphire (de dos, normal)"
+	  		src="Images/Shadows.php?shiny=0&amp;from=RSBack/3">
+	  		  </td>
+	  <td><img alt="Pokémon Rubis/Saphire (de face, shiny)"
+	  	src="Images/Shadows.php?shiny=1&amp;from=RSFace/3"></td>
+	  <td rowspan="3"><img alt="Pokémon Rubis/Saphire (de dos, shiny)"
+	  	src="Images/Shadows.php?shiny=1&amp;from=RSBack/3"></td>
+	</tr>
+	<tr class="contenu">
+	  <td class="titre4">Emeraude</td>
+	  <td><img alt="Pokémon Emeraude (de face, normal)"
+	  	src="Images/Games/Emeraude/003.gif"></td>
+	  <td>@ venir</td>
+	</tr>
+	<tr class="contenu">
+	  <td class="titre4">Vert-Feuille<br>Rouge-Feu</td>
+	  <td><img alt="Pokémon Vert-Feuille/Rouge-Feu (de face, normal)"
+	  			src="Images/Shadows.php?shiny=0&amp;from=FFNormal/3"></td>
+	  <td><img alt="Pokémon Rouge-Feu/Vert-Feuille (de face, shiny)"
+	  			src="Images/Shadows.php?shiny=0&amp;from=FFShiny/3"></td>
+	</tr>
+	<tr class="contenu">
+	  <td class="titre4">Colosseum</td>
+	  <td colspan="2">
+	  	<img alt="Pokémon Colosseum (de face, normal)"
+	  		src="Images/Games/ColNormal/003.png">
+	  </td>
+	  <td colspan="2">
+	  	<img alt="Pokémon Colosseum (de face, shiny)"
+	  		src="Images/Games/ColShiny/003.png">
+	  </td>
+	</tr>
+  </table>
+
+<p>
+Les images des jeux sur GameBoy et de Pokémon
+	Crystal<br>proviennent du site de
+<a href="http://www.pokemonelite2000.com/"
+	style="color:white;">Pokemon Elite 2000</a>.<br>
+Les images de Pokémon Colosseum proviennent du site de
+<a href="http://www.pokeguide.tk/"
+	style="color:white;">Pokeguide</a>.<br>
+Les images de Pokémon Emeraude proviennent du site de
+<a href="http://dynamic.gamespy.com/~psypoke/dex/index.php"
+	style="color:white;">Psypoke</a>.<br>
+Les autres images ont été extraites par MiSsInGnO.
+</p>
+
+</form>
+</div>
+
+<div id="footer">
+	© Pokemon-France.com, 1999-2008<br>
+	Version Actuelle :
+	<span style="text-decoration: underline">
+	  	2.0.0.8
+	</span>
+</div>
+</body>
+</html>
+
