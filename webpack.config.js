@@ -34,6 +34,7 @@ Encore
 	.addEntry('admin_attack', './assets/js/admin_attack.js')
 	.addEntry('admin_pokemon_edit', './assets/js/admin_pokemon_edit.js')
 	.addEntry('admin_attack_edit', './assets/js/admin_attack_edit.js')
+	.addEntry('contact', './assets/js/contact.js')
 	.addStyleEntry('css/app', './assets/css/global.scss')
 
 	// will require an extra script tag for runtime.js

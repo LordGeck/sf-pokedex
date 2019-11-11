@@ -97,12 +97,6 @@ class Pokemon
     private $location;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     * @Assert\Type("string")
-     */
-    private $image;
-
-    /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Type("string")
      * @Assert\Choice(callback = {"App\Enum\TypeEnum", "getAvailableTypes"})
@@ -331,18 +325,6 @@ class Pokemon
     public function setLocation(?string $location): self
     {
         $this->location = $location;
-
-        return $this;
-    }
-
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(?string $image): self
-    {
-        $this->image = $image;
 
         return $this;
     }
