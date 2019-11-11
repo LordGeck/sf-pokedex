@@ -8,7 +8,9 @@ use App\Form\AttackType;
 use App\Form\PokemonType;
 use App\Repository\AttackRepository;
 use App\Repository\PokemonRepository;
+use Liip\ImagineBundle\Imagine\Cache\CacheManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\AttackSlot;
@@ -17,6 +19,7 @@ use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Doctrine\Common\Persistence\ObjectManager;
 use App\Controller\Utils;
+use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
 
 /**
  * Class AdminController

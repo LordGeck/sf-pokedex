@@ -17,9 +17,9 @@
         <figure class="figure text-center">
 
             {% if pokemon.fileName %}
-                <img class="card-img" src="{{ vich_uploader_asset(pokemon, 'imageFile', 'App\\Entity\\Pokemon') | imagine_filter('medium') }}" alt="card-img-top">
-                {% else %}
-                <img src="{{ 'images/pokemon/empty.png' | imagine_filter('medium') }}" alt="card-img-top">
+                <img src="{{ '/images/pokemon/' ~ pokemon.fileName }}" alt="card-img-top" class="poke-detail-img">
+            {% else %}
+                <img src="{{ '/images/pokemon/empty.png'}}" alt="card-img-emp" class="poke-detail-img">
             {% endif %}
 
             <!-- <img class="figure-img img-fluid rounded" alt="Image of {{ pokemon.name }}" -->

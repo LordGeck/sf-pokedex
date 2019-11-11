@@ -6,6 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Enum\TypeEnum;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -35,7 +36,7 @@ class Pokemon
 
     /**
      * @var string|null
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $fileName;
 
@@ -45,6 +46,9 @@ class Pokemon
      *      maxSize = "1024k",
      *      mimeTypes = { "image/png" },
      *      mimeTypesMessage = "Please upload valid PNG"
+     * )
+     * @Assert\Image(
+     *     mimeTypes="image/jpeg"
      * )
      * @Vich\UploadableField(mapping="pokemon_image", fileNameProperty="fileName")
      */
@@ -194,6 +198,9 @@ class Pokemon
     public function setImageFile(?File $imageFile): Pokemon
     {
         $this->imageFile = $imageFile;
+        if($this->imageFile instanceof UploadedFile){
+            $this->editedAt = new \DateTime('now');
+        }
         return $this;
     }
 

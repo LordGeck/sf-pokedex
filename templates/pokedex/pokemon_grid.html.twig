@@ -48,9 +48,9 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ pokemon.name }}</h5>
                             {% if pokemon.fileName %}
-                                <img src="{{ vich_uploader_asset(pokemon, 'imageFile', 'App\\Entity\\Pokemon') | imagine_filter('thumb') }}" alt="card-img-top">
+                                <img src="{{ '/images/pokemon/' ~ pokemon.fileName }}" alt="card-img-top" class="poke-card-img">
                                 {% else %}
-                                <img src="{{ 'images/pokemon/empty.png' | imagine_filter('thumb') }}" alt="card-img-top">
+                                <img src="{{ '/images/pokemon/empty.png'}}" alt="card-img-emp" class="poke-card-img">
                             {% endif %}
 
                         <!-- {% set imgUrl = 'build/assets/images/artworks/' ~ prefixes[prefix_index] ~ '.png' %} -->
