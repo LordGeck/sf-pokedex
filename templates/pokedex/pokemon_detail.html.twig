@@ -13,21 +13,6 @@
 
     <h1>Pokémon #{{ pokemon.no_pokedex }} : {{ pokemon.name }}</h1>
 
-    <div class="figure-center">
-        <figure class="figure text-center">
-
-            {% if pokemon.fileName %}
-                <img src="{{ '/images/pokemon/' ~ pokemon.fileName }}" alt="card-img-top" class="poke-detail-img">
-            {% else %}
-                <img src="{{ '/images/pokemon/empty.png'}}" alt="card-img-emp" class="poke-detail-img">
-            {% endif %}
-
-            <!-- <img class="figure-img img-fluid rounded" alt="Image of {{ pokemon.name }}" -->
-                 <!-- src="{{ asset('build/assets/images/artworks/placeholder250x250.png') }}"> -->
-            <figcaption class="figure-caption">Artwork de {{ pokemon.name }}</figcaption>
-        </figure>
-    </div>
-
     <div class="row">
         <div class="alert alert-primary col-md-9">
             Utilise le select pour filtrer le type d'infos sur ce Pokémon !
@@ -47,23 +32,40 @@
         </div>
     </div>
 
-    <section id="general">
-        <h3>Infos générales</h3>
-        {# set variables for weight and size formatting #}
-        {% set dispWeight = pokemon.weight / 1000 %}
-        {% set dispSize = pokemon.size / 100 %}
+    <div class="row">
+        <div class="figure-center col-md-6">
+            <figure class="figure text-center">
 
-        <div class="card">Pokémon {{ pokemon.nature }}, poids {{ dispWeight | number_format(1, ',', ' ') }} Kg, taille {{ dispSize | number_format(1, ',', ' ') }} m</div>
-        <span>Type 1 : <button type="button"
-                               class="btn btn-{{ pokemon.type1 }} btn-xs btn-dark">{{ pokemon.type1 | upper }}</button> Type 2 : <button
-                    type="button"
-                    class="btn btn-{{ pokemon.type2 }} btn-xs btn-dark">{{ pokemon.type2 | upper }}</button></span>
-        <p>HP : {{ pokemon.hp }}<br>
-            Attaque : {{ pokemon.atk }}<br>
-            Défense : {{ pokemon.def }}<br>
-            Spécial : {{ pokemon.spe }}<br>
-            Vitesse : {{ pokemon.speed }}</p>
-    </section>
+                {% if pokemon.fileName %}
+                    <img src="{{ '/images/pokemon/' ~ pokemon.fileName }}" alt="card-img-top" class="poke-detail-img">
+                {% else %}
+                    <img src="{{ '/images/pokemon/empty.png'}}" alt="card-img-emp" class="poke-detail-img">
+                {% endif %}
+
+                <!-- <img class="figure-img img-fluid rounded" alt="Image of {{ pokemon.name }}" -->
+                    <!-- src="{{ asset('build/assets/images/artworks/placeholder250x250.png') }}"> -->
+                <figcaption class="figure-caption">Artwork de {{ pokemon.name }}</figcaption>
+            </figure>
+        </div>
+
+        <section id="general" class="col-md-6">
+            <h3>Infos générales</h3>
+            {# set variables for weight and size formatting #}
+            {% set dispWeight = pokemon.weight / 1000 %}
+            {% set dispSize = pokemon.size / 100 %}
+
+            <div class="card">Pokémon {{ pokemon.nature }}, poids {{ dispWeight | number_format(1, ',', ' ') }} Kg, taille {{ dispSize | number_format(1, ',', ' ') }} m</div>
+            <span>Type 1 : <button type="button"
+                                class="btn btn-{{ pokemon.type1 }} btn-xs btn-dark">{{ pokemon.type1 | upper }}</button> Type 2 : <button
+                        type="button"
+                        class="btn btn-{{ pokemon.type2 }} btn-xs btn-dark">{{ pokemon.type2 | upper }}</button></span>
+            <p>HP : {{ pokemon.hp }}<br>
+                Attaque : {{ pokemon.atk }}<br>
+                Défense : {{ pokemon.def }}<br>
+                Spécial : {{ pokemon.spe }}<br>
+                Vitesse : {{ pokemon.speed }}</p>
+        </section>
+    </div>
 
     <section id="attack_slots">
         <h3>Attaques apprises</h3>

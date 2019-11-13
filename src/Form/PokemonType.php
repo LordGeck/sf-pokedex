@@ -28,7 +28,6 @@ class PokemonType extends AbstractType
             ->add('imageFile', FileType::class, [
                 'required' => false
             ])
-            ->add('image')
             ->add('type1', ChoiceType::class, [
                 'required' => true,
                 'choices' => $available1,
