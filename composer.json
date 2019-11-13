@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-json": "*",
+        "beberlei/doctrineextensions": "^1.2",
         "doctrine/annotations": "^1.6",
         "friendsofphp/php-cs-fixer": "^2.15",
         "knplabs/knp-paginator-bundle": "^3.0",

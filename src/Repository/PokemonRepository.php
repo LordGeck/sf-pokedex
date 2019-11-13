@@ -39,7 +39,8 @@ class PokemonRepository extends ServiceEntityRepository
         $queryBuilder = $this->findWithDescription();
 
         if($search->getName()){
-            $queryBuilder = $queryBuilder->andWhere('p.name = :name')
+            $queryBuilder = $queryBuilder->andWhere('REGEXP(p.name, :name) = true')
+                ->setParameter('name', '%name%')
                 ->setParameter('name', $search->getName());
         }
         if($search->getType1()){
