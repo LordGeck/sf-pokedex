@@ -40,3 +40,4 @@ Attack management CRUD
 Pokemon management CRUD
 
 *Logged in required
+
