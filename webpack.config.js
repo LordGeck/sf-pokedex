@@ -26,7 +26,6 @@ Encore
 	.addEntry('app', './assets/js/app.js')
 	.addEntry('attack_detail', './assets/js/attack_detail.js')
 	.addEntry('attack_list', './assets/js/attack_list.js')
-	.addEntry('create_resource', './assets/js/create_resource.js')
 	.addEntry('home', './assets/js/home.js')
 	.addEntry('pokemon_detail', './assets/js/pokemon_detail.js')
 	.addEntry('pokemon_grid', './assets/js/pokemon_grid.js')
@@ -51,9 +50,9 @@ Encore
 		// modules and files whitelist
 	})
 
-	//.configureFilenames({
-	//	images: '[path][name].[hash:8].[ext]'
-	//})
+	.configureFilenames({
+		images: '[path][name].[hash:8].[ext]'
+	})
 ;
 
 // import webpack config
