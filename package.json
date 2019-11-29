@@ -19,5 +19,12 @@
     "dependencies": {
         "core-js": "3",
         "datatables.net-bs4": "^1.10.19"
+    },
+    "name": "sf-pokedex",
+    "description": "pokedex app in symfony",
+    "version": "1.0.0",
+    "engines": {
+        "node": "10.x",
+        "yarn": "1.x"
     }
 }
