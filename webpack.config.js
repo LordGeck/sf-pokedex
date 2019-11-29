@@ -51,9 +51,9 @@ Encore
 		// modules and files whitelist
 	})
 
-	.configureFilenames({
-		images: '[path][name].[hash:8].[ext]'
-	})
+	//.configureFilenames({
+	//	images: '[path][name].[hash:8].[ext]'
+	//})
 ;
 
 // import webpack config
