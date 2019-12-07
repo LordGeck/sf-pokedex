@@ -27,8 +27,8 @@ import 'datatables.net-bs4/css/dataTables.bootstrap4.css'
 const imagesCommonContext = require.context('../images/common', true, /\.(png|jpg|jpeg|gif|ico|svg|webp)$/);
 imagesCommonContext.keys().forEach(imagesCommonContext);
 // sprites
-const imagesSpritesContext = require.context('../images/sprites', true, /\.(png|jpg|jpeg|gif|ico|svg|webp)$/);
-imagesSpritesContext.keys().forEach(imagesSpritesContext);
+//const imagesSpritesContext = require.context('../images/sprites', true, /\.(png|jpg|jpeg|gif|ico|svg|webp)$/);
+//imagesSpritesContext.keys().forEach(imagesSpritesContext);
 // artworks (heavier, seek an alternative)
 const imagesArtworksContext = require.context('../images/artworks', true, /\.(png|jpg|jpeg|gif|ico|svg|webp)$/);
 imagesArtworksContext.keys().forEach(imagesArtworksContext);

@@ -18,7 +18,8 @@
     },
     "dependencies": {
         "core-js": "3",
-        "datatables.net-bs4": "^1.10.19"
+        "datatables.net-bs4": "^1.10.19",
+        "friendly-errors-webpack-plugin": "npm:@soda/friendly-errors-webpack-plugin@^1.7.1"
     },
     "name": "sf-pokedex",
     "description": "pokedex app in symfony",
